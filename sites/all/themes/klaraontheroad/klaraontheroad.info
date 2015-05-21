@@ -40,6 +40,10 @@ stylesheets[all][] = css/style.css
 ; ;; Scripts
 ; ;;;;;;;;;;;;;;;;;;;;;
 
+;scripts[] = 'js/jquery.scrolly.min.js'
+;scripts[] = 'js/init.js'
+scripts[] = 'js/gmapper.js'
+scripts[] = 'js/animatescroll.js'
 scripts[] = 'js/klara.js'
 
 ; 

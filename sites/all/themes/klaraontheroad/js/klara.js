@@ -65,6 +65,18 @@
                 });
             });
 
+            // scrolleffects
+            var scrollMenuFront = $('nav > ul.menu');
+            scrollMenuFront.find('> li:nth-child(2) > a').removeAttr('href').click(function(){
+                $('.front .main-container').animatescroll();
+            });
+            scrollMenuFront.find('> li:nth-child(3) > a').removeAttr('href').click(function(){
+                $('.front .content-bottom').animatescroll();
+            });
+            scrollMenuFront.find('> li:nth-child(4) > a').removeAttr('href').click(function(){
+                $('.front .footer').animatescroll();
+            });
+
 
         }
     };

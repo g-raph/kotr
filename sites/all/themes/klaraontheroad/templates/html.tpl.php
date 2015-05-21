@@ -60,9 +60,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <?php print $scripts; ?>
-  <script src="/sites/all/themes/klaraontheroad/js/jquery.scrolly.min.js"></script>
-  <script src="/sites/all/themes/klaraontheroad/js/init.js"></script>
-  <script src="/sites/all/themes/klaraontheroad/js/gmapper.js"></script>
+
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <div id="skip-link">
