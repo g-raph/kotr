@@ -1,0 +1,700 @@
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.well-white {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.transit {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+iframe {
+  max-width: 100%;
+}
+a {
+  color: #cc0001;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+a:hover {
+  color: #222;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eee;
+}
+h1.page-header {
+  text-align: center;
+}
+.front h1.page-header,
+.front .tabs--primary {
+  display: none;
+}
+.front #block-views-uitzendingen-block-1 {
+  margin: 0;
+  padding: 0;
+}
+.front .block-nodeblock ul.submenu {
+  margin-top: 40px;
+}
+.front .block-nodeblock ul.submenu li {
+  display: inline-block;
+  margin: 0 15px 0 0;
+}
+.front .block-nodeblock ul.submenu li a {
+  padding: 15px;
+  border: 1px solid #aaa;
+  font-size: 12px;
+  color: #aaa;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.front .block-nodeblock ul.submenu li a:hover {
+  color: #cc0001;
+  border: 1px solid #cc0001;
+  text-decoration: none;
+}
+.not-front .main-container {
+  padding-top: 80px;
+}
+.navbar-inverse {
+  margin-bottom: 0;
+}
+.navbar-nav {
+  float: none;
+  margin: 0;
+  text-align: center;
+  padding: 7px 0;
+  border-radius: 0;
+}
+.navbar-nav > li {
+  float: none;
+  display: inline-block;
+}
+.navbar-nav > li:first-child > a {
+  text-indent: -999999px;
+  width: 90px;
+  height: 35px;
+  background: url(../images/logo-nav2.png) no-repeat center 5px;
+  border-radius: 0;
+  opacity: 0.6;
+  margin: 0 5px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.navbar-nav > li:first-child > a:hover,
+.navbar-nav > li:first-child > a:active {
+  opacity: 1;
+}
+.navbar-nav > li:first-child > a.active {
+  background-color: transparent;
+  opacity: 1;
+}
+.highlighted {
+  padding: 130px 0 80px;
+  background: #fff;
+  border-bottom: 2px solid #ddd;
+}
+.highlighted .ds-2col .group-left {
+  width: 23%;
+}
+.highlighted .ds-2col .group-right {
+  width: 72%;
+  float: right;
+}
+.highlighted .ds-2col .group-right h1 {
+  margin-bottom: 20px;
+}
+.main-container {
+  padding: 0;
+}
+.view-uitzendingen .klara-timeline-block .group-left {
+  width: 35%;
+  float: left;
+}
+.view-uitzendingen .klara-timeline-block .group-right {
+  width: 60%;
+  float: right;
+}
+.front h2.block-title {
+  padding: 0 0 20px;
+  border-bottom: 4px solid #ddd;
+  text-align: center;
+  margin: 0;
+}
+.front .klara-timeline {
+  padding: 80px 0;
+  margin: 0;
+}
+.front .footer h2.block-title {
+  border-bottom: 4px solid #444;
+  margin-bottom: 20px;
+}
+ul.tabs--primary {
+  margin-bottom: 50px;
+}
+body.admin-menu .navbar-fixed-top {
+  top: 21px;
+}
+.group-header:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.footer {
+  background: #101010;
+  color: #fff;
+  padding: 80px 0;
+}
+.footer h2 {
+  border-bottom: 2px solid #444;
+}
+.footer .footer-logo {
+  float: left;
+  margin: 0 20px 0 0;
+  width: 100px;
+  opacity: 0.3;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.footer .footer-logo:hover {
+  opacity: 1;
+}
+.footer #VRTFooter {
+  margin-top: 20px;
+}
+.footer #VRTFooter a {
+  color: rgba(255, 255, 255, 0.4);
+  margin-right: 5px;
+}
+.footer #VRTFooter a:hover {
+  color: #fff;
+}
+.front .footer {
+  margin-top: 0;
+}
+.klara-timeline-block span.date-display-single {
+  color: #fff;
+  background: #cc0001;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0 3px 0 #ddd;
+}
+a.klara-read-more {
+  padding: 5px 10px;
+  box-shadow: 0 3px 0 #ddd;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-pic {
+  float: left;
+  width: 50%;
+  padding: 0 50px 30px 0;
+  margin: 0;
+  background: #eee;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-date,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-region,
+.node-type-uitzending .node-uitzending .field-name-body {
+  margin: 0 0 10px;
+  padding: 0 0 10px;
+  border-bottom: 1px solid #ddd;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-date {
+  text-indent: 25px;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-date:before {
+  content: "\f073";
+  font-family: fontawesome;
+  display: inline-block;
+  margin-left: -25px;
+  position: absolute;
+  color: #cc0001;
+}
+.node-type-uitzending .node-uitzending .field-name-body {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  display: block;
+}
+.node-type-uitzending .node-uitzending .field-name-body p:first-child {
+  text-indent: 25px;
+}
+.node-type-uitzending .node-uitzending .field-name-body:before {
+  content: "\f05a";
+  font-family: fontawesome;
+  display: inline-block;
+  margin-left: 0;
+  position: absolute;
+  color: #cc0001;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song {
+  width: 30%;
+  display: inline-block;
+  float: left;
+  clear: both;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > h3 {
+  position: relative;
+  text-indent: 52px;
+  font-size: 35px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > h3:before {
+  content: "\f001";
+  font-family: fontawesome;
+  position: absolute;
+  text-align: left;
+  left: -46px;
+  color: #cc0001;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items {
+  counter-reset: my-badass-counter;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item {
+  margin: 0 0 10px;
+  padding: 5px 38px 10px 65px;
+  border-bottom: 1px dashed #ccc;
+  position: relative;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item:before {
+  content: counter(my-badass-counter, decimal-leading-zero);
+  counter-increment: my-badass-counter;
+  position: absolute;
+  left: 0;
+  font-size: 50px;
+  letter-spacing: -3px;
+  color: #ccc;
+  top: -10px;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .field-name-field-song-title {
+  text-indent: 20px;
+  position: relative;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .field-name-field-song-title:before {
+  content: "\f001";
+  font-family: fontawesome;
+  position: absolute;
+  text-align: left;
+  left: -19px;
+  top: 0;
+  color: #cc0001;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .field-name-field-componist-name {
+  font-size: 12px;
+  font-style: italic;
+  padding-top: 2px;
+  text-indent: 20px;
+  position: relative;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .field-name-field-componist-name:before {
+  content: "\f007";
+  font-family: fontawesome;
+  position: absolute;
+  text-align: left;
+  left: -18px;
+  top: 1px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .field-name-field-componist-name .field-label {
+  display: none;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .open-popup {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  top: 9px;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .open-popup:before {
+  content: "\f055";
+  font-family: fontawesome;
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  line-height: 30px;
+  text-align: center;
+  left: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: rgba(0, 0, 0, 0.5);
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .open-popup:hover:before {
+  color: #cc0001;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .close-popup {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  font-size: 70px;
+  line-height: 60px;
+  text-align: center;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .close-popup:before {
+  content: "\f00d";
+  font-family: fontawesome;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  left: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: rgba(0, 0, 0, 0.5);
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .close-popup:hover:before {
+  color: #cc0001;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 998;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song {
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  background: #fff;
+  margin: 0;
+  z-index: 999;
+  top: 10%;
+  left: 10%;
+  overflow-y: scroll;
+  padding: 50px;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #ddd;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .field-name-field-song-title {
+  padding-bottom: 9px;
+  margin: 0 0 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 40px;
+  text-align: center;
+  font-family: georgia, serif;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .field-name-field-song-img {
+  float: left;
+  margin: 0 20px 5px 0;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .field-name-field-song-componist h2 {
+  display: none;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .field-name-field-song-componist .field-name-field-componist-name {
+  font-size: 18px;
+  color: #cc0001;
+  margin-bottom: 15px;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-left .field-name-field-song-link {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+  width: 90%;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-left .field-name-field-song-link a {
+  text-indent: 25px;
+  position: relative;
+  display: block;
+  color: #333;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-left .field-name-field-song-link a:before {
+  content: "\f0c1";
+  font-family: fontawesome;
+  position: absolute;
+  text-align: left;
+  left: -25px;
+  top: 0;
+  color: #cc0001;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-left .mapboxsmall {
+  width: 90%;
+  height: 300px;
+  max-width: 100%;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-left .field-name-field-song-location {
+  display: none;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-right .componist-title {
+  text-indent: 25px;
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-right .componist-title:before {
+  content: "\f007";
+  font-family: fontawesome;
+  position: absolute;
+  text-align: left;
+  left: -25px;
+  top: 0;
+  color: #cc0001;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-right .field-name-field-componist-img {
+  float: left;
+  margin: 0 20px 10px 0;
+}
+.node-type-uitzending .node-uitzending .mapbox {
+  width: 65%;
+  height: 600px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 5%;
+  max-width: 100%;
+}
+.node-type-uitzending .node-uitzending .mapbox img {
+  max-width: none;
+}
+.node-type-uitzending .node-uitzending .mapbox h3.marker-title {
+  text-indent: 30px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.node-type-uitzending .node-uitzending .mapbox h3.marker-title:before {
+  content: "\f001";
+  font-family: fontawesome;
+  position: absolute;
+  text-align: left;
+  left: -30px;
+  color: #cc0001;
+}
+.node-type-uitzending .node-uitzending .mapbox .left-side {
+  float: left;
+}
+.node-type-uitzending .node-uitzending .mapbox .left-side img {
+  max-width: 90%;
+}
+.page-uitzendingen h1 {
+  padding: 0 0 20px;
+  border-bottom: 4px solid #ddd;
+  text-align: center;
+  margin: 0;
+}
+.page-uitzendingen .view-uitzendingen {
+  margin: 0;
+  padding: 80px 0;
+}
+.page-uitzendingen .footer {
+  margin-top: 0;
+}
+.webform-client-form {
+  margin-top: 20px;
+}
+.webform-client-form .webform-component--naam-en-voornaam {
+  float: left;
+  width: 48%;
+}
+.webform-client-form .webform-component--email-adres {
+  float: right;
+  width: 48%;
+}
+.webform-client-form .webform-component--bericht {
+  float: left;
+  width: 100%;
+  margin-top: 20px;
+}
+.webform-client-form button {
+  float: left;
+  margin-top: 20px;
+}
+.footer .webform-client-form {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px dashed #333;
+}
+.footer .webform-client-form:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.footer .webform-client-form input,
+.footer .webform-client-form textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: 0;
+  color: #fff;
+  border-radius: 4px;
+}
+.footer .webform-client-form .grippie {
+  display: none;
+}
+.front .content-bottom {
+  background: #fff;
+  padding: 80px 0;
+  border-top: 2px solid #ddd;
+}
+.page-kalender-maand .calendar-calendar div.day {
+  float: none;
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+}
+.page-kalender-maand #block-system-main > .view-calendar-broadcasts {
+  float: left;
+  width: 46%;
+  clear: none;
+}
+.page-kalender-maand #block-system-main > .view-calendar-broadcasts table {
+  margin-top: 20px;
+  border-radius: 4px;
+}
+.page-kalender-maand #block-system-main > .view-calendar-broadcasts table tr td,
+.page-kalender-maand #block-system-main > .view-calendar-broadcasts table tr th {
+  background: #101010;
+  border: #101010;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+}
+.page-kalender-maand #block-system-main > .view-calendar-broadcasts table tr th {
+  color: #555;
+}
+.page-kalender-maand #block-system-main > .view-calendar-broadcasts table tr.date-box {
+  position: relative;
+}
+.page-kalender-maand #block-system-main > .view-calendar-broadcasts table tr.date-box > td > .item {
+  position: absolute;
+  display: none;
+  top: -100%;
+  z-index: 99;
+  width: 100px;
+}
+.page-kalender-maand #block-system-main > .view-calendar-broadcasts table tr.date-box > td:hover > .item {
+  display: block;
+}
+.page-kalender-maand #block-system-main > .view-calendar-broadcasts table thead tr {
+  border-bottom: 1px solid #555;
+}
+.page-kalender-maand #block-system-main > .view-calendar-broadcasts table td a {
+  color: #fff;
+  background: #cc0001;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+}
+#block-views-calendar-broadcasts-block-1 {
+  float: left;
+  width: 46%;
+  clear: none;
+}
+#block-views-calendar-broadcasts-block-1 table {
+  margin-top: 20px;
+  border-radius: 4px;
+}
+#block-views-calendar-broadcasts-block-1 table tr td,
+#block-views-calendar-broadcasts-block-1 table tr th {
+  background: #101010;
+  border: #101010;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+}
+#block-views-calendar-broadcasts-block-1 table tr th {
+  color: #555;
+}
+#block-views-calendar-broadcasts-block-1 table thead tr {
+  border-bottom: 1px solid #555;
+}
+#block-views-calendar-broadcasts-block-1 table td.has-events a {
+  color: #fff;
+  background: #cc0001;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+}
+#block-views-calendar-broadcasts-block-2 {
+  float: right;
+  width: 46%;
+  clear: none;
+}
+#block-views-calendar-broadcasts-block-2 ul {
+  margin-top: 20px;
+}
+#block-views-calendar-broadcasts-block-2 ul > li.views-row {
+  margin: 0 0 10px;
+  padding: 0 0 10px;
+  border-bottom: 1px dashed #ccc;
+}
+#block-views-calendar-broadcasts-block-2 ul > li.views-row:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#block-views-calendar-broadcasts-block-2 ul > li.views-row .views-field-field-broadcast-pic {
+  float: left;
+  margin: 0 20px 10px 0;
+}
+#block-views-calendar-broadcasts-block-2 ul > li.views-row .views-field-title a {
+  font-size: 26px;
+}
+#block-views-calendar-broadcasts-block-2 ul > li.views-row .views-field-field-broadcast-date {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.5);
+}

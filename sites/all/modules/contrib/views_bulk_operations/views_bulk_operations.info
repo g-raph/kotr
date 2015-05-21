@@ -1,0 +1,7 @@
+name = Views Bulk Operations
+description = Provides a way of selecting multiple rows and applying operations to them.
+dependencies[] = views
+package = Views
+core = 7.x
+
+files[] = views/views_bulk_operations_handler_field_operations.inc

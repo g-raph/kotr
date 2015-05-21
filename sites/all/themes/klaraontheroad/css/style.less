@@ -1,0 +1,751 @@
+// imports
+@import "../less/variables";
+
+// vars
+
+@color-base: #cc0001;
+
+// custom classes
+
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.well-white {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.transit {
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+// theme
+
+h1, h2, h3, h4 {
+  font-family: @headings-font-family;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+a {
+  color: @color-base;
+  .transit;
+  &:hover {
+    color: #222;
+  }
+}
+
+body {
+  font-family: @font-family-base;
+  background: #eee;//#f5f5f5;
+}
+
+h1.page-header {
+  text-align: center;
+}
+
+// front
+.front h1.page-header, .front .tabs--primary {
+  display: none;
+}
+.front {
+  #block-views-uitzendingen-block-1 {
+    margin: 0;
+    padding: 0;
+  }
+  .block-nodeblock {
+    ul.submenu {
+      margin-top: 40px;
+      li {
+        display: inline-block;
+        margin: 0 15px 0 0;
+        a {
+          padding: 15px;
+          border: 1px solid #aaa;
+          font-size: 12px;
+          color: #aaa;
+          .transit;
+          border-radius: 4px;
+          text-transform: uppercase;
+          &:hover {
+            color: @color-base;
+            border: 1px solid @color-base;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// not-front
+.not-front {
+  .main-container {
+    padding-top: 80px;
+  }
+}
+
+// navbar
+.navbar-inverse {
+  margin-bottom: 0;
+}
+.navbar-nav {
+  float: none;
+  margin: 0;
+  text-align: center;
+  padding: 7px 0;
+  border-radius: 0;
+  > li {
+    float: none;
+    display: inline-block;
+    &:first-child > a {
+      text-indent: -999999px;
+      width: 90px;
+      height: 35px;
+      background: url(../images/logo-nav2.png) no-repeat center 5px;
+      border-radius: 0;
+      opacity: 0.6;
+      margin: 0 5px;
+      .transit;
+      &:hover, &:active {
+        opacity: 1;
+      }
+      &.active {
+        background-color: transparent;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// highlight
+.highlighted {
+  padding: 130px 0 80px;
+  background: #fff;
+  border-bottom: 2px solid #ddd;
+  .ds-2col {
+    .group-left {
+      width: 23%;
+    }
+    .group-right {
+      width: 72%;
+      float: right;
+      h1 {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+// main container
+.main-container {
+  padding: 0;
+}
+
+// uitzendingen view
+.view-uitzendingen {
+  .klara-timeline-block {
+    .group-left {
+      width: 35%;
+      float: left;
+    }
+    .group-right {
+      width: 60%;
+      float: right;
+    }
+  }
+}
+
+.front {
+  h2.block-title {
+    padding: 0 0 20px;
+    border-bottom: 4px solid #ddd;
+    text-align: center;
+    margin: 0;
+  }
+  .klara-timeline {
+    padding: 80px 0;
+    margin: 0;
+  }
+  .footer h2.block-title {
+    border-bottom: 4px solid #444;
+    margin-bottom: 20px;
+  }
+}
+
+ul.tabs--primary {
+  margin-bottom: 50px;
+}
+
+body.admin-menu .navbar-fixed-top {
+  top: 21px;
+}
+
+.group-header {
+  .clearfix;
+}
+
+.footer {
+  background: #101010;
+  color: #fff;
+  padding: 80px 0;
+  h2 {
+    border-bottom: 2px solid #444;
+  }
+  .footer-logo {
+    float: left;
+    margin: 0 20px 0 0;
+    width: 100px;
+    opacity: 0.3;
+    .transit;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  #VRTFooter {
+    margin-top: 20px;
+    a {
+      color: rgba(255,255,255,0.4);
+      margin-right: 5px;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+.front .footer {
+  margin-top: 0;
+
+}
+
+// timeline
+.klara-timeline-block span.date-display-single {
+  color: #fff;
+  background: @color-base;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0 3px 0 #ddd;
+}
+a.klara-read-more {
+  padding: 5px 10px;
+  box-shadow: 0 3px 0 #ddd;
+}
+
+// uitzending detail
+.node-type-uitzending {
+  .node-uitzending {
+    .field-name-field-broadcast-pic {
+      float: left;
+      width: 50%;
+      padding: 0 50px 30px 0;
+      margin: 0;
+      background: #eee;
+    }
+    .field-name-field-broadcast-date, .field-name-field-broadcast-region, .field-name-body {
+      margin: 0 0 10px;
+      padding: 0 0 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .field-name-field-broadcast-date {
+      text-indent: 25px;
+      &:before {
+        content: "\f073";
+        font-family: fontawesome;
+        display: inline-block;
+        margin-left: -25px;
+        position: absolute;
+        color: @color-base;
+      }
+    }
+    .field-name-body {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      display: block;
+      p:first-child {
+        text-indent: 25px;
+      }
+      &:before {
+        content: "\f05a";
+        font-family: fontawesome;
+        display: inline-block;
+        margin-left: 0;
+        position: absolute;
+        color: @color-base;
+      }
+    }
+    .field-name-field-broadcast-song {
+      width: 30%;
+      display: inline-block;
+      float: left;
+      clear: both;
+      > h3 {
+        position: relative;
+        text-indent: 52px;
+        font-size: 35px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+        &:before {
+          content: "\f001";
+          font-family: fontawesome;
+          position: absolute;
+          text-align: left;
+          left: -46px;
+          color: @color-base;
+        }
+      }
+      > .field-items {
+        counter-reset: my-badass-counter;
+        > .field-item {
+          margin: 0 0 10px;
+          padding: 5px 38px 10px 65px;
+          border-bottom: 1px dashed #ccc;
+          position: relative;
+          &:before {
+            content: counter(my-badass-counter, decimal-leading-zero);
+            counter-increment: my-badass-counter;
+            position: absolute;
+            left: 0;
+            font-size: 50px;
+            letter-spacing: -3px;
+            color: #ccc;
+            top: -10px;
+          }
+          > .field-name-field-song-title {
+            text-indent: 20px;
+            position: relative;
+            &:before {
+              content: "\f001";
+              font-family: fontawesome;
+              position: absolute;
+              text-align: left;
+              left: -19px;
+              top: 0;
+              color: @color-base;
+            }
+          }
+          > .field-name-field-componist-name {
+            font-size: 12px;
+            font-style: italic;
+            padding-top: 2px;
+            text-indent: 20px;
+            position: relative;
+            &:before {
+              content: "\f007";
+              font-family: fontawesome;
+              position: absolute;
+              text-align: left;
+              left: -18px;
+              top: 1px;
+              color: rgba(0,0,0,0.5);
+            }
+            .field-label {
+              display: none;
+            }
+          }
+          .open-popup {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 0;
+            cursor: pointer;
+            top: 9px;
+            &:before {
+              content: "\f055";
+              font-family: fontawesome;
+              font-size: 24px;
+              position: absolute;
+              top: 0;
+              line-height: 30px;
+              text-align: center;
+              left: 0;
+              .transit;
+              color: rgba(0,0,0,0.5);
+            }
+            &:hover:before {
+              color: @color-base;
+            }
+          }
+          .close-popup {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            cursor: pointer;
+            font-size: 70px;
+            line-height: 60px;
+            text-align: center;
+            &:before {
+              content: "\f00d";
+              font-family: fontawesome;
+              position: absolute;
+              top: 0;
+              text-align: center;
+              left: 0;
+              .transit;
+              color: rgba(0,0,0,0.5);
+            }
+            &:hover:before {
+              color: @color-base;
+            }
+          }
+          > .popup {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 998;
+            > .entity-song {
+              position: fixed;
+              width: 80%;
+              height: 80%;
+              background: #fff;
+              margin: 0;
+              z-index: 999;
+              top: 10%;
+              left: 10%;
+              overflow-y: scroll;
+              padding: 50px;
+              .group-header {
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px dashed #ddd;
+              }
+              .field-name-field-song-title {
+                padding-bottom: 9px;
+                margin: 0 0 20px;
+                border-bottom: 1px solid #eee;
+                font-size: 40px;
+                text-align: center;
+                font-family: georgia, serif;
+              }
+              .field-name-field-song-img {
+                float: left;
+                margin: 0 20px 5px 0;
+              }
+              .field-name-field-song-componist {
+                h2 {
+                  display: none;
+                }
+                .field-name-field-componist-name {
+                  font-size: 18px;
+                  color: @color-base;
+                  margin-bottom: 15px;
+                }
+              }
+              .group-left {
+                .field-name-field-song-link {
+                  margin-bottom: 20px;
+                  padding-bottom: 10px;
+                  border-bottom: 1px dashed #ccc;
+                  width: 90%;
+                  a {
+                    text-indent: 25px;
+                    position: relative;
+                    display: block;
+                    color: #333;
+                    &:before {
+                      content: "\f0c1";
+                      font-family: fontawesome;
+                      position: absolute;
+                      text-align: left;
+                      left: -25px;
+                      top: 0;
+                      color: @color-base;
+                    }
+                  }
+                }
+                .mapboxsmall {
+                  width: 90%;
+                  height: 300px;
+                  max-width: 100%;
+                }
+                .field-name-field-song-location {
+                  display: none;
+                }
+              }
+              .group-right {
+                .componist-title {
+                  text-indent: 25px;
+                  position: relative;
+                  display: block;
+                  margin-bottom: 20px;
+                  padding-bottom: 10px;
+                  border-bottom: 1px dashed #ccc;
+                  &:before {
+                    content: "\f007";
+                    font-family: fontawesome;
+                    position: absolute;
+                    text-align: left;
+                    left: -25px;
+                    top: 0;
+                    color: @color-base;
+                  }
+                }
+                .field-name-field-componist-img {
+                  float: left;
+                  margin: 0 20px 10px 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .mapbox {
+      width: 65%;
+      height: 600px;
+      display:inline-block;
+      vertical-align:top;
+      margin-left:5%;
+      max-width: 100%;
+      img {
+        max-width: none;
+      }
+      h3.marker-title {
+        text-indent: 30px;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+        &:before {
+          content: "\f001";
+          font-family: fontawesome;
+          position: absolute;
+          text-align: left;
+          left: -30px;
+          color: @color-base;
+        }
+      }
+      .left-side {
+        float: left;
+        img {
+          max-width: 90%;
+        }
+      }
+    }
+  }
+}
+
+// timeline page uitzendingen
+.page-uitzendingen {
+  h1 {
+    padding: 0 0 20px;
+    border-bottom: 4px solid #ddd;
+    text-align: center;
+    margin: 0;
+  }
+  .view-uitzendingen {
+    margin: 0;
+    padding: 80px 0;
+  }
+  .footer {
+    margin-top: 0;
+  }
+}
+
+// webform
+.webform-client-form {
+  margin-top: 20px;
+  .webform-component--naam-en-voornaam {
+    float: left;
+    width: 48%;
+  }
+  .webform-component--email-adres {
+    float: right;
+    width: 48%;
+  }
+  .webform-component--bericht {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+  }
+  button {
+    float: left;
+    margin-top: 20px;
+  }
+}
+.footer .webform-client-form {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px dashed #333;
+  .clearfix;
+  input,textarea {
+    background: rgba(255,255,255,0.1);
+    border: 0;
+    color: #fff;
+    border-radius: 4px;
+  }
+  .grippie {
+    display: none;
+  }
+}
+
+// calendar
+.front {
+  .content-bottom {
+    background: #fff;
+    padding: 80px 0;
+    border-top: 2px solid #ddd;
+  }
+}
+.page-kalender-maand {
+  .calendar-calendar div.day {
+    float: none;
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+  }
+  #block-system-main > .view-calendar-broadcasts {
+    float: left;
+    width: 46%;
+    clear: none;
+    table {
+      margin-top: 20px;
+      border-radius: 4px;
+      tr {
+        td,th {
+          background: #101010;
+          border: #101010;
+          height: 50px;
+          line-height: 50px;
+          text-align: center;
+          color: #fff;
+        }
+        th {
+          color: #555;
+        }
+        &.date-box {
+          position: relative;
+          > td {
+            > .item {
+              position: absolute;
+              display: none;
+              top: -100%;
+              z-index: 99;
+              width: 100px;
+            }
+            &:hover > .item {
+              display: block;
+            }
+          }
+
+        }
+      }
+      thead tr {
+        border-bottom: 1px solid #555;
+      }
+      td a {
+        color: #fff;
+        background: #cc0001;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        text-align: center;
+        line-height: 30px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+#block-views-calendar-broadcasts-block-1 {
+  float: left;
+  width: 46%;
+  clear: none;
+  table {
+    margin-top: 20px;
+    border-radius: 4px;
+    tr {
+      td,th {
+        background: #101010;
+        border: #101010;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+      }
+      th {
+        color: #555;
+      }
+    }
+    thead tr {
+      border-bottom: 1px solid #555;
+    }
+    td.has-events a {
+      color: #fff;
+      background: #cc0001;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      text-align: center;
+      line-height: 30px;
+      text-decoration: none;
+    }
+  }
+}
+#block-views-calendar-broadcasts-block-2 {
+  float: right;
+  width: 46%;
+  clear: none;
+  ul {
+    margin-top: 20px;
+    > li.views-row {
+      margin: 0 0 10px;
+      padding: 0 0 10px;
+      border-bottom: 1px dashed #ccc;
+      .clearfix;
+      .views-field-field-broadcast-pic {
+        float: left;
+        margin: 0 20px 10px 0;
+      }
+      .views-field-title a {
+        font-size: 26px;
+      }
+      .views-field-field-broadcast-date {
+        font-style: italic;
+        color: rgba(0,0,0,0.5);
+      }
+    }
+  }
+}
+
+
