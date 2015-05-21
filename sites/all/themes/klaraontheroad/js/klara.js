@@ -49,8 +49,8 @@
             $('.webform-component--email-adres input').addClass('form-control');
 
             // calendar
-            var tdToCheck = $('.page-kalender-maand .view-calendar-broadcasts tr.date-box td');
-            $('.page-kalender-maand .view-calendar-broadcasts tr.single-day').hide();
+            var tdToCheck = $('.front .view-calendar-broadcasts tr.date-box td');
+            $('.front .view-calendar-broadcasts tr.single-day').hide();
             tdToCheck.each(function(){
                 var $this = $(this);
                 var tdHasLink = $this.find('> .inner > .day > a');
@@ -59,7 +59,12 @@
                     var tdLinkContent = $this.parent().next().find('td[data-day-of-month='+tdHasLink.html()+']');
                     tdLinkContent.find('> .inner > .item').appendTo($this);
                 }
+                tdHasLink.click(function(e){
+                    e.preventDefault();
+                    $this.find('> .item > div > div.monthview').toggleClass('hovering');
+                });
             });
+
 
         }
     };

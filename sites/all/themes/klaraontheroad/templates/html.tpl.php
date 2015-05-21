@@ -51,11 +51,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
-  <link rel="stylesheet" href="/sites/all/themes/klaraontheroad/css/skel.css" />
   <link rel="stylesheet" href="/sites/all/themes/klaraontheroad/css/style.css" />
-  <link rel="stylesheet" href="/sites/all/themes/klaraontheroad/css/style-1000px.css" />
   <link rel="stylesheet" href="/sites/all/themes/klaraontheroad/css/style-desktop.css" />
-  <link rel="stylesheet" href="/sites/all/themes/klaraontheroad/css/style-mobile.css" />
   <link rel="stylesheet" href="/sites/all/themes/klaraontheroad/css/timeline.css" />
   <?php print $styles; ?>
   <!-- HTML5 element support for IE6-8 -->
@@ -64,7 +61,6 @@
   <![endif]-->
   <?php print $scripts; ?>
   <script src="/sites/all/themes/klaraontheroad/js/jquery.scrolly.min.js"></script>
-  <script src="/sites/all/themes/klaraontheroad/js/skel.min.js"></script>
   <script src="/sites/all/themes/klaraontheroad/js/init.js"></script>
   <script src="/sites/all/themes/klaraontheroad/js/gmapper.js"></script>
 </head>

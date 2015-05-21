@@ -137,7 +137,6 @@ h1.page-header {
       height: 35px;
       background: url(../images/logo-nav2.png) no-repeat center 5px;
       border-radius: 0;
-      opacity: 0.6;
       margin: 0 5px;
       .transit;
       &:hover, &:active {
@@ -545,6 +544,7 @@ a.klara-read-more {
         padding-bottom: 10px;
         margin-bottom: 20px;
         border-bottom: 1px solid #ccc;
+        width: 250px;
         &:before {
           content: "\f001";
           font-family: fontawesome;
@@ -626,64 +626,12 @@ a.klara-read-more {
     border-top: 2px solid #ddd;
   }
 }
-.page-kalender-maand {
+.front {
   .calendar-calendar div.day {
     float: none;
     display: inline-block;
     width: 100%;
     padding: 0;
-  }
-  #block-system-main > .view-calendar-broadcasts {
-    float: left;
-    width: 46%;
-    clear: none;
-    table {
-      margin-top: 20px;
-      border-radius: 4px;
-      tr {
-        td,th {
-          background: #101010;
-          border: #101010;
-          height: 50px;
-          line-height: 50px;
-          text-align: center;
-          color: #fff;
-        }
-        th {
-          color: #555;
-        }
-        &.date-box {
-          position: relative;
-          > td {
-            > .item {
-              position: absolute;
-              display: none;
-              top: -100%;
-              z-index: 99;
-              width: 100px;
-            }
-            &:hover > .item {
-              display: block;
-            }
-          }
-
-        }
-      }
-      thead tr {
-        border-bottom: 1px solid #555;
-      }
-      td a {
-        color: #fff;
-        background: #cc0001;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        text-align: center;
-        line-height: 30px;
-        text-decoration: none;
-      }
-    }
   }
 }
 #block-views-calendar-broadcasts-block-1 {
@@ -705,11 +653,60 @@ a.klara-read-more {
       th {
         color: #555;
       }
+      &.date-box {
+        position: relative;
+        > td {
+          position: relative;
+          > .item > div > div.monthview {
+            position: absolute;
+            display: none;
+            left: -45px;
+            bottom: 100%;
+            z-index: 99;
+            text-align: center;
+            width: 150px;
+            height: 50px;
+            color: #101010;
+            border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.4);
+            .transit;
+            &.hovering {
+              display: block;
+            }
+            &:after {
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              border: 10px solid transparent;
+              border-top: 10px solid #fff;
+              margin: 0 0 0 -10px;
+            }
+            .cutoff {
+              display: none;
+            }
+            .views-field-title {
+              width: auto;
+              height: auto;
+              line-height: 1.5;
+              margin-top: 8px;
+              a {
+                color: @color-base;
+                font-size: 14px;
+                line-height: 1.3;
+              }
+            }
+            .views-field-field-broadcast-date {
+              line-height: 1.5;
+            }
+          }
+        }
+      }
     }
     thead tr {
       border-bottom: 1px solid #555;
     }
-    td.has-events a {
+    td > .inner > .day > a {
       color: #fff;
       background: #cc0001;
       border-radius: 50%;
@@ -719,7 +716,9 @@ a.klara-read-more {
       text-align: center;
       line-height: 30px;
       text-decoration: none;
+      position: relative;
     }
+
   }
 }
 #block-views-calendar-broadcasts-block-2 {
@@ -748,4 +747,20 @@ a.klara-read-more {
   }
 }
 
+@media only screen and (max-width: 992px) {
+  .view-uitzendingen .klara-timeline-block .klara-timeline-content {
+    width: 42%;
+    .group-left, .group-right {
+      width: 100%;
+    }
+  }
+  .view-uitzendingen .klara-date {
+    left: 138%;
+  }
+}
 
+@media only screen and (max-width: 768px) {
+  .view-uitzendingen .klara-timeline-block .klara-timeline-content {
+    width: 75%;
+  }
+}

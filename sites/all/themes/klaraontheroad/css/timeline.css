@@ -32,7 +32,7 @@ h2 {
 }
 .klara-container {
   width: 90%;
-  max-width: 1170px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 .klara-container::after {
@@ -57,7 +57,7 @@ h2 {
   width: 4px;
   background: #ddd;
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 768px) {
   .klara-timeline {
     margin-top: 3em;
     margin-bottom: 3em;
@@ -82,7 +82,7 @@ h2 {
 .klara-timeline-block:last-child {
   margin-bottom: 0;
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 768px) {
   .klara-timeline-block {
     margin: 4em 0;
   }
@@ -121,7 +121,7 @@ h2 {
 .klara-timeline-img.klara-location {
   background: #cc0001;
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 768px) {
   .klara-timeline-img {
     width: 60px;
     height: 60px;
@@ -252,7 +252,7 @@ h2 {
   border: 7px solid transparent;
   border-right: 7px solid white;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 500px) {
   .klara-timeline-content h2 {
     font-size: 28px;
   }
@@ -264,7 +264,7 @@ h2 {
     font-size: 14px;
   }
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 768px) {
   .klara-timeline-content {
     margin-left: 0;
     padding: 1.6em;
@@ -316,7 +316,7 @@ h2 {
     animation: klara-bounce-2 0.6s;
   }
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 768px) {
   /* inverse bounce effect on even content blocks */
   .cssanimations .klara-timeline-block:nth-child(even) .klara-timeline-content.bounce-in {
     -webkit-animation: klara-bounce-2-inverse 0.6s;
