@@ -52,6 +52,68 @@ a {
 a:hover {
   color: #222;
 }
+ul.tabs--primary {
+  background: none;
+  padding: 0;
+  width: 100%;
+  border: none;
+  text-align: center;
+}
+ul.tabs--primary li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: none;
+}
+ul.tabs--primary li.active a {
+  background: #cc0001;
+  position: relative;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+}
+ul.tabs--primary li.active a:after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  margin-left: -8px;
+  border-top: 8px solid #cc0001;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+ul.tabs--primary li a {
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  border: none;
+  color: #333;
+  padding: 5px 10px;
+}
+ul.tabs--primary li a.active {
+  background: #cc0001;
+  color: #fff;
+  position: relative;
+}
+ul.tabs--primary li a.active:hover {
+  background: #cc0001;
+}
+ul.tabs--primary li a.active:after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  margin-left: -8px;
+  border-top: 8px solid #cc0001;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+ul.tabs--primary li a:hover {
+  background: #333;
+  color: #fff;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #eee;
