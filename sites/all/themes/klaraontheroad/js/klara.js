@@ -4,7 +4,9 @@
 
 
             // title playlist
-            $('<h3>Playlist</h3>').prependTo('.field-name-field-broadcast-song');
+            if (!$('.titleplaylist').length) {
+                $('<h3 class="titleplaylist">Playlist</h3>').prependTo('.field-name-field-broadcast-song');
+            }
 
             // timeline KlaraOnTheRoad
             var $timeline_block = $('.klara-timeline-block');
@@ -30,10 +32,12 @@
                 var $this = $(this);
                 $this.find('> .entity-song').wrap('<div class="popup"></div>');
                 var $songBlockContent = $this.find('.popup');
-                $('<div class="close-popup"></div>').prependTo($songBlockContent.find('> .entity-song'));
-                $this.find('.field-name-field-song-title').clone().insertBefore($songBlockContent);
-                $this.find('.field-name-field-componist-name').clone().insertBefore($songBlockContent);
-                $('<div class="open-popup"></div>').insertBefore($songBlockContent);
+                if (!$('.open-popup').length) {
+                    $('<div class="open-popup"></div>').insertBefore($songBlockContent);
+                    $('<div class="close-popup"></div>').prependTo($songBlockContent.find('> .entity-song'));
+                    $this.find('.field-name-field-song-title').clone().insertBefore($songBlockContent);
+                    $this.find('.field-name-field-componist-name').clone().insertBefore($songBlockContent);
+                }
                 var $popupbutton = $this.find('> .open-popup');
                 $popupbutton.click(function(){
                     $songBlockContent.fadeIn(200);
@@ -44,7 +48,9 @@
             });
 
             // group-right title
-            $('<p class="componist-title">Componist</p>').prependTo($songBlock.find('.group-right'));
+            if (!$('.componist-title').length) {
+                $('<p class="componist-title">Componist</p>').prependTo($songBlock.find('.group-right'));
+            }
 
             // webform
             $('.webform-component--email-adres input').addClass('form-control');

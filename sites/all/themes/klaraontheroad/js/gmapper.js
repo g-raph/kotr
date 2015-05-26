@@ -251,7 +251,9 @@
             };
 
             // gmap big
-            $('<div class="mapbox"></div>').appendTo('.node-type-uitzending .node-uitzending');
+            if (!$('.mapbox').length) {
+                $('<div class="mapbox"></div>').appendTo('.node-type-uitzending .node-uitzending');
+            }
             var $mapbox = $('.node-type-uitzending .node-uitzending .mapbox');
             $mapbox.googleMap();
             var $songpernode = $('.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item');
@@ -260,7 +262,9 @@
             });
 
             // gmap small
-            $('<div class="mapboxsmall"></div>').insertAfter('.popup .group-left .field-name-field-song-location');
+            if (!$('.mapboxsmall').length) {
+                $('<div class="mapboxsmall"></div>').insertAfter('.popup .group-left .field-name-field-song-location');
+            }
             var $mapboxsmall = $('.popup .group-left .mapboxsmall');
             $mapboxsmall.googleMap();
             $('.popup .group-left').custommarkersmall();
