@@ -189,6 +189,16 @@ h1.page-header {
   background-color: transparent;
   opacity: 1;
 }
+.navbar-nav > li:last-child {
+  display: none;
+}
+.not-front .navbar-nav > li {
+  display: none;
+}
+.not-front .navbar-nav > li:first-child,
+.not-front .navbar-nav > li:last-child {
+  display: inline-block;
+}
 .highlighted {
   padding: 130px 0 80px;
   background: #fff;
@@ -215,17 +225,17 @@ h1.page-header {
   width: 60%;
   float: right;
 }
-.front h2.block-title {
+h2.block-title {
   padding: 0 0 20px;
   border-bottom: 4px solid #ddd;
   text-align: center;
   margin: 0;
 }
-.front .klara-timeline {
+.klara-timeline {
   padding: 80px 0;
   margin: 0;
 }
-.front .footer h2.block-title {
+.footer h2.block-title {
   border-bottom: 4px solid #444;
   margin-bottom: 20px;
 }
@@ -632,12 +642,12 @@ a.klara-read-more {
 .footer .webform-client-form .grippie {
   display: none;
 }
-.front .content-bottom {
+.content-bottom {
   background: #fff;
   padding: 80px 0;
   border-top: 2px solid #ddd;
 }
-.front .calendar-calendar div.day {
+.calendar-calendar div.day {
   float: none;
   display: inline-block;
   width: 100%;

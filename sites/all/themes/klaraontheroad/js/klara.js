@@ -34,14 +34,15 @@
                 $this.find('.field-name-field-song-title').clone().insertBefore($songBlockContent);
                 $this.find('.field-name-field-componist-name').clone().insertBefore($songBlockContent);
                 $('<div class="open-popup"></div>').insertBefore($songBlockContent);
-                var popupbutton = $this.find('> .open-popup');
-                popupbutton.click(function(){
+                var $popupbutton = $this.find('> .open-popup');
+                $popupbutton.click(function(){
                     $songBlockContent.fadeIn(200);
                 });
                 $songBlockContent.find('.close-popup').click(function(){
                     $songBlockContent.fadeOut(200);
                 });
             });
+
             // group-right title
             $('<p class="componist-title">Componist</p>').prependTo($songBlock.find('.group-right'));
 
@@ -49,8 +50,8 @@
             $('.webform-component--email-adres input').addClass('form-control');
 
             // calendar
-            var tdToCheck = $('.front .view-calendar-broadcasts tr.date-box td');
-            $('.front .view-calendar-broadcasts tr.single-day').hide();
+            var tdToCheck = $('.view-calendar-broadcasts tr.date-box td');
+            $('.view-calendar-broadcasts tr.single-day').hide();
             tdToCheck.each(function(){
                 var $this = $(this);
                 var tdHasLink = $this.find('> .inner > .day > a');
@@ -67,7 +68,6 @@
 
             });
 
-
             // scrolleffects
             var scrollMenuFront = $('nav > ul.menu');
             scrollMenuFront.find('> li:nth-child(2) > a').removeAttr('href').click(function(){
@@ -79,6 +79,8 @@
             scrollMenuFront.find('> li:nth-child(4) > a').removeAttr('href').click(function(){
                 $('.front .footer').animatescroll();
             });
+
+
 
 
         }
