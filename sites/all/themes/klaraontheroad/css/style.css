@@ -276,11 +276,7 @@ body.admin-menu .navbar-fixed-top {
   margin-top: 0;
 }
 .klara-timeline-block span.date-display-single {
-  color: #fff;
-  background: #cc0001;
-  padding: 5px 10px;
-  border-radius: 4px;
-  box-shadow: 0 3px 0 #ddd;
+  font-size: 14px;
 }
 a.klara-read-more {
   padding: 5px 10px;

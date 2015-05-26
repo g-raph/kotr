@@ -61,9 +61,12 @@
                 }
                 tdHasLink.click(function(e){
                     e.preventDefault();
-                    $this.find('> .item > div > div.monthview').toggleClass('hovering');
+                    $('tr.date-box td > .item > div > div.monthview').removeClass('hovering');
+                    $this.find('> .item > div > div.monthview').addClass('hovering');
                 });
+
             });
+
 
             // scrolleffects
             var scrollMenuFront = $('nav > ul.menu');

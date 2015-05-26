@@ -69,7 +69,7 @@ h2 {
 }
 .klara-timeline-block {
   position: relative;
-  margin: 2em 0;
+  margin: 80px 0;
 }
 .klara-timeline-block:after {
   content: "";
@@ -84,7 +84,7 @@ h2 {
 }
 @media only screen and (min-width: 768px) {
   .klara-timeline-block {
-    margin: 4em 0;
+    margin: 160px 0;
   }
   .klara-timeline-block:first-child {
     margin-top: 0;
@@ -208,6 +208,7 @@ h2 {
 .klara-timeline-content h2 {
   color: #303e49;
   font-size: 28px;
+  margin-top: 0;
 }
 .klara-timeline-content p,
 .klara-timeline-content .klara-read-more,

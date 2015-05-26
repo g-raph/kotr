@@ -210,7 +210,7 @@
             };
 
             $.fn.custommarker = function() {
-                var songTitle = $(this).parent().find('.group-header .field-name-field-song-title .field-item').html();
+                var songTitle = $(this).find('.field-name-field-song-title .field-item').html();
                 var songImg = $(this).find('.field-name-field-song-img img').attr('src');
                 var songComponist = $(this).find('.field-name-field-componist-name .field-item').html();
                 var address = $(this).find('.field-name-field-song-location .street-address > span').html();
@@ -231,7 +231,7 @@
             };
 
             $.fn.custommarkersmall = function() {
-                var songTitle = $(this).parent().find('.group-header .field-name-field-song-title .field-item').html();
+                var songTitle2 = $(this).parent().find('.group-header .field-name-field-song-title .field-item').html();
                 var songImg = $(this).parent().find('.field-name-field-song-img img').attr('src');
                 var songComponist = $(this).parent().find('.field-name-field-componist-name .field-item').html();
                 var address = $(this).find('.field-name-field-song-location .street-address > span').html();
@@ -244,7 +244,7 @@
                     var lng = data.results[0].geometry.location.lng;
                     $mapboxsmall.addMarker({
                         coords: [lat, lng],
-                        title: songTitle,
+                        title: songTitle2,
                         text: '<div class="left-side"><img src="'+songImg+'"></div><div class="right-side"><p style="margin-bottom:0;font-style:italic;color:#cc0001;">Componist:</p><h4>'+songComponist+'</h4></div>'
                     });
                 });
@@ -254,7 +254,8 @@
             $('<div class="mapbox"></div>').appendTo('.node-type-uitzending .node-uitzending');
             var $mapbox = $('.node-type-uitzending .node-uitzending .mapbox');
             $mapbox.googleMap();
-            $('.field-name-field-broadcast-song > .field-items > .field-item').each(function(){
+            var $songpernode = $('.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item');
+            $songpernode.each(function(){
                 $(this).custommarker();
             });
 
