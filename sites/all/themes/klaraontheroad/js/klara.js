@@ -32,11 +32,11 @@
                 var $this = $(this);
                 $this.find('> .entity-song').wrap('<div class="popup"></div>');
                 var $songBlockContent = $this.find('.popup');
+                $this.find('.field-name-field-song-title').clone().insertBefore($songBlockContent);
+                $this.find('.field-name-field-componist-name').clone().insertBefore($songBlockContent);
                 if (!$('.open-popup').length) {
                     $('<div class="open-popup"></div>').insertBefore($songBlockContent);
                     $('<div class="close-popup"></div>').prependTo($songBlockContent.find('> .entity-song'));
-                    $this.find('.field-name-field-song-title').clone().insertBefore($songBlockContent);
-                    $this.find('.field-name-field-componist-name').clone().insertBefore($songBlockContent);
                 }
                 var $popupbutton = $this.find('> .open-popup');
                 $popupbutton.click(function(){
