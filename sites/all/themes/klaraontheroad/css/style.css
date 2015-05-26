@@ -168,6 +168,7 @@ h1.page-header {
 .navbar-nav > li {
   float: none;
   display: inline-block;
+  vertical-align: middle;
 }
 .navbar-nav > li:first-child > a {
   text-indent: -999999px;
@@ -661,6 +662,7 @@ a.klara-read-more {
   width: 100%;
   left: 0;
   top: 0;
+  margin-top: 4px;
 }
 #block-views-calendar-broadcasts-block-1 .view-header .date-nav ul.pager > li.date-prev {
   left: 0;
