@@ -169,6 +169,7 @@ h1.page-header {
   float: none;
   display: inline-block;
   vertical-align: middle;
+  cursor: pointer;
 }
 .navbar-nav > li:first-child > a {
   text-indent: -999999px;
