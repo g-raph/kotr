@@ -419,6 +419,7 @@ a.klara-read-more {
           > .field-name-field-song-title {
             text-indent: 20px;
             position: relative;
+            cursor: pointer;
             &:before {
               content: "\f001";
               font-family: fontawesome;
@@ -447,6 +448,12 @@ a.klara-read-more {
             .field-label {
               display: none;
             }
+          }
+          .songteaser-audio {
+            display: none;
+            margin-top: 10px;
+            max-width: 100%;
+            opacity: 0.7;
           }
           .open-popup {
             width: 30px;
@@ -527,6 +534,7 @@ a.klara-read-more {
                 font-size: 40px;
                 text-align: center;
                 font-family: georgia, serif;
+                cursor: pointer;
               }
               .field-name-field-song-img {
                 float: left;
@@ -599,6 +607,9 @@ a.klara-read-more {
             }
           }
         }
+        .field-name-field-song-audio-file {
+          display: none;
+        }
       }
     }
     .mapbox {
@@ -617,6 +628,7 @@ a.klara-read-more {
         margin-bottom: 20px;
         border-bottom: 1px solid #ccc;
         width: 250px;
+        cursor: pointer;
         &:before {
           content: "\f001";
           font-family: fontawesome;
@@ -633,6 +645,9 @@ a.klara-read-more {
         }
       }
     }
+  }
+  .footer {
+    margin-top: 0;
   }
 }
 
@@ -751,6 +766,9 @@ a.klara-read-more {
         }
       }
     }
+  }
+  .view-footer {
+    margin-top: 20px;
   }
   table {
     margin-top: 20px;

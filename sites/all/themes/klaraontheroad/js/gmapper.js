@@ -6,6 +6,7 @@
             $.fn.googleMap = function(params) {
                 params = $.extend( {
                     zoom : 10,
+                    scrollwheel : false,
                     coords : [48.895651, 2.290569],
                     type : "ROADMAP",
                     debug : false,
@@ -43,7 +44,7 @@
                     coords : false,
                     address : false,
                     url : false,
-                    id : false,
+                    id : true,
                     icon : klaralogo,
                     draggable : false,
                     title : "",
@@ -125,6 +126,8 @@
                                 } else {
                                     $this.data('googleMap').fitBounds($this.data('googleBound'));
                                 }
+                                var markerLength = $this.data('googleMarker').length;
+                                alert(markerLength);
                                 var coords = {};
                                 if(typeof results[0].geometry.location.d != "undefined") {
                                     coords.lat = results[0].geometry.location.d;
@@ -188,28 +191,7 @@
                 return this;
             };
 
-            $.fn.removeMarker = function(id) {
-                this.each(function() {
-                    var $this = $(this);
-                    if(!$this.data('googleMap')) {
-                        if($this.data('googleDebug'))
-                            console.log("jQuery googleMap : Unable to delete a marker where there is no map !");
-                        return false;
-                    }
-                    var $markers = $this.data('googleMarker');
-                    if(typeof $markers[id] != 'undefined') {
-                        $markers[id].setMap(null);
-                        if($this.data('googleDebug'))
-                            console.log('jQuery googleMap : marker deleted');
-                    } else {
-                        if($this.data('googleDebug'))
-                            console.error("jQuery googleMap : Unable to delete a marker if it not exists !");
-                        return false;
-                    }
-                });
-            };
-
-            $.fn.custommarker = function() {
+            $.fn.custommarker = function(index) {
                 var songTitle = $(this).find('.field-name-field-song-title .field-item').html();
                 var songImg = $(this).find('.field-name-field-song-img img').attr('src');
                 var songComponist = $(this).find('.field-name-field-componist-name .field-item').html();
@@ -224,8 +206,8 @@
                     var lng = data.results[0].geometry.location.lng;
                     $mapbox.addMarker({
                         coords: [lat, lng],
-                        title: songTitle,
-                        text: '<div class="left-side"><img src="'+songImg+'"></div><div class="right-side"><p style="margin-bottom:0;font-style:italic;color:#cc0001;">Componist:</p><h4>'+songComponist+'</h4></div>'
+                        title: '0'+(index+1)+' '+songTitle,
+                        text: '<div class="markerindex">'+(index+1)+'</div><div class="left-side"><img src="'+songImg+'"></div><div class="right-side"><p style="margin-bottom:0;font-style:italic;color:#cc0001;">Componist:</p><h4>'+songComponist+'</h4></div>'
                     });
                 });
             };
@@ -257,17 +239,18 @@
             var $mapbox = $('.node-type-uitzending .node-uitzending .mapbox');
             $mapbox.googleMap();
             var $songpernode = $('.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item');
-            $songpernode.each(function(){
-                $(this).custommarker();
+            $songpernode.each(function(index){
+                $(this).custommarker(index);
             });
 
+
             // gmap small
-            if (!$('.mapboxsmall').length) {
-                $('<div class="mapboxsmall"></div>').insertAfter('.popup .group-left .field-name-field-song-location');
-            }
-            var $mapboxsmall = $('.popup .group-left .mapboxsmall');
-            $mapboxsmall.googleMap();
-            $('.popup .group-left').custommarkersmall();
+            //if (!$('.mapboxsmall').length) {
+            //    $('<div class="mapboxsmall"></div>').insertAfter('.popup .group-left .field-name-field-song-location');
+            //}
+            //var $mapboxsmall = $('.popup .group-left .mapboxsmall');
+            //$mapboxsmall.googleMap();
+            //$('.popup .group-left').custommarkersmall();
 
         }
     };

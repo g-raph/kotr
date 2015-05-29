@@ -379,6 +379,7 @@ a.klara-read-more {
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .field-name-field-song-title {
   text-indent: 20px;
   position: relative;
+  cursor: pointer;
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .field-name-field-song-title:before {
   content: "\f001";
@@ -407,6 +408,12 @@ a.klara-read-more {
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .field-name-field-componist-name .field-label {
   display: none;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .songteaser-audio {
+  display: none;
+  margin-top: 10px;
+  max-width: 100%;
+  opacity: 0.7;
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .open-popup {
   width: 30px;
@@ -493,6 +500,7 @@ a.klara-read-more {
   font-size: 40px;
   text-align: center;
   font-family: georgia, serif;
+  cursor: pointer;
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .field-name-field-song-img {
   float: left;
@@ -556,6 +564,9 @@ a.klara-read-more {
   float: left;
   margin: 0 20px 10px 0;
 }
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items .field-name-field-song-audio-file {
+  display: none;
+}
 .node-type-uitzending .node-uitzending .mapbox {
   width: 65%;
   height: 600px;
@@ -573,6 +584,7 @@ a.klara-read-more {
   margin-bottom: 20px;
   border-bottom: 1px solid #ccc;
   width: 250px;
+  cursor: pointer;
 }
 .node-type-uitzending .node-uitzending .mapbox h3.marker-title:before {
   content: "\f001";
@@ -587,6 +599,9 @@ a.klara-read-more {
 }
 .node-type-uitzending .node-uitzending .mapbox .left-side img {
   max-width: 90%;
+}
+.node-type-uitzending .footer {
+  margin-top: 0;
 }
 .page-uitzendingen h1 {
   padding: 0 0 20px;
@@ -700,6 +715,9 @@ a.klara-read-more {
   border: 0;
   border-radius: 0;
   margin: 0;
+}
+#block-views-calendar-broadcasts-block-1 .view-footer {
+  margin-top: 20px;
 }
 #block-views-calendar-broadcasts-block-1 table {
   margin-top: 20px;

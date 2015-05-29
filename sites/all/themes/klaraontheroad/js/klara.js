@@ -26,14 +26,24 @@
                 });
             });
 
-            // song popup
+            // song popup & linking
             var $songBlock = $('.field-name-field-broadcast-song > .field-items > .field-item');
+            var songBlockLength = $songBlock.length;
+            var $songMarker = $('.mapbox > div > div > div > div');
             $songBlock.each(function(){
+                // song popup
                 var $this = $(this);
                 $this.find('> .entity-song').wrap('<div class="popup"></div>');
                 var $songBlockContent = $this.find('.popup');
-                $this.find('.field-name-field-song-title').clone().insertBefore($songBlockContent);
-                $this.find('.field-name-field-componist-name').clone().insertBefore($songBlockContent);
+                if (!$this.find('> .field-name-field-song-title').length) {
+                    $this.find('.field-name-field-song-title').clone().insertBefore($songBlockContent);
+                }
+                if (!$this.find('> .field-name-field-componist-name').length) {
+                    $this.find('.field-name-field-componist-name').clone().insertBefore($songBlockContent);
+                }
+                if (!$this.find('> .field-name-field-song-audio-file').length) {
+                    $this.find('.field-name-field-song-audio-file').clone().insertBefore($songBlockContent);
+                }
                 $('<div class="open-popup"></div>').insertBefore($songBlockContent);
                 $('<div class="close-popup"></div>').prependTo($songBlockContent.find('> .entity-song'));
                 var $popupbutton = $this.find('> .open-popup');
@@ -44,6 +54,19 @@
                     $songBlockContent.fadeOut(200);
                 });
             });
+            // songs linked to markers
+            //setTimeout(function(){
+            //    for (var i = 1;i <= songBlockLength;i++) {
+            //        var $thisSong = $('.field-name-field-broadcast-song > .field-items > .field-item:nth-child('+i+')');
+            //        $thisSong.addClass('song-'+i);
+            //        var $thisSongMarker = $('.mapbox > div > div > div > div:nth-child('+i+')');
+            //        $thisSongMarker.addClass('songmarker-'+i);
+            //        $thisSongMarker.hover(function(){
+            //            $('.field-name-field-broadcast-song > .field-items > .field-item:nth-child('+i+')').hide();
+            //        });
+            //    }
+            //},1000);
+
 
             // group-right title
             if (!$('.componist-title').length) {
@@ -55,6 +78,7 @@
 
             // calendar
             var tdToCheck = $('.view-calendar-broadcasts tr.date-box td');
+            $('<i class="fa fa-times"></i>').prependTo(tdToCheck.find('> .item > div > div.monthview'));
             $('.view-calendar-broadcasts tr.single-day').hide();
             tdToCheck.each(function(){
                 var $this = $(this);
@@ -68,6 +92,9 @@
                     e.preventDefault();
                     $('tr.date-box td > .item > div > div.monthview').removeClass('hovering');
                     $this.find('> .item > div > div.monthview').addClass('hovering');
+                    setTimeout(function(){
+                        $this.find('> .item > div > div.monthview').fadeOut(200).removeClass('hovering');
+                    },3000);
                 });
 
             });
@@ -84,7 +111,19 @@
                 $('.front .footer').animatescroll();
             });
 
-
+            // audioplayer
+            var $ong = $('.field-name-field-broadcast-song > .field-items > .field-item');
+            $('<div><i class="fa fa-music"></i> Beluister alle nummers</div><audio class="mainaudioplayer" controls></audio>').insertAfter('.node-type-uitzending .field-name-body');
+            $ong.each(function() {
+                var $this = $(this);
+                var audioField = $this.find('.field-name-field-song-audio-file .field-item');
+                var audioUrl = audioField.html();
+                $('<source src="' + audioUrl + '" />').appendTo('.node-type-uitzending .mainaudioplayer');
+                $('</i><audio class="songteaser-audio" src="' + audioUrl + '" preload="auto" controls></audio>').insertBefore($this.find('.field-name-field-song-audio-file'));
+                $this.find('.field-name-field-song-title').click(function(){
+                    $this.find('.songteaser-audio').fadeToggle(200);
+                });
+            });
 
 
         }
