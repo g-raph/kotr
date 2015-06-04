@@ -25,6 +25,7 @@ regions[page_bottom]    = 'Page bottom'
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
+stylesheets[all][] = css/map.css
 stylesheets[all][] = css/style.css
 
 
@@ -42,7 +43,7 @@ stylesheets[all][] = css/style.css
 
 ;scripts[] = 'js/jquery.scrolly.min.js'
 ;scripts[] = 'js/init.js'
-scripts[] = 'js/gmapper.js'
+
 scripts[] = 'js/animatescroll.js'
 scripts[] = 'js/klara.js'
 

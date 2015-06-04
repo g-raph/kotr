@@ -293,12 +293,30 @@ a.klara-read-more {
   padding: 5px 10px;
   box-shadow: 0 3px 0 #ddd;
 }
+.node-type-uitzending .node-uitzending {
+  position: relative;
+}
+.node-type-uitzending .node-uitzending .group-broadcast-topview.field-group-div {
+  padding: 20px;
+  background-color: #fff;
+  margin: 0 0 30px;
+  position: relative;
+}
+.node-type-uitzending .node-uitzending .group-broadcast-topview.field-group-div .field-name-service-links-displays-group {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+.node-type-uitzending .node-uitzending .group-broadcast-topview.field-group-div .field-name-service-links-displays-group .field-item .service-links > * {
+  vertical-align: top;
+  margin-left: 5px;
+}
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-pic {
   float: left;
   width: 50%;
   padding: 0 50px 30px 0;
   margin: 0;
-  background: #eee;
+  background: #fff;
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-date,
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-region,
@@ -410,10 +428,8 @@ a.klara-read-more {
   display: none;
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .songteaser-audio {
-  display: none;
   margin-top: 10px;
   max-width: 100%;
-  opacity: 0.7;
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .open-popup {
   width: 30px;
@@ -567,7 +583,7 @@ a.klara-read-more {
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items .field-name-field-song-audio-file {
   display: none;
 }
-.node-type-uitzending .node-uitzending .mapbox {
+.node-type-uitzending .node-uitzending #mapbox {
   width: 65%;
   height: 600px;
   display: inline-block;
@@ -575,10 +591,10 @@ a.klara-read-more {
   margin-left: 5%;
   max-width: 100%;
 }
-.node-type-uitzending .node-uitzending .mapbox img {
+.node-type-uitzending .node-uitzending #mapbox img {
   max-width: none;
 }
-.node-type-uitzending .node-uitzending .mapbox h3.marker-title {
+.node-type-uitzending .node-uitzending #mapbox h3.marker-title {
   text-indent: 30px;
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -586,7 +602,7 @@ a.klara-read-more {
   width: 250px;
   cursor: pointer;
 }
-.node-type-uitzending .node-uitzending .mapbox h3.marker-title:before {
+.node-type-uitzending .node-uitzending #mapbox h3.marker-title:before {
   content: "\f001";
   font-family: fontawesome;
   position: absolute;
@@ -594,10 +610,10 @@ a.klara-read-more {
   left: -30px;
   color: #cc0001;
 }
-.node-type-uitzending .node-uitzending .mapbox .left-side {
+.node-type-uitzending .node-uitzending #mapbox .left-side {
   float: left;
 }
-.node-type-uitzending .node-uitzending .mapbox .left-side img {
+.node-type-uitzending .node-uitzending #mapbox .left-side img {
   max-width: 90%;
 }
 .node-type-uitzending .footer {
@@ -835,6 +851,20 @@ a.klara-read-more {
   font-style: italic;
   color: rgba(0, 0, 0, 0.5);
   margin-bottom: 10px;
+}
+.popup .group-right > .field-group-div {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+.popup .group-right > .field-group-div > h3 {
+  margin: 0 0 10px;
+}
+.popup .group-right > .field-group-div.group-song-componist {
+  background-color: #e0e0e0;
+  padding: 10px 30px;
+  margin: 20px 0;
+  display: block;
 }
 .main-container,
 .content-bottom,

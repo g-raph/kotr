@@ -54,24 +54,6 @@
                     $songBlockContent.fadeOut(200);
                 });
             });
-            // songs linked to markers
-            //setTimeout(function(){
-            //    for (var i = 1;i <= songBlockLength;i++) {
-            //        var $thisSong = $('.field-name-field-broadcast-song > .field-items > .field-item:nth-child('+i+')');
-            //        $thisSong.addClass('song-'+i);
-            //        var $thisSongMarker = $('.mapbox > div > div > div > div:nth-child('+i+')');
-            //        $thisSongMarker.addClass('songmarker-'+i);
-            //        $thisSongMarker.hover(function(){
-            //            $('.field-name-field-broadcast-song > .field-items > .field-item:nth-child('+i+')').hide();
-            //        });
-            //    }
-            //},1000);
-
-
-            // group-right title
-            if (!$('.componist-title').length) {
-                $('<p class="componist-title">Componist</p>').prependTo($songBlock.find('.group-right'));
-            }
 
             // webform
             $('.webform-component--email-adres input').addClass('form-control');
@@ -120,10 +102,72 @@
                 var audioUrl = audioField.html();
                 $('<source src="' + audioUrl + '" />').appendTo('.node-type-uitzending .mainaudioplayer');
                 $('</i><audio class="songteaser-audio" src="' + audioUrl + '" preload="auto" controls></audio>').insertBefore($this.find('.field-name-field-song-audio-file'));
-                $this.find('.field-name-field-song-title').click(function(){
-                    $this.find('.songteaser-audio').fadeToggle(200);
-                });
             });
+
+            // StoreLocator
+            function GoogleGeocode() {
+                geocoder = new google.maps.Geocoder();
+                this.geocode = function(address, callbackFunction) {
+                    geocoder.geocode( { 'address': address}, function(results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            var result = {};
+                            result.latitude = results[0].geometry.location.lat();
+                            result.longitude = results[0].geometry.location.lng();
+                            callbackFunction(result);
+                        } else {
+                            alert("Geocode was not successful for the following reason: " + status);
+                            callbackFunction(null);
+                        }
+                    });
+                };
+            }
+
+            if (!$('#map-container').length) {
+                $('<div id="map-container"><div id="loc-list"><ul id="list"></ul></div><div id="map"></div></div>').appendTo('.node-uitzending');
+            }
+
+            var locations = [];
+            $ong.each(function(index){
+                var $this = $(this);
+                var titleVal = $this.find('.field-name-field-song-title .field-item').html();
+                var addressVal = $this.find('.field-name-field-song-location .street-address span').html();
+                var countryVal = $this.find('.field-name-field-song-location .country-name').html();
+                var g = new GoogleGeocode();
+                g.geocode(addressVal, function(data) {
+                    olat = data.latitude;
+                    olng = data.longitude;
+                });
+                console.log($this);
+                var songLoc = {"id":index,"name":titleVal,"lat": olat,"lng": olng,"address":addressVal,"country":countryVal};
+                locations.push(songLoc);
+                console.log(locations);
+            });
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: new google.maps.LatLng(locations[0].lat,locations[0].lng),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+            var infowindow = new google.maps.InfoWindow();
+            var marker,i;
+            for (i=0;i<=locations.length;i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i].lat,locations[i].lng),
+                    map: map
+                });
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i].id, locations[i].name);
+                        infowindow.setContent(locations[i].address, locations[i].country);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+            }
+
+
+
+
+
 
 
         }

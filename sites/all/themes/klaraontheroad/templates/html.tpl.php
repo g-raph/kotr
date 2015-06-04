@@ -56,12 +56,13 @@
   <link rel="stylesheet" href="/sites/all/themes/klaraontheroad/css/style-desktop.css" />
   <link rel="stylesheet" href="/sites/all/themes/klaraontheroad/css/timeline.css" />
   <?php print $styles; ?>
+
   <!-- HTML5 element support for IE6-8 -->
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
   <?php print $scripts; ?>
-
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <div id="skip-link">
@@ -70,11 +71,6 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
-
-  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-  <script type="text/javascript">
-    google.load("maps", "3.4");
-  </script>
 
 </body>
 </html>

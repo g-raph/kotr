@@ -338,12 +338,28 @@ a.klara-read-more {
 // uitzending detail
 .node-type-uitzending {
   .node-uitzending {
+    position: relative;
+    .group-broadcast-topview.field-group-div {
+      padding: 20px;
+      background-color: #fff;
+      margin: 0 0 30px;
+      position: relative;
+      .field-name-service-links-displays-group {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        .field-item .service-links > * {
+          vertical-align: top;
+          margin-left: 5px;
+        }
+      }
+    }
     .field-name-field-broadcast-pic {
       float: left;
       width: 50%;
       padding: 0 50px 30px 0;
       margin: 0;
-      background: #eee;
+      background: #fff;
     }
     .field-name-field-broadcast-date, .field-name-field-broadcast-region, .field-name-body {
       margin: 0 0 10px;
@@ -450,10 +466,10 @@ a.klara-read-more {
             }
           }
           .songteaser-audio {
-            display: none;
+            //display: none;
             margin-top: 10px;
             max-width: 100%;
-            opacity: 0.7;
+            //opacity: 0.7;
           }
           .open-popup {
             width: 30px;
@@ -612,7 +628,7 @@ a.klara-read-more {
         }
       }
     }
-    .mapbox {
+    #mapbox {
       width: 65%;
       height: 600px;
       display:inline-block;
@@ -878,6 +894,26 @@ a.klara-read-more {
         font-style: italic;
         color: rgba(0,0,0,0.5);
         margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// popup song
+.popup {
+  .group-right {
+    > .field-group-div {
+      float: left;
+      clear: both;
+      width: 100%;
+      > h3 {
+        margin: 0 0 10px;
+      }
+      &.group-song-componist {
+        background-color: #e0e0e0;
+        padding: 10px 30px;
+        margin: 20px 0;
+        display: block;
       }
     }
   }
