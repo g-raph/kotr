@@ -8,6 +8,13 @@
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
+.well:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
 .well-white {
   min-height: 20px;
   padding: 19px;
@@ -17,6 +24,13 @@
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.well-white:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
 .transit {
   -webkit-transition: all 0.2s ease-in-out;
@@ -113,6 +127,17 @@ ul.tabs--primary li a.active:after {
 ul.tabs--primary li a:hover {
   background: #333;
   color: #fff;
+}
+.node-node-block .group-left {
+  text-align: center;
+}
+.node-node-block .field-name-field-nodeblock-pic {
+  width: 75%;
+  display: inline-block;
+  text-align: center;
+}
+.node-node-block .field-name-body .field-item div {
+  margin: 0 0 10px;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -233,7 +258,7 @@ h2.block-title {
   margin: 0;
 }
 .klara-timeline {
-  padding: 80px 0;
+  padding: 200px 0;
   margin: 0;
 }
 .footer h2.block-title {
@@ -296,45 +321,60 @@ a.klara-read-more {
 .node-type-uitzending .node-uitzending {
   position: relative;
 }
-.node-type-uitzending .node-uitzending .group-broadcast-topview.field-group-div {
-  padding: 20px;
+.node-type-uitzending .node-uitzending .group-header {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
   background-color: #fff;
-  margin: 0 0 30px;
-  position: relative;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
-.node-type-uitzending .node-uitzending .group-broadcast-topview.field-group-div .field-name-service-links-displays-group {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
+.node-type-uitzending .node-uitzending .group-header:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
-.node-type-uitzending .node-uitzending .group-broadcast-topview.field-group-div .field-name-service-links-displays-group .field-item .service-links > * {
-  vertical-align: top;
-  margin-left: 5px;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-pic {
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-bottom {
+  clear: both;
   float: left;
-  width: 50%;
-  padding: 0 50px 30px 0;
-  margin: 0;
-  background: #fff;
+  padding: 10px 0 0;
+  margin: 10px 15px 0;
+  border-top: 1px solid #ddd;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-date,
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-region,
-.node-type-uitzending .node-uitzending .field-name-body {
-  margin: 0 0 10px;
-  padding: 0 0 10px;
-  border-bottom: 1px solid #ddd;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-date {
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-bottom .field-name-field-broadcast-date {
+  border: 0;
   text-indent: 25px;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-date:before {
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-bottom .field-name-field-broadcast-date:before {
   content: "\f073";
   font-family: fontawesome;
   display: inline-block;
   margin-left: -25px;
   position: absolute;
   color: #cc0001;
+}
+.node-type-uitzending .node-uitzending .group-left {
+  width: 30%;
+}
+.node-type-uitzending .node-uitzending .group-right {
+  width: 70%;
+}
+.node-type-uitzending .node-uitzending .field-name-service-links-displays-group {
+  float: right;
+}
+.node-type-uitzending .node-uitzending .field-name-service-links-displays-group .field-item .service-links > * {
+  vertical-align: top;
+  margin-left: 5px;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-region,
+.node-type-uitzending .node-uitzending .field-name-body {
+  margin: 0 0 10px;
+  padding: 0 0 10px;
+  border-bottom: 1px solid #ddd;
 }
 .node-type-uitzending .node-uitzending .field-name-body {
   margin-bottom: 20px;
@@ -354,7 +394,7 @@ a.klara-read-more {
   color: #cc0001;
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-song {
-  width: 30%;
+  width: 100%;
   display: inline-block;
   float: left;
   clear: both;
@@ -594,30 +634,120 @@ a.klara-read-more {
 .node-type-uitzending .node-uitzending #mapbox img {
   max-width: none;
 }
-.node-type-uitzending .node-uitzending #mapbox h3.marker-title {
-  text-indent: 30px;
-  padding-bottom: 10px;
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw h1 {
+  font-size: 20px;
+}
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .field-name-field-song-img {
+  float: left;
+  width: 25%;
+  margin: 0 10px 5px 0;
+}
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .field-name-field-song-img img {
+  max-width: 100%;
+}
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 998;
+}
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup > .entity-song {
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  background: #fff;
+  margin: 0;
+  z-index: 999;
+  top: 10%;
+  left: 10%;
+  overflow-y: scroll;
+  padding: 50px;
+}
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup > .entity-song .group-header {
   margin-bottom: 20px;
-  border-bottom: 1px solid #ccc;
-  width: 250px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #ddd;
+}
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup > .entity-song .field-name-field-song-title {
+  padding-bottom: 9px;
+  margin: 0 0 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 40px;
+  text-align: center;
+  font-family: georgia, serif;
   cursor: pointer;
 }
-.node-type-uitzending .node-uitzending #mapbox h3.marker-title:before {
-  content: "\f001";
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup > .entity-song .field-name-field-song-img {
+  float: left;
+  margin: 0 20px 5px 0;
+}
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup > .entity-song .field-name-field-song-componist h2 {
+  display: none;
+}
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup > .entity-song .field-name-field-song-componist .field-name-field-componist-name {
+  font-size: 18px;
+  color: #cc0001;
+  margin-bottom: 15px;
+}
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup > .entity-song .group-left .field-name-field-song-link {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+  width: 90%;
+}
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup > .entity-song .group-left .field-name-field-song-link a {
+  text-indent: 25px;
+  position: relative;
+  display: block;
+  color: #333;
+}
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup > .entity-song .group-left .field-name-field-song-link a:before {
+  content: "\f0c1";
   font-family: fontawesome;
   position: absolute;
   text-align: left;
-  left: -30px;
+  left: -25px;
+  top: 0;
   color: #cc0001;
 }
-.node-type-uitzending .node-uitzending #mapbox .left-side {
-  float: left;
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup > .entity-song .group-left .mapboxsmall {
+  width: 90%;
+  height: 300px;
+  max-width: 100%;
 }
-.node-type-uitzending .node-uitzending #mapbox .left-side img {
-  max-width: 90%;
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup > .entity-song .group-left .field-name-field-song-location {
+  display: none;
+}
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup > .entity-song .group-right .componist-title {
+  text-indent: 25px;
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+}
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup > .entity-song .group-right .componist-title:before {
+  content: "\f007";
+  font-family: fontawesome;
+  position: absolute;
+  text-align: left;
+  left: -25px;
+  top: 0;
+  color: #cc0001;
+}
+.node-type-uitzending .node-uitzending #mapbox .gm-style-iw .marker-popup > .entity-song .group-right .field-name-field-componist-img {
+  float: left;
+  margin: 0 20px 10px 0;
 }
 .node-type-uitzending .footer {
   margin-top: 0;
+}
+audio {
+  max-width: 100%;
 }
 .page-uitzendingen h1 {
   padding: 0 0 20px;
@@ -866,10 +996,22 @@ a.klara-read-more {
   margin: 20px 0;
   display: block;
 }
+.popup .group-right > .field-group-div.group-song-uitv {
+  background-color: #e0e0e0;
+  padding: 10px 30px;
+  margin: 20px 0;
+  display: block;
+}
 .main-container,
 .content-bottom,
 .footer {
   padding: 65px 0;
+}
+.front .main-container {
+  padding: 0;
+}
+.front #block-system-main {
+  display: none;
 }
 @media only screen and (max-width: 992px) {
   .view-uitzendingen .klara-timeline-block .klara-timeline-content {
@@ -887,4 +1029,71 @@ a.klara-read-more {
   .view-uitzendingen .klara-timeline-block .klara-timeline-content {
     width: 75%;
   }
+}
+@media screen and (max-width: 500px) {
+  .group-left,
+  .group-right {
+    width: 100%;
+  }
+  .highlighted {
+    padding: 80px 0;
+  }
+  .highlighted .ds-2col .group-left,
+  .highlighted .ds-2col .group-right {
+    width: 100%;
+  }
+  .highlighted .ds-2col .group-left img {
+    width: 50%;
+    margin: 0 25%;
+  }
+  .highlighted .ds-2col .group-right {
+    text-align: center;
+    padding: 0 30px;
+  }
+  .group-left {
+    margin-bottom: 30px;
+  }
+  #block-views-calendar-broadcasts-block-1 {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  #block-views-calendar-broadcasts-block-2 {
+    width: 100%;
+  }
+  .node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-bottom {
+    float: none;
+  }
+}
+.navbar-fixed-top .fa-image {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+#block-views-slider-block-1 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 65px;
+  z-index: 9999999999;
+}
+#block-views-slider-block-1 .view-slider .views-row {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999999;
+  padding: 0;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+#block-views-slider-block-1 .view-slider .views-row .field-name-title {
+  position: absolute;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  left: 0;
+  bottom: 50px;
 }

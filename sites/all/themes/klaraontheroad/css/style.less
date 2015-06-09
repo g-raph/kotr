@@ -16,6 +16,7 @@
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
   box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+  .clearfix;
 }
 
 .well-white {
@@ -27,6 +28,7 @@
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
   box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+  .clearfix;
 }
 
 .transit {
@@ -130,6 +132,20 @@ ul.tabs--primary {
         color: #fff;
       }
     }
+  }
+}
+
+.node-node-block {
+  .group-left {
+    text-align: center;
+  }
+  .field-name-field-nodeblock-pic {
+    width: 75%;
+    display: inline-block;
+    text-align: center;
+  }
+  .field-name-body .field-item div {
+    margin: 0 0 10px;
   }
 }
 
@@ -273,7 +289,7 @@ h2.block-title {
   margin: 0;
 }
 .klara-timeline {
-  padding: 80px 0;
+  padding: 200px 0;
   margin: 0;
 }
 .footer h2.block-title {
@@ -339,44 +355,56 @@ a.klara-read-more {
 .node-type-uitzending {
   .node-uitzending {
     position: relative;
-    .group-broadcast-topview.field-group-div {
-      padding: 20px;
-      background-color: #fff;
-      margin: 0 0 30px;
-      position: relative;
-      .field-name-service-links-displays-group {
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
-        .field-item .service-links > * {
-          vertical-align: top;
-          margin-left: 5px;
+    .group-header {
+      .well-white;
+      .group-broadcast-topview.field-group-div {
+        .field-name-field-broadcast-pic {
+
+        }
+      }
+      .group-broadcast-topview-right {
+
+      }
+      .group-broadcast-topview-bottom {
+        clear: both;
+        float: left;
+        padding: 10px 0 0;
+        margin: 10px 15px 0;
+        border-top: 1px solid #ddd;
+        .field-name-field-broadcast-date {
+          border: 0;
+          text-indent: 25px;
+          &:before {
+            content: "\f073";
+            font-family: fontawesome;
+            display: inline-block;
+            margin-left: -25px;
+            position: absolute;
+            color: @color-base;
+          }
         }
       }
     }
-    .field-name-field-broadcast-pic {
-      float: left;
-      width: 50%;
-      padding: 0 50px 30px 0;
-      margin: 0;
-      background: #fff;
+    .group-left {
+      width: 30%;
     }
-    .field-name-field-broadcast-date, .field-name-field-broadcast-region, .field-name-body {
+    .group-right {
+      width: 70%;
+    }
+    .field-name-service-links-displays-group {
+      float: right;
+      .field-item .service-links > * {
+        vertical-align: top;
+        margin-left: 5px;
+      }
+    }
+
+    .field-name-field-broadcast-region, .field-name-body {
       margin: 0 0 10px;
       padding: 0 0 10px;
       border-bottom: 1px solid #ddd;
     }
-    .field-name-field-broadcast-date {
-      text-indent: 25px;
-      &:before {
-        content: "\f073";
-        font-family: fontawesome;
-        display: inline-block;
-        margin-left: -25px;
-        position: absolute;
-        color: @color-base;
-      }
-    }
+
     .field-name-body {
       margin-bottom: 20px;
       padding-bottom: 20px;
@@ -395,7 +423,7 @@ a.klara-read-more {
       }
     }
     .field-name-field-broadcast-song {
-      width: 30%;
+      width: 100%;
       display: inline-block;
       float: left;
       clear: both;
@@ -638,26 +666,121 @@ a.klara-read-more {
       img {
         max-width: none;
       }
-      h3.marker-title {
-        text-indent: 30px;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-        border-bottom: 1px solid #ccc;
-        width: 250px;
-        cursor: pointer;
-        &:before {
-          content: "\f001";
-          font-family: fontawesome;
-          position: absolute;
-          text-align: left;
-          left: -30px;
-          color: @color-base;
+      .gm-style-iw {
+        h1 {
+          font-size: 20px;
         }
-      }
-      .left-side {
-        float: left;
-        img {
-          max-width: 90%;
+        .field-name-field-song-img {
+          float: left;
+          width: 25%;
+          margin: 0 10px 5px 0;
+          img {
+            max-width: 100%;
+          }
+        }
+        .marker-popup {
+          display: none;
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          background: rgba(0, 0, 0, 0.85);
+          z-index: 998;
+          > .entity-song {
+            position: fixed;
+            width: 80%;
+            height: 80%;
+            background: #fff;
+            margin: 0;
+            z-index: 999;
+            top: 10%;
+            left: 10%;
+            overflow-y: scroll;
+            padding: 50px;
+            .group-header {
+              margin-bottom: 20px;
+              padding-bottom: 20px;
+              border-bottom: 1px dashed #ddd;
+            }
+            .field-name-field-song-title {
+              padding-bottom: 9px;
+              margin: 0 0 20px;
+              border-bottom: 1px solid #eee;
+              font-size: 40px;
+              text-align: center;
+              font-family: georgia, serif;
+              cursor: pointer;
+            }
+            .field-name-field-song-img {
+              float: left;
+              margin: 0 20px 5px 0;
+            }
+            .field-name-field-song-componist {
+              h2 {
+                display: none;
+              }
+              .field-name-field-componist-name {
+                font-size: 18px;
+                color: @color-base;
+                margin-bottom: 15px;
+              }
+            }
+            .group-left {
+              .field-name-field-song-link {
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px dashed #ccc;
+                width: 90%;
+                a {
+                  text-indent: 25px;
+                  position: relative;
+                  display: block;
+                  color: #333;
+                  &:before {
+                    content: "\f0c1";
+                    font-family: fontawesome;
+                    position: absolute;
+                    text-align: left;
+                    left: -25px;
+                    top: 0;
+                    color: @color-base;
+                  }
+                }
+              }
+              .mapboxsmall {
+                width: 90%;
+                height: 300px;
+                max-width: 100%;
+              }
+              .field-name-field-song-location {
+                display: none;
+              }
+            }
+            .group-right {
+              .componist-title {
+                text-indent: 25px;
+                position: relative;
+                display: block;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px dashed #ccc;
+                &:before {
+                  content: "\f007";
+                  font-family: fontawesome;
+                  position: absolute;
+                  text-align: left;
+                  left: -25px;
+                  top: 0;
+                  color: @color-base;
+                }
+              }
+              .field-name-field-componist-img {
+                float: left;
+                margin: 0 20px 10px 0;
+              }
+            }
+          }
         }
       }
     }
@@ -665,6 +788,10 @@ a.klara-read-more {
   .footer {
     margin-top: 0;
   }
+}
+
+audio {
+  max-width: 100%;
 }
 
 // timeline page uitzendingen
@@ -915,6 +1042,12 @@ a.klara-read-more {
         margin: 20px 0;
         display: block;
       }
+      &.group-song-uitv {
+        background-color: #e0e0e0;
+        padding: 10px 30px;
+        margin: 20px 0;
+        display: block;
+      }
     }
   }
 }
@@ -922,6 +1055,15 @@ a.klara-read-more {
 // scrolling
 .main-container, .content-bottom, .footer {
   padding: 65px 0;
+}
+
+.front {
+  .main-container {
+    padding: 0;
+  }
+  #block-system-main {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -939,5 +1081,89 @@ a.klara-read-more {
 @media only screen and (max-width: 768px) {
   .view-uitzendingen .klara-timeline-block .klara-timeline-content {
     width: 75%;
+  }
+}
+
+// responsive
+@media screen and (max-width:500px) {
+  .group-left, .group-right {
+    width: 100%;
+  }
+  .highlighted {
+    padding: 80px 0;
+    .ds-2col {
+      .group-left, .group-right {
+        width: 100%;
+      }
+      .group-left {
+        img {
+          width: 50%;
+          margin: 0 25%;
+        }
+      }
+      .group-right {
+        text-align: center;
+        padding: 0 30px;
+      }
+    }
+  }
+  .group-left {
+    margin-bottom: 30px;
+  }
+  .region-content-bottom {
+
+  }
+  #block-views-calendar-broadcasts-block-1 {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  #block-views-calendar-broadcasts-block-2 {
+    width: 100%;
+  }
+  .field.field-name-service-links-displays-group.field-type-ds.field-label-hidden,
+  .node-type-uitzending .node-uitzending .field-name-service-links-displays-group {
+    //width: 100%;
+  }
+  .node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-bottom {
+    float: none;
+  }
+}
+
+// slider
+.navbar-fixed-top {
+  .fa-image {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+#block-views-slider-block-1 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 65px;
+  z-index: 9999999999;
+  .view-slider {
+    .views-row {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 9999999999;
+      padding: 0;
+      left: 0;
+      top: 0;
+      background: rgba(0,0,0,0.9);
+      .field-name-title {
+        position: absolute;
+        padding: 10px;
+        background: rgba(0,0,0,0.8);
+        color: #fff;
+        left: 0;
+        bottom: 50px;
+      }
+    }
   }
 }

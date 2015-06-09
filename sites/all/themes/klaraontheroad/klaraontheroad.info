@@ -44,6 +44,7 @@ stylesheets[all][] = css/style.css
 ;scripts[] = 'js/jquery.scrolly.min.js'
 ;scripts[] = 'js/init.js'
 
+scripts[] = 'js/flexslider.js'
 scripts[] = 'js/animatescroll.js'
 scripts[] = 'js/klara.js'
 

@@ -8,6 +8,10 @@
                 $('<h3 class="titleplaylist">Playlist</h3>').prependTo('.field-name-field-broadcast-song');
             }
 
+            // slider
+
+
+
             // timeline KlaraOnTheRoad
             var $timeline_block = $('.klara-timeline-block');
             $timeline_block.find('.group-right > span > a').addClass('klara-read-more');
@@ -30,7 +34,7 @@
             var $songBlock = $('.field-name-field-broadcast-song > .field-items > .field-item');
             var songBlockLength = $songBlock.length;
             var $songMarker = $('.mapbox > div > div > div > div');
-            $songBlock.each(function(){
+            $songBlock.each(function(index){
                 // song popup
                 var $this = $(this);
                 $this.find('> .entity-song').wrap('<div class="popup"></div>');
@@ -40,9 +44,6 @@
                 }
                 if (!$this.find('> .field-name-field-componist-name').length) {
                     $this.find('.field-name-field-componist-name').clone().insertBefore($songBlockContent);
-                }
-                if (!$this.find('> .field-name-field-song-audio-file').length) {
-                    $this.find('.field-name-field-song-audio-file').clone().insertBefore($songBlockContent);
                 }
                 $('<div class="open-popup"></div>').insertBefore($songBlockContent);
                 $('<div class="close-popup"></div>').prependTo($songBlockContent.find('> .entity-song'));
@@ -54,7 +55,6 @@
                     $songBlockContent.fadeOut(200);
                 });
             });
-
             // webform
             $('.webform-component--email-adres input').addClass('form-control');
 
@@ -66,7 +66,6 @@
                 var $this = $(this);
                 var tdHasLink = $this.find('> .inner > .day > a');
                 if (tdHasLink.length) {
-                    console.log(tdHasLink.html());
                     var tdLinkContent = $this.parent().next().find('td[data-day-of-month='+tdHasLink.html()+']');
                     tdLinkContent.find('> .inner > .item').appendTo($this);
                 }
@@ -101,73 +100,40 @@
                 var audioField = $this.find('.field-name-field-song-audio-file .field-item');
                 var audioUrl = audioField.html();
                 $('<source src="' + audioUrl + '" />').appendTo('.node-type-uitzending .mainaudioplayer');
-                $('</i><audio class="songteaser-audio" src="' + audioUrl + '" preload="auto" controls></audio>').insertBefore($this.find('.field-name-field-song-audio-file'));
+                $('<audio class="songteaser-audio" src="' + audioUrl + '" preload="auto" controls></audio>').insertBefore($this.find('.field-name-field-song-audio-file'));
             });
 
-            // StoreLocator
-            function GoogleGeocode() {
-                geocoder = new google.maps.Geocoder();
-                this.geocode = function(address, callbackFunction) {
-                    geocoder.geocode( { 'address': address}, function(results, status) {
-                        if (status == google.maps.GeocoderStatus.OK) {
-                            var result = {};
-                            result.latitude = results[0].geometry.location.lat();
-                            result.longitude = results[0].geometry.location.lng();
-                            callbackFunction(result);
-                        } else {
-                            alert("Geocode was not successful for the following reason: " + status);
-                            callbackFunction(null);
-                        }
-                    });
-                };
+            // uitzending img slider
+            var $imgfield = $('.node-uitzending .group-header .field-name-field-broadcast-pic');
+            var $imgfieldimg = $('.node-uitzending .group-header .field-name-field-broadcast-pic .field-item');
+            if ($imgfieldimg.length > 1) {
+                $imgfield.flexslider({
+                    selector: ".field-items > .field-item",
+                    animation: "fade",
+                    directionNav: false,
+                    pausePlay: false,
+                    controlNav: false,
+                    slideshow: true
+                });
             }
 
-            if (!$('#map-container').length) {
-                $('<div id="map-container"><div id="loc-list"><ul id="list"></ul></div><div id="map"></div></div>').appendTo('.node-uitzending');
-            }
-
-            var locations = [];
-            $ong.each(function(index){
+            // shitmap!
+            $('<div id="mapbox" style="width: 900px; height: 500px; max-width: 100%;"></div>').appendTo('.node-uitzending > .group-right');
+            $("#mapbox").googleMap();
+            $ong.each(function(index) {
                 var $this = $(this);
-                var titleVal = $this.find('.field-name-field-song-title .field-item').html();
-                var addressVal = $this.find('.field-name-field-song-location .street-address span').html();
-                var countryVal = $this.find('.field-name-field-song-location .country-name').html();
-                var g = new GoogleGeocode();
-                g.geocode(addressVal, function(data) {
-                    olat = data.latitude;
-                    olng = data.longitude;
+                var $thistitle = $this.find('.field-name-field-song-title .field-item').html();
+                var $thiscontent = $this.find('.group-song-info').html();
+                var $thisaddress = $this.find('.field-name-field-song-location .vcard .street-address span').html();
+                var $thiscity = $this.find('.field-name-field-song-location .vcard .locality').html();
+                var $thiscountry = $this.find('.field-name-field-song-location .vcard .country-name').html();
+                var $thispopup = $this.find('.popup').html();
+                $("#mapbox").addMarker({
+                    address: $thisaddress+' '+$thiscity+' '+$thiscountry,
+                    title: $thistitle,
+                    text:  $thiscontent
                 });
-                console.log($this);
-                var songLoc = {"id":index,"name":titleVal,"lat": olat,"lng": olng,"address":addressVal,"country":countryVal};
-                locations.push(songLoc);
-                console.log(locations);
             });
-
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: new google.maps.LatLng(locations[0].lat,locations[0].lng),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-            var infowindow = new google.maps.InfoWindow();
-            var marker,i;
-            for (i=0;i<=locations.length;i++) {
-                marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(locations[i].lat,locations[i].lng),
-                    map: map
-                });
-                google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                    return function () {
-                        infowindow.setContent(locations[i].id, locations[i].name);
-                        infowindow.setContent(locations[i].address, locations[i].country);
-                        infowindow.open(map, marker);
-                    }
-                })(marker, i));
-            }
-
-
-
-
-
 
 
         }
