@@ -132,7 +132,7 @@ ul.tabs--primary li a:hover {
   text-align: center;
 }
 .node-node-block .field-name-field-nodeblock-pic {
-  width: 75%;
+  width: 100%;
   display: inline-block;
   text-align: center;
 }
@@ -239,6 +239,9 @@ h1.page-header {
 }
 .highlighted .ds-2col .group-right h1 {
   margin-bottom: 20px;
+  margin-top: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #ddd;
 }
 .main-container {
   padding: 0;
@@ -890,7 +893,8 @@ audio {
 #block-views-calendar-broadcasts-block-1 table tr.date-box > td > .item > div > div.monthview {
   position: absolute;
   display: none;
-  left: -45px;
+  left: 50%;
+  margin-left: -75px;
   bottom: 100%;
   z-index: 99;
   text-align: center;
@@ -1025,7 +1029,7 @@ audio {
     left: 138%;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 700px) {
   .view-uitzendingen .klara-timeline-block .klara-timeline-content {
     width: 75%;
   }
@@ -1064,36 +1068,52 @@ audio {
     float: none;
   }
 }
-.navbar-fixed-top .fa-image {
-  position: absolute;
-  left: 24px;
-  top: 24px;
-  color: #fff;
-  cursor: pointer;
+@media (min-width: 700px) {
+  .klara-timeline-content h2 {
+    margin-top: 15px;
+    text-align: center;
+  }
+  .klara-timeline-block:nth-child(even) .klara-timeline-content .klara-date {
+    right: 138%;
+  }
+  .klara-timeline-block:nth-child(odd) .klara-timeline-content .klara-date {
+    left: 109%;
+  }
+  .view-uitzendingen .klara-timeline-block .group-right {
+    text-align: center;
+  }
+  .klara-timeline-content .klara-read-more {
+    width: 100%;
+  }
+  .view .date-nav-wrapper .date-heading h3 {
+    font-size: 16px;
+  }
 }
-#block-views-slider-block-1 {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 65px;
-  z-index: 9999999999;
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
 }
-#block-views-slider-block-1 .view-slider .views-row {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 9999999999;
-  padding: 0;
-  left: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.9);
-}
-#block-views-slider-block-1 .view-slider .views-row .field-name-title {
-  position: absolute;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  left: 0;
-  bottom: 50px;
+@media (max-width: 500px) {
+  .view .date-nav-wrapper .date-heading h3 {
+    font-size: 14px;
+  }
+  .webform-client-form .webform-component--naam-en-voornaam {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .webform-client-form .webform-component--email-adres {
+    width: 100%;
+  }
+  .view-uitzendingen .klara-timeline-block .group-right {
+    text-align: center;
+  }
+  .klara-timeline-content .klara-read-more {
+    width: 100%;
+  }
+  .klara-timeline-content .klara-date {
+    float: none;
+    padding: 14px 0 0;
+    color: #cc0001;
+  }
 }
