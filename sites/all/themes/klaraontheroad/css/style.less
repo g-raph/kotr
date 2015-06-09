@@ -156,6 +156,7 @@ body {
 
 h1.page-header {
   text-align: center;
+  margin: 40px 0;
 }
 
 // front
@@ -352,7 +353,10 @@ body.admin-menu .navbar-fixed-top {
 a.klara-read-more {
   padding: 5px 10px;
   box-shadow: 0 3px 0 #ddd;
+  display: none;
 }
+
+
 
 // uitzending detail
 .node-type-uitzending {
@@ -362,8 +366,25 @@ a.klara-read-more {
       .well-white;
       .group-broadcast-topview.field-group-div {
         .field-name-field-broadcast-pic {
-
+          .field-item {
+            float: none !important;
+            display: inline-block !important;
+          }
         }
+        .field-name-field-broadcast-date {
+           border: 0;
+           text-indent: 25px;
+          float: left;
+          margin: 20px 0 0;
+           &:before {
+             content: "\f073";
+             font-family: fontawesome;
+             display: inline-block;
+             margin-left: -25px;
+             position: absolute;
+             color: @color-base;
+           }
+         }
       }
       .group-broadcast-topview-right {
 
@@ -374,31 +395,23 @@ a.klara-read-more {
         padding: 10px 0 0;
         margin: 10px 15px 0;
         border-top: 1px solid #ddd;
-        .field-name-field-broadcast-date {
-          border: 0;
-          text-indent: 25px;
-          &:before {
-            content: "\f073";
-            font-family: fontawesome;
-            display: inline-block;
-            margin-left: -25px;
-            position: absolute;
-            color: @color-base;
-          }
-        }
+
       }
     }
     .group-left {
       width: 30%;
     }
     .group-right {
-      width: 70%;
+      width: 66%;
+      float: right;
     }
     .field-name-service-links-displays-group {
-      float: right;
+      float: left;
+      margin: 20px 0 0;
+      width: 100%;
       .field-item .service-links > * {
         vertical-align: top;
-        margin-left: 5px;
+        margin-right: 5px;
       }
     }
 
@@ -572,6 +585,7 @@ a.klara-read-more {
               .group-header {
                 margin-bottom: 20px;
                 padding-bottom: 20px;
+                border: 0;
                 border-bottom: 1px dashed #ddd;
               }
               .field-name-field-song-title {
@@ -660,11 +674,11 @@ a.klara-read-more {
       }
     }
     #mapbox {
-      width: 65%;
+      width: 100%;
       height: 600px;
       display:inline-block;
       vertical-align:top;
-      margin-left:5%;
+      margin-left: 0;
       max-width: 100%;
       img {
         max-width: none;
@@ -1086,6 +1100,22 @@ audio {
   .view-uitzendingen .klara-timeline-block .klara-timeline-content {
     width: 75%;
   }
+  .field-name-field-broadcast-pic .field-item {
+    float: none !important;
+    display: inline-block !important;
+    margin-bottom: 20px;
+  }
+  .node-type-uitzending .node-uitzending {
+    .group-left, .group-right {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  .node-type-uitzending .node-uitzending #mapbox {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
 }
 
 // responsive
@@ -1156,6 +1186,18 @@ audio {
   }
 }
 
+@media (min-width: 990px) {
+  .klara-timeline-content {
+    width: 44%;
+  }
+  .klara-timeline-block:nth-child(odd) .klara-timeline-content .klara-date {
+    left: 90%;
+  }
+  .klara-timeline-block:nth-child(even) .klara-timeline-content .klara-date {
+    right: 125%;
+  }
+}
+
 // wide screen
 @media (min-width: 1200px) {
   .container {
@@ -1185,5 +1227,54 @@ audio {
     float: none;
     padding: 14px 0 0;
     color: @color-base;
+  }
+  .node-type-uitzending .node-uitzending {
+    .group-left, .group-right {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  .group-broadcast-topview.field-group-div.col-sm-4 {
+    padding: 0;
+    margin: 0;
+  }
+  .group-broadcast-topview-right.field-group-div.col-sm-8 {
+    margin: 20px 0 0;
+    padding: 0;
+  }
+  .field-name-field-broadcast-pic .field-item {
+    float: none !important;
+    display: inline-block !important;
+  }
+  .node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-bottom {
+    padding: 0;
+    margin: 20px 0 0;
+  }
+  .node-type-uitzending .node-uitzending .field-name-service-links-displays-group {
+    width: 100%;
+    padding: 0;
+    margin: 10px 0 0;
+  }
+  .node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-bottom .field-name-field-broadcast-date {
+    padding: 0;
+    margin: 10px 0 0;
+  }
+  .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song {
+    padding: 20px;
+  }
+  .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-header {
+    padding: 20px;
+    box-shadow: none;
+  }
+  .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .field-name-field-song-title {
+    border: 0;
+    font-size: 30px;
+    line-height: 30px;
+    margin: 50px 0 0;
+  }
+  .node-type-uitzending .node-uitzending #mapbox {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
   }
 }

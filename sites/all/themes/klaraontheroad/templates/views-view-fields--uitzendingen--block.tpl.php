@@ -8,7 +8,6 @@
   <div class="group-right">
     <h2><?php print $fields['title']->content; ?></h2>
     <p><?php print $fields['body']->content; ?></p>
-    <?php print $fields['view_node']->content; ?>
     <span class="klara-date"><?php print $fields['field_broadcast_date']->content; ?></span>
   </div>
 </div> <!-- klara-timeline-content -->

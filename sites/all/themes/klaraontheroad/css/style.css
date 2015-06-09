@@ -145,6 +145,7 @@ body {
 }
 h1.page-header {
   text-align: center;
+  margin: 40px 0;
 }
 .front h1.page-header,
 .front .tabs--primary {
@@ -320,6 +321,7 @@ body.admin-menu .navbar-fixed-top {
 a.klara-read-more {
   padding: 5px 10px;
   box-shadow: 0 3px 0 #ddd;
+  display: none;
 }
 .node-type-uitzending .node-uitzending {
   position: relative;
@@ -341,18 +343,17 @@ a.klara-read-more {
   clear: both;
   visibility: hidden;
 }
-.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-bottom {
-  clear: both;
-  float: left;
-  padding: 10px 0 0;
-  margin: 10px 15px 0;
-  border-top: 1px solid #ddd;
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview.field-group-div .field-name-field-broadcast-pic .field-item {
+  float: none !important;
+  display: inline-block !important;
 }
-.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-bottom .field-name-field-broadcast-date {
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview.field-group-div .field-name-field-broadcast-date {
   border: 0;
   text-indent: 25px;
+  float: left;
+  margin: 20px 0 0;
 }
-.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-bottom .field-name-field-broadcast-date:before {
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview.field-group-div .field-name-field-broadcast-date:before {
   content: "\f073";
   font-family: fontawesome;
   display: inline-block;
@@ -360,18 +361,28 @@ a.klara-read-more {
   position: absolute;
   color: #cc0001;
 }
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-bottom {
+  clear: both;
+  float: left;
+  padding: 10px 0 0;
+  margin: 10px 15px 0;
+  border-top: 1px solid #ddd;
+}
 .node-type-uitzending .node-uitzending .group-left {
   width: 30%;
 }
 .node-type-uitzending .node-uitzending .group-right {
-  width: 70%;
+  width: 66%;
+  float: right;
 }
 .node-type-uitzending .node-uitzending .field-name-service-links-displays-group {
-  float: right;
+  float: left;
+  margin: 20px 0 0;
+  width: 100%;
 }
 .node-type-uitzending .node-uitzending .field-name-service-links-displays-group .field-item .service-links > * {
   vertical-align: top;
-  margin-left: 5px;
+  margin-right: 5px;
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-region,
 .node-type-uitzending .node-uitzending .field-name-body {
@@ -550,6 +561,7 @@ a.klara-read-more {
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-header {
   margin-bottom: 20px;
   padding-bottom: 20px;
+  border: 0;
   border-bottom: 1px dashed #ddd;
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .field-name-field-song-title {
@@ -627,11 +639,11 @@ a.klara-read-more {
   display: none;
 }
 .node-type-uitzending .node-uitzending #mapbox {
-  width: 65%;
+  width: 100%;
   height: 600px;
   display: inline-block;
   vertical-align: top;
-  margin-left: 5%;
+  margin-left: 0;
   max-width: 100%;
 }
 .node-type-uitzending .node-uitzending #mapbox img {
@@ -1033,6 +1045,21 @@ audio {
   .view-uitzendingen .klara-timeline-block .klara-timeline-content {
     width: 75%;
   }
+  .field-name-field-broadcast-pic .field-item {
+    float: none !important;
+    display: inline-block !important;
+    margin-bottom: 20px;
+  }
+  .node-type-uitzending .node-uitzending .group-left,
+  .node-type-uitzending .node-uitzending .group-right {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .node-type-uitzending .node-uitzending #mapbox {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
 }
 @media screen and (max-width: 500px) {
   .group-left,
@@ -1089,6 +1116,17 @@ audio {
     font-size: 16px;
   }
 }
+@media (min-width: 990px) {
+  .klara-timeline-content {
+    width: 44%;
+  }
+  .klara-timeline-block:nth-child(odd) .klara-timeline-content .klara-date {
+    left: 90%;
+  }
+  .klara-timeline-block:nth-child(even) .klara-timeline-content .klara-date {
+    right: 125%;
+  }
+}
 @media (min-width: 1200px) {
   .container {
     width: 970px;
@@ -1115,5 +1153,53 @@ audio {
     float: none;
     padding: 14px 0 0;
     color: #cc0001;
+  }
+  .node-type-uitzending .node-uitzending .group-left,
+  .node-type-uitzending .node-uitzending .group-right {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .group-broadcast-topview.field-group-div.col-sm-4 {
+    padding: 0;
+    margin: 0;
+  }
+  .group-broadcast-topview-right.field-group-div.col-sm-8 {
+    margin: 20px 0 0;
+    padding: 0;
+  }
+  .field-name-field-broadcast-pic .field-item {
+    float: none !important;
+    display: inline-block !important;
+  }
+  .node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-bottom {
+    padding: 0;
+    margin: 20px 0 0;
+  }
+  .node-type-uitzending .node-uitzending .field-name-service-links-displays-group {
+    width: 100%;
+    padding: 0;
+    margin: 10px 0 0;
+  }
+  .node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-bottom .field-name-field-broadcast-date {
+    padding: 0;
+    margin: 10px 0 0;
+  }
+  .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song {
+    padding: 20px;
+  }
+  .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-header {
+    padding: 20px;
+    box-shadow: none;
+  }
+  .node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .field-name-field-song-title {
+    border: 0;
+    font-size: 30px;
+    line-height: 30px;
+    margin: 50px 0 0;
+  }
+  .node-type-uitzending .node-uitzending #mapbox {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
   }
 }
