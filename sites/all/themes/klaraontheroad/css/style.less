@@ -217,9 +217,10 @@ h1.page-header {
     cursor: pointer;
     &:first-child > a {
       text-indent: -999999px;
-      width: 90px;
-      height: 35px;
-      background: url(../images/logo-nav2.png) no-repeat center 5px;
+      width: 36px;
+      height: 50px;
+      background: url(../logo-otr-def.png) no-repeat center 5px;
+      background-size: 34px;
       border-radius: 0;
       margin: 0 5px;
       .transit;
@@ -365,6 +366,7 @@ a.klara-read-more {
     .group-header {
       .well-white;
       .group-broadcast-topview.field-group-div {
+        .well;
         .field-name-field-broadcast-pic {
           .field-item {
             float: none !important;
@@ -399,10 +401,10 @@ a.klara-read-more {
       }
     }
     .group-left {
-      width: 30%;
+      width: 40%;
     }
     .group-right {
-      width: 66%;
+      width: 56%;
       float: right;
     }
     .field-name-service-links-displays-group {
@@ -438,7 +440,7 @@ a.klara-read-more {
         color: @color-base;
       }
     }
-    .field-name-field-broadcast-song {
+    .field-name-field-broadcast-ctsong {
       width: 100%;
       display: inline-block;
       float: left;
@@ -476,21 +478,16 @@ a.klara-read-more {
             color: #ccc;
             top: -10px;
           }
-          > .field-name-field-song-title {
-            text-indent: 20px;
+          .field-name-title {
             position: relative;
             cursor: pointer;
-            &:before {
-              content: "\f001";
-              font-family: fontawesome;
-              position: absolute;
-              text-align: left;
-              left: -19px;
-              top: 0;
-              color: @color-base;
+            h3 {
+              margin-top: 0;
+              font-size: 18px;
             }
           }
-          > .field-name-field-componist-name {
+          .field-name-field-song-comp .field-item,
+          .field-name-field-song-uitv .field-item {
             font-size: 12px;
             font-style: italic;
             padding-top: 2px;
@@ -505,9 +502,18 @@ a.klara-read-more {
               top: 1px;
               color: rgba(0,0,0,0.5);
             }
-            .field-label {
-              display: none;
-            }
+          }
+          .field-name-field-song-comp,
+          .field-name-field-song-uitv {
+            display: inline-block;
+            vertical-align: top;
+            width: 48%;
+          }
+          .field-name-field-song-audiofile,
+          .field-name-field-song-pics,
+          .field-name-field-song-locatie,
+          .field-name-body {
+            display: none;
           }
           .songteaser-audio {
             //display: none;
@@ -515,162 +521,8 @@ a.klara-read-more {
             max-width: 100%;
             //opacity: 0.7;
           }
-          .open-popup {
-            width: 30px;
-            height: 30px;
-            position: absolute;
-            right: 0;
-            cursor: pointer;
-            top: 9px;
-            &:before {
-              content: "\f055";
-              font-family: fontawesome;
-              font-size: 24px;
-              position: absolute;
-              top: 0;
-              line-height: 30px;
-              text-align: center;
-              left: 0;
-              .transit;
-              color: rgba(0,0,0,0.5);
-            }
-            &:hover:before {
-              color: @color-base;
-            }
-          }
-          .close-popup {
-            width: 60px;
-            height: 60px;
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            cursor: pointer;
-            font-size: 70px;
-            line-height: 60px;
-            text-align: center;
-            &:before {
-              content: "\f00d";
-              font-family: fontawesome;
-              position: absolute;
-              top: 0;
-              text-align: center;
-              left: 0;
-              .transit;
-              color: rgba(0,0,0,0.5);
-            }
-            &:hover:before {
-              color: @color-base;
-            }
-          }
-          > .popup {
-            display: none;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 998;
-            > .entity-song {
-              position: fixed;
-              width: 80%;
-              height: 80%;
-              background: #fff;
-              margin: 0;
-              z-index: 999;
-              top: 10%;
-              left: 10%;
-              overflow-y: scroll;
-              padding: 50px;
-              .group-header {
-                margin-bottom: 20px;
-                padding-bottom: 20px;
-                border: 0;
-                border-bottom: 1px dashed #ddd;
-              }
-              .field-name-field-song-title {
-                padding-bottom: 9px;
-                margin: 0 0 20px;
-                border-bottom: 1px solid #eee;
-                font-size: 40px;
-                text-align: center;
-                font-family: georgia, serif;
-                cursor: pointer;
-              }
-              .field-name-field-song-img {
-                float: left;
-                margin: 0 20px 5px 0;
-              }
-              .field-name-field-song-componist {
-                h2 {
-                  display: none;
-                }
-                .field-name-field-componist-name {
-                  font-size: 18px;
-                  color: @color-base;
-                  margin-bottom: 15px;
-                }
-              }
-              .group-left {
-                .field-name-field-song-link {
-                  margin-bottom: 20px;
-                  padding-bottom: 10px;
-                  border-bottom: 1px dashed #ccc;
-                  width: 90%;
-                  a {
-                    text-indent: 25px;
-                    position: relative;
-                    display: block;
-                    color: #333;
-                    &:before {
-                      content: "\f0c1";
-                      font-family: fontawesome;
-                      position: absolute;
-                      text-align: left;
-                      left: -25px;
-                      top: 0;
-                      color: @color-base;
-                    }
-                  }
-                }
-                .mapboxsmall {
-                  width: 90%;
-                  height: 300px;
-                  max-width: 100%;
-                }
-                .field-name-field-song-location {
-                  display: none;
-                }
-              }
-              .group-right {
-                .componist-title {
-                  text-indent: 25px;
-                  position: relative;
-                  display: block;
-                  margin-bottom: 20px;
-                  padding-bottom: 10px;
-                  border-bottom: 1px dashed #ccc;
-                  &:before {
-                    content: "\f007";
-                    font-family: fontawesome;
-                    position: absolute;
-                    text-align: left;
-                    left: -25px;
-                    top: 0;
-                    color: @color-base;
-                  }
-                }
-                .field-name-field-componist-img {
-                  float: left;
-                  margin: 0 20px 10px 0;
-                }
-              }
-            }
-          }
         }
-        .field-name-field-song-audio-file {
-          display: none;
-        }
+
       }
     }
     #mapbox {
@@ -1084,6 +936,183 @@ audio {
   }
 }
 
+// node-typoe-song
+.node-type-song {
+  #singlemap {
+    width: 100%;
+    height: 350px;
+    max-width: 100%;
+    top: 65px;
+  }
+  .node-song {
+    .group-header {
+      margin: 0 0 40px;
+      padding: 0 0 40px;
+      border-bottom: 1px dashed #ccc;
+      .field-name-field-song-locatie {
+        display: none;
+      }
+      .field-name-field-song-pics {
+        float: left;
+        margin: 0 20px 10px 0;
+      }
+    }
+    .group-left {
+      width: 48%;
+      float: left;
+      > div {
+        .well-white;
+        margin-bottom: 0;
+      }
+      .field-name-field-componist-img {
+        float: left;
+        margin: 0 20px 10px 0;
+      }
+      .field-label {
+        font-size: 16px;
+        margin: 0 0 10px;
+        padding: 0 0 5px;
+        font-weight: normal;
+        border-bottom: 1px solid #ccc;
+        &:before {
+          content: "\f006";
+          font-family: fontawesome;
+          font-size: 16px;
+          color: @color-base;
+          margin-right: 5px;
+        }
+      }
+      .field-name-field-componist-name {
+        color: @color-base;
+        font-size: 22px;
+        margin: 0 0 10px;
+      }
+    }
+    .group-right {
+      width: 48%;
+      float: right;
+      > div {
+        .well-white;
+        margin-bottom: 0;
+      }
+      .field-name-field-uitv-image {
+        float: left;
+        margin: 0 20px 10px 0;
+      }
+      .field-label {
+        font-size: 16px;
+        margin: 0 0 10px;
+        padding: 0 0 5px;
+        font-weight: normal;
+        border-bottom: 1px solid #ccc;
+        &:before {
+          content: "\f006";
+          font-family: fontawesome;
+          font-size: 16px;
+          color: @color-base;
+          margin-right: 5px;
+        }
+      }
+      .field-name-field-uitv-name {
+        color: @color-base;
+        font-size: 22px;
+        margin: 0 0 10px;
+      }
+    }
+    .group-footer {
+      float: left;
+      width: 100%;
+      margin: 40px 0 0;
+      padding: 40px 0 0;
+      border-top: 1px dashed #ccc;
+      > * {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        height: 80px;
+        .well;
+      }
+      .field-name-field-song-audiofile {
+        display: none;
+      }
+      .audiobox {
+        padding: 25px 10px;
+        i.fa-signal {
+          font-size: 30px;
+          color: #cc0001;
+          vertical-align: top;
+          margin-right: 5px;
+        }
+        audio {
+          width: 80%;
+        }
+      }
+      .field-name-field-song-external-link {
+        padding: 25px 0;
+        i {
+          font-size: 30px;
+          color: @color-base;
+          margin-right: 5px;
+        }
+        a {
+          font-size: 20px;
+          color: #303030;
+          .transit;
+          &:hover {
+            color: @color-base;
+            text-decoration: none;
+          }
+        }
+        > * {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+      .field-name-service-links-displays-group {
+        .field-item > * {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        i.fa-share-alt {
+          font-size: 30px;
+          color: @color-base;
+          margin-right: 8px;
+        }
+        .service-links {
+          padding: 7px 0;
+          > * {
+            display: inline-block;
+            vertical-align: top;
+          }
+        }
+      }
+    }
+  }
+}
+
+.view-uitzendingen .klara-timeline-block .group-left a,
+#block-views-calendar-broadcasts-block-2 ul > li.views-row .views-field-field-broadcast-pic a {
+  position: relative;
+  display: block;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    .transit;
+    background: url(../images/loep.png) no-repeat center rgba(0,0,0,0.75);
+    opacity: 0;
+  }
+  &:hover:after {
+    opacity: 1;
+  }
+  img {
+    display: block;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .view-uitzendingen .klara-timeline-block .klara-timeline-content {
     width: 42%;
@@ -1166,8 +1195,21 @@ audio {
 // desktop
 @media (min-width: 700px) {
   .klara-timeline-content h2 {
-    margin-top: 15px;
+    margin: 0;
     text-align: center;
+    a {
+      font-size: 20px;
+      font-family: arial;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #303030;
+      .transit;
+      &:hover {
+        color: @color-base;
+        text-decoration: none;
+      }
+    }
   }
   .klara-timeline-block:nth-child(even) .klara-timeline-content .klara-date {
     right: 138%;
@@ -1175,8 +1217,13 @@ audio {
   .klara-timeline-block:nth-child(odd) .klara-timeline-content .klara-date {
     left: 109%;
   }
+  .view-uitzendingen .klara-timeline-block .group-left {
+    text-align: center;
+    width: 100%;
+  }
   .view-uitzendingen .klara-timeline-block .group-right {
     text-align: center;
+    width: 100%;
   }
   .klara-timeline-content .klara-read-more {
     width: 100%;

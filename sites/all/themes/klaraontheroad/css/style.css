@@ -199,9 +199,10 @@ h1.page-header {
 }
 .navbar-nav > li:first-child > a {
   text-indent: -999999px;
-  width: 90px;
-  height: 35px;
-  background: url(../images/logo-nav2.png) no-repeat center 5px;
+  width: 36px;
+  height: 50px;
+  background: url(../logo-otr-def.png) no-repeat center 5px;
+  background-size: 34px;
   border-radius: 0;
   margin: 0 5px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -343,6 +344,23 @@ a.klara-read-more {
   clear: both;
   visibility: hidden;
 }
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview.field-group-div {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview.field-group-div:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
 .node-type-uitzending .node-uitzending .group-header .group-broadcast-topview.field-group-div .field-name-field-broadcast-pic .field-item {
   float: none !important;
   display: inline-block !important;
@@ -369,10 +387,10 @@ a.klara-read-more {
   border-top: 1px solid #ddd;
 }
 .node-type-uitzending .node-uitzending .group-left {
-  width: 30%;
+  width: 40%;
 }
 .node-type-uitzending .node-uitzending .group-right {
-  width: 66%;
+  width: 56%;
   float: right;
 }
 .node-type-uitzending .node-uitzending .field-name-service-links-displays-group {
@@ -407,13 +425,13 @@ a.klara-read-more {
   position: absolute;
   color: #cc0001;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong {
   width: 100%;
   display: inline-block;
   float: left;
   clear: both;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > h3 {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > h3 {
   position: relative;
   text-indent: 52px;
   font-size: 35px;
@@ -421,7 +439,7 @@ a.klara-read-more {
   margin-bottom: 20px;
   border-bottom: 1px solid #ccc;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > h3:before {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > h3:before {
   content: "\f001";
   font-family: fontawesome;
   position: absolute;
@@ -429,16 +447,16 @@ a.klara-read-more {
   left: -46px;
   color: #cc0001;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items {
   counter-reset: my-badass-counter;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item {
   margin: 0 0 10px;
   padding: 5px 38px 10px 65px;
   border-bottom: 1px dashed #ccc;
   position: relative;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item:before {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item:before {
   content: counter(my-badass-counter, decimal-leading-zero);
   counter-increment: my-badass-counter;
   position: absolute;
@@ -448,28 +466,24 @@ a.klara-read-more {
   color: #ccc;
   top: -10px;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .field-name-field-song-title {
-  text-indent: 20px;
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-title {
   position: relative;
   cursor: pointer;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .field-name-field-song-title:before {
-  content: "\f001";
-  font-family: fontawesome;
-  position: absolute;
-  text-align: left;
-  left: -19px;
-  top: 0;
-  color: #cc0001;
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-title h3 {
+  margin-top: 0;
+  font-size: 18px;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .field-name-field-componist-name {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-comp .field-item,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-uitv .field-item {
   font-size: 12px;
   font-style: italic;
   padding-top: 2px;
   text-indent: 20px;
   position: relative;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .field-name-field-componist-name:before {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-comp .field-item:before,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-uitv .field-item:before {
   content: "\f007";
   font-family: fontawesome;
   position: absolute;
@@ -478,165 +492,21 @@ a.klara-read-more {
   top: 1px;
   color: rgba(0, 0, 0, 0.5);
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .field-name-field-componist-name .field-label {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-comp,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-uitv {
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-audiofile,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-pics,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-locatie,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-body {
   display: none;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .songteaser-audio {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .songteaser-audio {
   margin-top: 10px;
   max-width: 100%;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .open-popup {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  right: 0;
-  cursor: pointer;
-  top: 9px;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .open-popup:before {
-  content: "\f055";
-  font-family: fontawesome;
-  font-size: 24px;
-  position: absolute;
-  top: 0;
-  line-height: 30px;
-  text-align: center;
-  left: 0;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  color: rgba(0, 0, 0, 0.5);
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .open-popup:hover:before {
-  color: #cc0001;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .close-popup {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  cursor: pointer;
-  font-size: 70px;
-  line-height: 60px;
-  text-align: center;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .close-popup:before {
-  content: "\f00d";
-  font-family: fontawesome;
-  position: absolute;
-  top: 0;
-  text-align: center;
-  left: 0;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  color: rgba(0, 0, 0, 0.5);
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item .close-popup:hover:before {
-  color: #cc0001;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 998;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song {
-  position: fixed;
-  width: 80%;
-  height: 80%;
-  background: #fff;
-  margin: 0;
-  z-index: 999;
-  top: 10%;
-  left: 10%;
-  overflow-y: scroll;
-  padding: 50px;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-header {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border: 0;
-  border-bottom: 1px dashed #ddd;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .field-name-field-song-title {
-  padding-bottom: 9px;
-  margin: 0 0 20px;
-  border-bottom: 1px solid #eee;
-  font-size: 40px;
-  text-align: center;
-  font-family: georgia, serif;
-  cursor: pointer;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .field-name-field-song-img {
-  float: left;
-  margin: 0 20px 5px 0;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .field-name-field-song-componist h2 {
-  display: none;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .field-name-field-song-componist .field-name-field-componist-name {
-  font-size: 18px;
-  color: #cc0001;
-  margin-bottom: 15px;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-left .field-name-field-song-link {
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px dashed #ccc;
-  width: 90%;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-left .field-name-field-song-link a {
-  text-indent: 25px;
-  position: relative;
-  display: block;
-  color: #333;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-left .field-name-field-song-link a:before {
-  content: "\f0c1";
-  font-family: fontawesome;
-  position: absolute;
-  text-align: left;
-  left: -25px;
-  top: 0;
-  color: #cc0001;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-left .mapboxsmall {
-  width: 90%;
-  height: 300px;
-  max-width: 100%;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-left .field-name-field-song-location {
-  display: none;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-right .componist-title {
-  text-indent: 25px;
-  position: relative;
-  display: block;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px dashed #ccc;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-right .componist-title:before {
-  content: "\f007";
-  font-family: fontawesome;
-  position: absolute;
-  text-align: left;
-  left: -25px;
-  top: 0;
-  color: #cc0001;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items > .field-item > .popup > .entity-song .group-right .field-name-field-componist-img {
-  float: left;
-  margin: 0 20px 10px 0;
-}
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-song > .field-items .field-name-field-song-audio-file {
-  display: none;
 }
 .node-type-uitzending .node-uitzending #mapbox {
   width: 100%;
@@ -1029,6 +899,223 @@ audio {
 .front #block-system-main {
   display: none;
 }
+.node-type-song #singlemap {
+  width: 100%;
+  height: 350px;
+  max-width: 100%;
+  top: 65px;
+}
+.node-type-song .node-song .group-header {
+  margin: 0 0 40px;
+  padding: 0 0 40px;
+  border-bottom: 1px dashed #ccc;
+}
+.node-type-song .node-song .group-header .field-name-field-song-locatie {
+  display: none;
+}
+.node-type-song .node-song .group-header .field-name-field-song-pics {
+  float: left;
+  margin: 0 20px 10px 0;
+}
+.node-type-song .node-song .group-left {
+  width: 48%;
+  float: left;
+}
+.node-type-song .node-song .group-left > div {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 0;
+}
+.node-type-song .node-song .group-left > div:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.node-type-song .node-song .group-left .field-name-field-componist-img {
+  float: left;
+  margin: 0 20px 10px 0;
+}
+.node-type-song .node-song .group-left .field-label {
+  font-size: 16px;
+  margin: 0 0 10px;
+  padding: 0 0 5px;
+  font-weight: normal;
+  border-bottom: 1px solid #ccc;
+}
+.node-type-song .node-song .group-left .field-label:before {
+  content: "\f006";
+  font-family: fontawesome;
+  font-size: 16px;
+  color: #cc0001;
+  margin-right: 5px;
+}
+.node-type-song .node-song .group-left .field-name-field-componist-name {
+  color: #cc0001;
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+.node-type-song .node-song .group-right {
+  width: 48%;
+  float: right;
+}
+.node-type-song .node-song .group-right > div {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 0;
+}
+.node-type-song .node-song .group-right > div:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.node-type-song .node-song .group-right .field-name-field-uitv-image {
+  float: left;
+  margin: 0 20px 10px 0;
+}
+.node-type-song .node-song .group-right .field-label {
+  font-size: 16px;
+  margin: 0 0 10px;
+  padding: 0 0 5px;
+  font-weight: normal;
+  border-bottom: 1px solid #ccc;
+}
+.node-type-song .node-song .group-right .field-label:before {
+  content: "\f006";
+  font-family: fontawesome;
+  font-size: 16px;
+  color: #cc0001;
+  margin-right: 5px;
+}
+.node-type-song .node-song .group-right .field-name-field-uitv-name {
+  color: #cc0001;
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+.node-type-song .node-song .group-footer {
+  float: left;
+  width: 100%;
+  margin: 40px 0 0;
+  padding: 40px 0 0;
+  border-top: 1px dashed #ccc;
+}
+.node-type-song .node-song .group-footer > * {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  height: 80px;
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.node-type-song .node-song .group-footer > *:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.node-type-song .node-song .group-footer .field-name-field-song-audiofile {
+  display: none;
+}
+.node-type-song .node-song .group-footer .audiobox {
+  padding: 25px 10px;
+}
+.node-type-song .node-song .group-footer .audiobox i.fa-signal {
+  font-size: 30px;
+  color: #cc0001;
+  vertical-align: top;
+  margin-right: 5px;
+}
+.node-type-song .node-song .group-footer .audiobox audio {
+  width: 80%;
+}
+.node-type-song .node-song .group-footer .field-name-field-song-external-link {
+  padding: 25px 0;
+}
+.node-type-song .node-song .group-footer .field-name-field-song-external-link i {
+  font-size: 30px;
+  color: #cc0001;
+  margin-right: 5px;
+}
+.node-type-song .node-song .group-footer .field-name-field-song-external-link a {
+  font-size: 20px;
+  color: #303030;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.node-type-song .node-song .group-footer .field-name-field-song-external-link a:hover {
+  color: #cc0001;
+  text-decoration: none;
+}
+.node-type-song .node-song .group-footer .field-name-field-song-external-link > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.node-type-song .node-song .group-footer .field-name-service-links-displays-group .field-item > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.node-type-song .node-song .group-footer .field-name-service-links-displays-group i.fa-share-alt {
+  font-size: 30px;
+  color: #cc0001;
+  margin-right: 8px;
+}
+.node-type-song .node-song .group-footer .field-name-service-links-displays-group .service-links {
+  padding: 7px 0;
+}
+.node-type-song .node-song .group-footer .field-name-service-links-displays-group .service-links > * {
+  display: inline-block;
+  vertical-align: top;
+}
+.view-uitzendingen .klara-timeline-block .group-left a,
+#block-views-calendar-broadcasts-block-2 ul > li.views-row .views-field-field-broadcast-pic a {
+  position: relative;
+  display: block;
+}
+.view-uitzendingen .klara-timeline-block .group-left a:after,
+#block-views-calendar-broadcasts-block-2 ul > li.views-row .views-field-field-broadcast-pic a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background: url(../images/loep.png) no-repeat center rgba(0, 0, 0, 0.75);
+  opacity: 0;
+}
+.view-uitzendingen .klara-timeline-block .group-left a:hover:after,
+#block-views-calendar-broadcasts-block-2 ul > li.views-row .views-field-field-broadcast-pic a:hover:after {
+  opacity: 1;
+}
+.view-uitzendingen .klara-timeline-block .group-left a img,
+#block-views-calendar-broadcasts-block-2 ul > li.views-row .views-field-field-broadcast-pic a img {
+  display: block;
+}
 @media only screen and (max-width: 992px) {
   .view-uitzendingen .klara-timeline-block .klara-timeline-content {
     width: 42%;
@@ -1097,8 +1184,23 @@ audio {
 }
 @media (min-width: 700px) {
   .klara-timeline-content h2 {
-    margin-top: 15px;
+    margin: 0;
     text-align: center;
+  }
+  .klara-timeline-content h2 a {
+    font-size: 20px;
+    font-family: arial;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #303030;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  .klara-timeline-content h2 a:hover {
+    color: #cc0001;
+    text-decoration: none;
   }
   .klara-timeline-block:nth-child(even) .klara-timeline-content .klara-date {
     right: 138%;
@@ -1106,8 +1208,13 @@ audio {
   .klara-timeline-block:nth-child(odd) .klara-timeline-content .klara-date {
     left: 109%;
   }
+  .view-uitzendingen .klara-timeline-block .group-left {
+    text-align: center;
+    width: 100%;
+  }
   .view-uitzendingen .klara-timeline-block .group-right {
     text-align: center;
+    width: 100%;
   }
   .klara-timeline-content .klara-read-more {
     width: 100%;
