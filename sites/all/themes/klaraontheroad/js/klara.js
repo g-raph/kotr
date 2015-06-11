@@ -2,15 +2,26 @@
     Drupal.behaviors.klara = {
         attach: function (context, settings) {
 
+            // date calc for timeline
+            var now = new Date();
+            var twoDigitMonth = ((now.getMonth().length+1) === 1)? (now.getMonth()+1) : '0' + (now.getMonth()+1);
+            var $thisdate = now.getFullYear() + "-" + twoDigitMonth + "-" + now.getDate();
+            console.log('DATE: '+$thisdate);
+            var $timelineblock = $('.klara-timeline-block');
+            $timelineblock.each(function(){
+                var $this = $(this);
+                var $timelineblockdate = $this.find('.date-display-single').attr('content');
+                if ($thisdate > $timelineblockdate) {
+                    $this.append('<div class="scrollanchor"></div>').siblings().find('.scrollanchor').remove();
+                    $this.find('.klara-timeline-img.klara-picture').css('background','#b0cc00');
+                }
+            });
+
 
             // title playlist
             if (!$('.titleplaylist').length) {
                 $('<h3 class="titleplaylist">Playlist</h3>').prependTo('.field-name-field-broadcast-ctsong');
             }
-
-            // slider
-
-
 
             // timeline KlaraOnTheRoad
             var $timeline_block = $('.klara-timeline-block');
@@ -58,7 +69,7 @@
             // scrolleffects
             var scrollMenuFront = $('nav > ul.menu');
             scrollMenuFront.find('> li:nth-child(2) > a').removeAttr('href').click(function(){
-                $('.front .main-container').animatescroll();
+                $('.front .klara-timeline-block .scrollanchor').animatescroll();
             });
             scrollMenuFront.find('> li:nth-child(3) > a').removeAttr('href').click(function(){
                 $('.front .content-bottom').animatescroll();

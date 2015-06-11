@@ -113,7 +113,7 @@ h2 {
   margin-top: -12px;
 }
 .klara-timeline-img.klara-picture {
-  background: #b0cc00;
+  background: #808080;
 }
 .klara-timeline-img.klara-movie {
   background: #c03b44;
@@ -418,4 +418,8 @@ h2 {
     -o-transform: translateX(0);
     transform: translateX(0);
   }
+}
+.scrollanchor {
+  position: absolute;
+  bottom: 0;
 }
