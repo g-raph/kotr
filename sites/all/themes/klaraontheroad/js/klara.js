@@ -69,7 +69,7 @@
 
             // audioplayer
             var $ong = $('.field-name-field-broadcast-ctsong > .field-items > .field-item');
-            $('<div><i class="fa fa-music"></i> Beluister alle nummers</div><audio class="mainaudioplayer" controls></audio>').insertAfter('.node-type-uitzending .group-header .field-name-body');
+            $('<div class="audiolabel"><i class="fa fa-signal"></i> Beluister alle nummers</div><audio class="mainaudioplayer" controls></audio>').appendTo('.node-uitzending .group-header .group-broadcast-topview');
             $ong.each(function() {
                 var $this = $(this);
                 var audioField = $this.find('.field-name-field-song-audiofile .field-item');
@@ -91,6 +91,12 @@
                     slideshow: true
                 });
             }
+
+            // klara block menu
+            $('<div class="klaramenubutton"></div>').appendTo('.logged-in .navbar-fixed-top');
+            $('.klaramenubutton').click(function(){
+                $('#block-menu-block-1').fadeToggle(200);
+            });
 
             // map multiple markers
             $('<div id="mapbox" style="width: 900px; height: 500px; max-width: 100%;"></div>').appendTo('.node-uitzending > .group-right');
