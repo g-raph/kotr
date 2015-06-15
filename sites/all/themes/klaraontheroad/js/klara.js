@@ -145,13 +145,16 @@
                 text:  songcontent1 + songcontent2
             });
             // scrolling zoom fix
-            $('#singlemap > .gm-style').addClass('scrolloff');
-            $('#singlemap').click(function(){
-                $('#singlemap > .gm-style').removeClass('scrolloff');
-            });
-            $('#singlemap').mouseleave(function(){
+            setTimeout(function(){
                 $('#singlemap > .gm-style').addClass('scrolloff');
-            });
+                $('#singlemap').click(function(){
+                    $('#singlemap > .gm-style').removeClass('scrolloff');
+                });
+                $('#singlemap').mouseleave(function(){
+                    $('#singlemap > .gm-style').addClass('scrolloff');
+                });
+            },600);
+
 
             // audio on song pages
             var audioUrl = $('.node-type-song .field-name-field-song-audiofile .field-item').html();
