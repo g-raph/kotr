@@ -219,7 +219,7 @@ h1.page-header {
       text-indent: -999999px;
       width: 36px;
       height: 50px;
-      background: url(../logo-otr-def.png) no-repeat center 5px;
+      background: url(../images/headerlogo.png) no-repeat center 5px;
       background-size: 34px;
       border-radius: 0;
       margin: 0 5px;
@@ -246,6 +246,14 @@ h1.page-header {
   }
 }
 
+.navbar-inverse .navbar-nav>li>a {
+  color: #fff;
+  .transit;
+  &:hover, &.active {
+    color: @color-base;
+  }
+}
+
 // klara block menu
 .navbar-fixed-top {
   .klaramenubutton {
@@ -267,7 +275,7 @@ h1.page-header {
     position: absolute;
     right: 20px;
     top: 82px;
-    .well;
+    .well-white;
     &:before {
       content: '';
       position: absolute;
@@ -317,6 +325,11 @@ h1.page-header {
       width: 60%;
       float: right;
     }
+    &.upcoming {
+      .group-left img {
+        filter: grayscale(100%);
+      }
+    }
   }
 }
 
@@ -354,14 +367,25 @@ body.admin-menu .navbar-fixed-top {
   h2 {
     border-bottom: 2px solid #444;
   }
+  #block-block-1 {
+    text-align: center;
+  }
   .footer-logo {
-    float: left;
-    margin: 0 20px 0 0;
-    width: 100px;
+    float: none;
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    width: 100%;
     opacity: 0.3;
     .transit;
     &:hover {
       opacity: 1;
+    }
+    a {
+      display: inline-block;
+      img {
+        width: 50px;
+      }
     }
   }
   #VRTFooter {
@@ -420,14 +444,16 @@ a.klara-read-more {
       .group-broadcast-topview-right {
         .field-name-field-broadcast-date {
           border: 0;
-          text-indent: 25px;
+          text-indent: 20px;
           float: left;
+          font-size: 12px;
           margin: 0;
+          padding: 3px 0;
           &:before {
             content: "\f073";
             font-family: fontawesome;
             display: inline-block;
-            margin-left: -25px;
+            margin-left: -20px;
             position: absolute;
             color: @color-base;
           }
@@ -452,6 +478,14 @@ a.klara-read-more {
     .field-name-service-links-displays-group {
       float: right;
       margin: 0;
+      > * {
+        display: inline-block;
+        vertical-align: middle;
+        &.fa-share-alt {
+          color: @color-base;
+          margin-right: 5px;
+        }
+      }
       .field-item .service-links > * {
         vertical-align: top;
         margin-left: 5px;
@@ -600,7 +634,7 @@ a.klara-read-more {
 }
 
 audio {
-  max-width: 100%;
+  width: 100%;
 }
 
 #singlemap {
@@ -1068,6 +1102,14 @@ audio {
   }
   img {
     display: block;
+  }
+}
+
+.view-uitzendingen {
+  .klara-timeline-block.upcoming {
+    .group-left img {
+      filter: grayscale(50%);
+    }
   }
 }
 

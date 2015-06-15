@@ -6,7 +6,6 @@
             var now = new Date();
             var twoDigitMonth = ((now.getMonth().length+1) === 1)? (now.getMonth()+1) : '0' + (now.getMonth()+1);
             var $thisdate = now.getFullYear() + "-" + twoDigitMonth + "-" + now.getDate();
-            console.log('DATE: '+$thisdate);
             var $timelineblock = $('.klara-timeline-block');
             $timelineblock.each(function(){
                 var $this = $(this);
@@ -14,9 +13,13 @@
                 if ($thisdate > $timelineblockdate) {
                     $this.append('<div class="scrollanchor"></div>').siblings().find('.scrollanchor').remove();
                     $this.find('.klara-timeline-img.klara-picture').css('background','#b0cc00');
+                } else {
+                    $this.addClass('upcoming');
                 }
             });
 
+            // share buttons icon
+            $('<i class="fa fa-share-alt"></i>').prependTo('.node-uitzending .field-name-service-links-displays-group');
 
             // title playlist
             if (!$('.titleplaylist').length) {
