@@ -640,6 +640,9 @@ audio {
   float: left;
   margin: 0 10px 5px 0;
 }
+#singlemap > .gm-style.scrolloff {
+  pointer-events: none;
+}
 .page-uitzendingen h1 {
   padding: 0 0 20px;
   border-bottom: 4px solid #ddd;
