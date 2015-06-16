@@ -925,7 +925,6 @@ audio {
 .node-type-song .node-song .group-header .field-name-field-song-pics {
   float: left;
   margin: 0 20px 10px 0;
-  width: 50%;
   position: relative;
   min-height: 20px;
   padding: 19px;
@@ -944,6 +943,7 @@ audio {
   visibility: hidden;
 }
 .node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo {
+  width: 50%;
   padding-bottom: 40px;
 }
 .node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav {

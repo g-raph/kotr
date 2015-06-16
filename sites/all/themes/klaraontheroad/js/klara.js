@@ -178,6 +178,11 @@
                 });
             },600);
 
+            // go back button
+            $('.navbar-inverse .navbar-nav > li.last > a').click(function(){
+                window.history.back();
+            });
+
 
             // audio on song pages
             var audioUrl = $('.node-type-song .field-name-field-song-audiofile .field-item').html();
