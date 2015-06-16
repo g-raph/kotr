@@ -44,8 +44,8 @@ function hook_video_embed_handler_info() {
       'ustream.com',
     ),
     'defaults' => array(
-      'width' => 640,
-      'height' => 360,
+      'width' => 1000,
+      'height' => 700,
     ),
   );
 
