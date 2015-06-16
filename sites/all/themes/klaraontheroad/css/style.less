@@ -949,6 +949,73 @@ audio {
       .field-name-field-song-pics {
         float: left;
         margin: 0 20px 10px 0;
+        width: 50%;
+        position: relative;
+        .well-white;
+        &.hasvideo {
+          padding-bottom: 40px;
+          ul.flex-direction-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            > li {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              > a {
+                position: absolute;
+                z-index: 99;
+                color: @color-base;
+                .transit;
+                padding: 0 1px;
+                border: 0;
+                &:hover {
+                  color: orange;
+                }
+                &.flex-prev {
+                  left: 20px;
+                  bottom: 15px;
+                }
+                &.flex-next {
+                  right: 20px;
+                  bottom: 15px;
+                }
+              }
+            }
+          }
+        }
+        ol.flex-control-paging {
+          position: absolute;
+          padding: 0;
+          margin: 0;
+          text-align: center;
+          width: 100%;
+          bottom: 15px;
+          > li {
+            display: inline-block;
+            vertical-align: middle;
+            list-style: none;
+            margin: 0 1px;
+            > a {
+              text-indent: -999999px;
+              display: block;
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background: #303030;
+              border: 0;
+              cursor: pointer;
+              .transit;
+              &.flex-active {
+                background: @color-base;
+                border: 2px solid @color-base;
+              }
+            }
+          }
+        }
+      }
+      .field-name-field-song-video {
+
       }
     }
     .group-left {

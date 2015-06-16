@@ -925,6 +925,88 @@ audio {
 .node-type-song .node-song .group-header .field-name-field-song-pics {
   float: left;
   margin: 0 20px 10px 0;
+  width: 50%;
+  position: relative;
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.node-type-song .node-song .group-header .field-name-field-song-pics:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo {
+  padding-bottom: 40px;
+}
+.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li > a {
+  position: absolute;
+  z-index: 99;
+  color: #cc0001;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  padding: 0 1px;
+  border: 0;
+}
+.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li > a:hover {
+  color: orange;
+}
+.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li > a.flex-prev {
+  left: 20px;
+  bottom: 15px;
+}
+.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li > a.flex-next {
+  right: 20px;
+  bottom: 15px;
+}
+.node-type-song .node-song .group-header .field-name-field-song-pics ol.flex-control-paging {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  bottom: 15px;
+}
+.node-type-song .node-song .group-header .field-name-field-song-pics ol.flex-control-paging > li {
+  display: inline-block;
+  vertical-align: middle;
+  list-style: none;
+  margin: 0 1px;
+}
+.node-type-song .node-song .group-header .field-name-field-song-pics ol.flex-control-paging > li > a {
+  text-indent: -999999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #303030;
+  border: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.node-type-song .node-song .group-header .field-name-field-song-pics ol.flex-control-paging > li > a.flex-active {
+  background: #cc0001;
+  border: 2px solid #cc0001;
 }
 .node-type-song .node-song .group-left {
   width: 48%;

@@ -81,6 +81,29 @@
                 $('.front .footer').animatescroll();
             });
 
+            // video to slideshow
+            var $songvideo = $('.node-type-song .node-song .group-header .field-name-field-song-video .embedded-video .player iframe');
+            var $songpicsitems = $('.node-type-song .node-song .group-header .field-name-field-song-pics > .field-items');
+            if ($songvideo.length) {
+                $('.node-type-song .node-song .group-header .field-name-field-song-pics').addClass('hasvideo');
+                $('<div class="field-item field-item-video"></div>').prependTo($songpicsitems);
+                $songvideo.attr('width','480').attr('height','328').appendTo('.field-item-video');
+            }
+
+            // song img slider
+            var $imgfield = $('.node-song .group-header .field-name-field-song-pics.hasvideo');
+            var $imgfieldimg = $('.node-song .group-header .field-name-field-song-pics.hasvideo .field-item');
+            if ($imgfieldimg.length > 1) {
+                $imgfield.flexslider({
+                    selector: ".field-items > .field-item",
+                    animation: "slide",
+                    directionNav: true,
+                    pausePlay: false,
+                    controlNav: true,
+                    slideshow: false
+                });
+            }
+
             // audioplayer
             var $ong = $('.field-name-field-broadcast-ctsong > .field-items > .field-item');
             $('<div class="audiolabel"><i class="fa fa-signal"></i> Beluister alle nummers</div><audio class="mainaudioplayer" controls></audio>').appendTo('.node-uitzending .group-header .group-broadcast-topview');
@@ -162,6 +185,9 @@
             $('.node-type-song .node-song .group-footer > *').addClass('col-sm-4');
             $('<i class="fa fa-link"></i>').prependTo('.node-type-song .node-song .group-footer > .field-name-field-song-external-link');
             $('<i class="fa fa-share-alt"></i>').insertBefore('.node-type-song .group-footer .field-name-service-links-displays-group .service-links');
+
+
+
 
         }
     };
