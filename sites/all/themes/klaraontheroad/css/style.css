@@ -1364,6 +1364,9 @@ audio {
     padding: 14px 0 0;
     color: #cc0001;
   }
+  .klara-timeline {
+    padding: 100px 0;
+  }
   .node-type-uitzending .node-uitzending .group-left,
   .node-type-uitzending .node-uitzending .group-right {
     width: 100%;
@@ -1411,5 +1414,18 @@ audio {
     margin: 0;
     padding: 0;
     max-width: 100%;
+  }
+  .node-type-song .node-song .group-left {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .node-type-song .node-song .group-right {
+    width: 100%;
+  }
+  .node-type-song .node-song .group-footer .field {
+    width: 100%;
+  }
+  .node-type-song #singlemap {
+    height: 200px;
   }
 }

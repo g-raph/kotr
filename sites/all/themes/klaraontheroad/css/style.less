@@ -1332,6 +1332,7 @@ audio {
 
 // smartphones
 @media (max-width: 500px) {
+  // global
   .view .date-nav-wrapper .date-heading h3 {
     font-size: 14px;
   }
@@ -1353,6 +1354,10 @@ audio {
     padding: 14px 0 0;
     color: @color-base;
   }
+  .klara-timeline {
+    padding: 100px 0;
+  }
+  // uitzending detail
   .node-type-uitzending .node-uitzending {
     .group-left, .group-right {
       width: 100%;
@@ -1401,5 +1406,21 @@ audio {
     margin: 0;
     padding: 0;
     max-width: 100%;
+  }
+  // song detail
+  .node-type-song .node-song {
+    .group-left {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .group-right {
+      width: 100%;
+    }
+    .group-footer .field {
+      width: 100%;
+    }
+  }
+  .node-type-song #singlemap {
+    height: 200px;
   }
 }

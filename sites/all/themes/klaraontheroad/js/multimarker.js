@@ -28,12 +28,26 @@
                 if (songcount > 0) {
                     markerquery(0, 10);
                 }
-                setTimeout(function () {
-                    markerquery(10, 20);
-                }, 5000);
-                setTimeout(function () {
-                    markerquery(20, songcount);
-                }, 10000);
+                if (songcount > 10 ) {
+                    setTimeout(function () {
+                        markerquery(10, 20);
+                    }, 5000);
+                }
+                if (songcount > 20) {
+                    setTimeout(function () {
+                        markerquery(20, 30);
+                    }, 10000);
+                }
+                if (songcount > 30) {
+                    setTimeout(function () {
+                        markerquery(30, 40);
+                    }, 15000);
+                }
+                if (songcount > 40) {
+                    setTimeout(function () {
+                        markerquery(40, 50);
+                    }, 20000);
+                }
             }
 
 
