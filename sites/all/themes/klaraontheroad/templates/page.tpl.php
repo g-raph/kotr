@@ -74,36 +74,13 @@
  */
 ?>
 
-<nav id="nav">
-  <ul class="navbar navbar-inverse navbar-fixed-top">
-<!--    <li><a href="#top">Top</a></li>-->
-<!--    <li><a href="#work">Work</a></li>-->
-<!--    <li><a href="#portfolio">Portfolio</a></li>-->
-<!--    <li><a href="#contact">Contact</a></li>-->
-
-    <div class="navbar-header">
-      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-
-    <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-      <div class="navbar-collapse collapse">
-        <nav role="navigation">
-          <?php if (!empty($primary_nav)): ?>
-            <?php print render($primary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($page['navigation'])): ?>
-            <?php print render($page['navigation']); ?>
-          <?php endif; ?>
-        </nav>
-      </div>
-    <?php endif; ?>
-  </ul>
+<nav id="nav" class="navbar navbar-inverse navbar-fixed-top">
+  <?php if (!empty($primary_nav)): ?>
+    <?php print render($primary_nav); ?>
+  <?php endif; ?>
+  <?php if (!empty($page['navigation'])): ?>
+    <?php print render($page['navigation']); ?>
+  <?php endif; ?>
 </nav>
 
 <?php if (!empty($page['highlighted'])): ?>

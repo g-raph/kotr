@@ -48,7 +48,9 @@
                 //var songcontent1 = $('.node-type-song .field-name-field-song-pics').html();
                 var songcontent2 = $('.node-type-song .field-name-body').html();
                 console.log(singleAddress);
-                $('#singlemap').googleMap().addMarker({
+                $('#singlemap').googleMap({
+                    zoom: 4
+                }).addMarker({
                     address: singleAddress+' '+singleCity, //+' '+singleCountry,
                     title: songtitle,
                     text:  songcontent2

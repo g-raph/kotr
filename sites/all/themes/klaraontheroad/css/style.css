@@ -229,6 +229,7 @@ h1.page-header {
 }
 .navbar-inverse .navbar-nav > li > a {
   color: #fff;
+  padding: 10px;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
