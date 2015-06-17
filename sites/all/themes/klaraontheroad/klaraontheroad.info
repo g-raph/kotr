@@ -46,6 +46,7 @@ stylesheets[all][] = css/style.css
 
 scripts[] = 'js/flexslider.js'
 scripts[] = 'js/animatescroll.js'
+scripts[] = 'js/multimarker.js'
 scripts[] = 'js/klara.js'
 
 ; 

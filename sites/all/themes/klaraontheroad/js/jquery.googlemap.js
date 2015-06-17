@@ -43,9 +43,9 @@
         var custommarker = '/sites/all/themes/klaraontheroad/images/marker.svg';
 		params = $.extend( {
 			coords : false,
-			address : false,
+			address : true,
 			url : false,
-			id : false,
+			id : true,
 			icon : custommarker,
 			draggable : false,
 			title : "",

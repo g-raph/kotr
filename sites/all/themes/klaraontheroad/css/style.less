@@ -430,6 +430,7 @@ a.klara-read-more {
           .field-item {
             float: none !important;
             display: inline-block !important;
+            max-width: 100%;
           }
         }
         .audiolabel {
@@ -538,6 +539,8 @@ a.klara-read-more {
       }
       > .field-items {
         counter-reset: my-badass-counter;
+        height: 420px;
+        overflow-y: scroll;
         > .field-item {
           margin: 0 0 10px;
           padding: 5px 38px 10px 65px;
@@ -1206,6 +1209,7 @@ audio {
     float: none !important;
     display: inline-block !important;
     margin-bottom: 20px;
+    max-width: 100%;
   }
   .node-type-uitzending .node-uitzending {
     .group-left, .group-right {

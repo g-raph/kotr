@@ -437,6 +437,7 @@ a.klara-read-more {
 .node-type-uitzending .node-uitzending .group-header .group-broadcast-topview.field-group-div .field-name-field-broadcast-pic .field-item {
   float: none !important;
   display: inline-block !important;
+  max-width: 100%;
 }
 .node-type-uitzending .node-uitzending .group-header .group-broadcast-topview.field-group-div .audiolabel {
   font-size: 14px;
@@ -539,6 +540,8 @@ a.klara-read-more {
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items {
   counter-reset: my-badass-counter;
+  height: 420px;
+  overflow-y: scroll;
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item {
   margin: 0 0 10px;
@@ -1234,6 +1237,7 @@ audio {
     float: none !important;
     display: inline-block !important;
     margin-bottom: 20px;
+    max-width: 100%;
   }
   .node-type-uitzending .node-uitzending .group-left,
   .node-type-uitzending .node-uitzending .group-right {
