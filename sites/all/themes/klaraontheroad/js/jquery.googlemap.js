@@ -42,10 +42,10 @@
 	$.fn.addMarker = function(params) {
         var custommarker = '/sites/all/themes/klaraontheroad/images/marker.svg';
 		params = $.extend( {
-			coords : false,
-			address : true,
+			coords : true,
+			address : false,
 			url : false,
-			id : true,
+			id : false,
 			icon : custommarker,
 			draggable : false,
 			title : "",
@@ -138,7 +138,7 @@
 			            
 						if($this.data('googleMarker').length == 1) {
 							$this.data('googleMap').setCenter(results[0].geometry.location);
-							$this.data('googleMap').setZoom($this.data('googleMap').getZoom());
+							$this.data('googleMap').setZoom(8);
 						} else {
 							$this.data('googleMap').fitBounds($this.data('googleBound'));
 						}
@@ -168,7 +168,8 @@
 						map: $this.data('googleMap'),
 						position: new google.maps.LatLng(params.coords[0], params.coords[1]),
 						title: params.title,
-						icon: params.icon
+						icon: params.icon,
+                        zoom: 8
 					});
 				} else {
 					var marker = new google.maps.Marker({
@@ -202,7 +203,7 @@
 
 				if($this.data('googleMarker').length == 1) {
 				  $this.data('googleMap').setCenter(new google.maps.LatLng(params.coords[0], params.coords[1]));
-				  $this.data('googleMap').setZoom($this.data('googleMap').getZoom());
+				  $this.data('googleMap').setZoom(8);
 				} else {
 					$this.data('googleMap').fitBounds($this.data('googleBound'));
 				}

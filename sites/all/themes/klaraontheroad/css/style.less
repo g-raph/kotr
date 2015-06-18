@@ -226,6 +226,7 @@ h1.page-header {
       .transit;
       &:hover, &:active {
         opacity: 1;
+        background-color: transparent;
       }
       &.active {
         background-color: transparent;
@@ -244,6 +245,11 @@ h1.page-header {
       display: inline-block;
     }
   }
+  &.node-type-uitzending {
+    .navbar-nav > li.last {
+      display: none;
+    }
+  }
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -252,6 +258,10 @@ h1.page-header {
   .transit;
   &:hover, &.active {
     color: @color-base;
+    background-color: transparent;
+  }
+  &.active:hover {
+    background-color: transparent;
   }
 }
 
@@ -284,6 +294,12 @@ h1.page-header {
       border-bottom: 10px solid #e3e3e3;
       top: -20px;
       right: 23px;
+    }
+    ul.menu {
+      padding-top: 15px;
+      > li > a {
+        padding: 5px 15px;
+      }
     }
   }
 }
@@ -538,10 +554,11 @@ a.klara-read-more {
           color: @color-base;
         }
       }
-      > .field-items {
+      > .slimScrollDiv > .field-items {
         counter-reset: my-badass-counter;
         height: 420px;
-        overflow-y: scroll;
+        overflow: hidden;
+        padding-left: 20px;
         > .field-item {
           margin: 0 0 10px;
           padding: 5px 38px 10px 65px;
@@ -567,6 +584,7 @@ a.klara-read-more {
           }
           .field-name-field-song-comp,
           .field-name-field-song-uitv {
+            word-break: break-all;
             > .field-label {
               font-size: 12px;
               text-indent: 12px;
@@ -868,12 +886,26 @@ audio {
   float: right;
   width: 46%;
   clear: none;
+  .view-content {
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    height: 400px;
+  }
+  .slimScrollBar {
+    margin: 20px 0;
+  }
+  .slimScrollRail {
+    height: 380px !important;
+    top: 20px !important;
+  }
   ul {
     margin-top: 20px;
-    padding-left: 0;
+    padding-left: 30px;
     list-style: none;
+    overflow: hidden;
+    width: auto;
     height: 400px;
-    overflow-y: scroll;
     > li.views-row {
       list-style: none;
       margin: 0 0 10px;
@@ -883,6 +915,7 @@ audio {
       .views-field-field-broadcast-pic {
         float: left;
         margin: 0 20px 10px 0;
+        width: 60px;
       }
       .views-field-title a {
         font-size: 26px;

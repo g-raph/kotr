@@ -212,6 +212,7 @@ h1.page-header {
 .navbar-nav > li:first-child > a:hover,
 .navbar-nav > li:first-child > a:active {
   opacity: 1;
+  background-color: transparent;
 }
 .navbar-nav > li:first-child > a.active {
   background-color: transparent;
@@ -227,6 +228,9 @@ h1.page-header {
 .not-front .navbar-nav > li:last-child {
   display: inline-block;
 }
+.not-front.node-type-uitzending .navbar-nav > li.last {
+  display: none;
+}
 .navbar-inverse .navbar-nav > li > a {
   color: #fff;
   padding: 10px;
@@ -237,6 +241,10 @@ h1.page-header {
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a.active {
   color: #cc0001;
+  background-color: transparent;
+}
+.navbar-inverse .navbar-nav > li > a.active:hover {
+  background-color: transparent;
 }
 .navbar-fixed-top .klaramenubutton {
   background: url(../images/klaramenubutton.png) no-repeat center;
@@ -282,6 +290,12 @@ h1.page-header {
   border-bottom: 10px solid #e3e3e3;
   top: -20px;
   right: 23px;
+}
+.navbar-fixed-top #block-menu-block-1 ul.menu {
+  padding-top: 15px;
+}
+.navbar-fixed-top #block-menu-block-1 ul.menu > li > a {
+  padding: 5px 15px;
 }
 .highlighted {
   padding: 130px 0 80px;
@@ -539,18 +553,19 @@ a.klara-read-more {
   left: -46px;
   color: #cc0001;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items {
   counter-reset: my-badass-counter;
   height: 420px;
-  overflow-y: scroll;
+  overflow: hidden;
+  padding-left: 20px;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item {
   margin: 0 0 10px;
   padding: 5px 38px 10px 65px;
   border-bottom: 1px dashed #ccc;
   position: relative;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item:before {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item:before {
   content: counter(my-badass-counter, decimal-leading-zero);
   counter-increment: my-badass-counter;
   position: absolute;
@@ -560,22 +575,26 @@ a.klara-read-more {
   color: #ccc;
   top: -10px;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-title {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-title {
   position: relative;
   cursor: pointer;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-title h3 {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-title h3 {
   margin-top: 0;
   font-size: 18px;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-comp > .field-label,
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-uitv > .field-label {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-comp,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-uitv {
+  word-break: break-all;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-comp > .field-label,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-uitv > .field-label {
   font-size: 12px;
   text-indent: 12px;
   position: relative;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-comp > .field-label:before,
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-uitv > .field-label:before {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-comp > .field-label:before,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-uitv > .field-label:before {
   content: "\f007";
   font-family: fontawesome;
   position: absolute;
@@ -584,24 +603,24 @@ a.klara-read-more {
   font-style: normal;
   color: #cc0001;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-comp .field-item,
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-uitv .field-item {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-comp .field-item,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-uitv .field-item {
   padding-top: 2px;
   font-size: 12px;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-comp,
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-uitv {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-comp,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-uitv {
   display: inline-block;
   vertical-align: top;
   width: 48%;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-audiofile,
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-pics,
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-field-song-locatie,
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .field-name-body {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-audiofile,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-pics,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-locatie,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-body {
   display: none;
 }
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items > .field-item .songteaser-audio {
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .songteaser-audio {
   margin-top: 10px;
   max-width: 100%;
 }
@@ -851,12 +870,26 @@ audio {
   width: 46%;
   clear: none;
 }
+#block-views-calendar-broadcasts-block-2 .view-content {
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  height: 400px;
+}
+#block-views-calendar-broadcasts-block-2 .slimScrollBar {
+  margin: 20px 0;
+}
+#block-views-calendar-broadcasts-block-2 .slimScrollRail {
+  height: 380px !important;
+  top: 20px !important;
+}
 #block-views-calendar-broadcasts-block-2 ul {
   margin-top: 20px;
-  padding-left: 0;
+  padding-left: 30px;
   list-style: none;
+  overflow: hidden;
+  width: auto;
   height: 400px;
-  overflow-y: scroll;
 }
 #block-views-calendar-broadcasts-block-2 ul > li.views-row {
   list-style: none;
@@ -874,6 +907,7 @@ audio {
 #block-views-calendar-broadcasts-block-2 ul > li.views-row .views-field-field-broadcast-pic {
   float: left;
   margin: 0 20px 10px 0;
+  width: 60px;
 }
 #block-views-calendar-broadcasts-block-2 ul > li.views-row .views-field-title a {
   font-size: 26px;

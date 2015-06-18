@@ -18,6 +18,40 @@
                 }
             });
 
+            var cts = $('.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items');
+            cts.addClass('toplevel');
+
+            // uitzendingen h1
+            $('<span>Klara | On the road | </span>').prependTo('.node-type-uitzending h1.page-header');
+
+            // cool scrolling
+            $('#block-views-calendar-broadcasts-block-2 .view-calendar-broadcasts > .view-content ul').slimScroll({
+                height: '400px',
+                alwaysVisible: true,
+                position: 'left',
+                railColor: '#222',
+                railOpacity: 0.2,
+                color: '#cc0001',
+                size: '4px',
+                allowPageScroll: false,
+                disableFadeOut: false,
+                distance: '0',
+                railVisible: true
+            });
+            $('.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong .field-items.toplevel').slimScroll({
+                height: '420px',
+                alwaysVisible: true,
+                position: 'left',
+                railColor: '#222',
+                railOpacity: 0.2,
+                color: '#cc0001',
+                size: '4px',
+                allowPageScroll: false,
+                disableFadeOut: false,
+                distance: '0',
+                railVisible: true
+            });
+
             // share buttons icon
             $('<i class="fa fa-share-alt"></i>').prependTo('.node-uitzending .field-name-service-links-displays-group');
 
@@ -150,11 +184,16 @@
             });
 
             // audio on song pages
-            var audioUrl = $('.node-type-song .field-name-field-song-audiofile .field-item').html();
-            $('<div class="audiobox"><i class="fa fa-signal"></i> <audio class="songteaser-audio" src="' + audioUrl + '" preload="auto" controls></audio></div>').insertBefore('.node-type-song .field-name-field-song-audiofile');
-            $('.node-type-song .node-song .group-footer > *').addClass('col-sm-4');
-            $('<i class="fa fa-link"></i>').prependTo('.node-type-song .node-song .group-footer > .field-name-field-song-external-link');
-            $('<i class="fa fa-share-alt"></i>').insertBefore('.node-type-song .group-footer .field-name-service-links-displays-group .service-links');
+
+            if ($('.node-type-song .field-name-field-song-audiofile').length) {
+                var audioUrl = $('.node-type-song .field-name-field-song-audiofile .field-item').html();
+                $('<div class="audiobox"><i class="fa fa-signal"></i> <audio class="songteaser-audio" src="' + audioUrl + '" preload="auto" controls></audio></div>').insertBefore('.node-type-song .field-name-field-song-audiofile');
+                $('.node-type-song .node-song .group-footer > *').addClass('col-sm-4');
+                $('<i class="fa fa-link"></i>').prependTo('.node-type-song .node-song .group-footer > .field-name-field-song-external-link');
+                $('<i class="fa fa-share-alt"></i>').insertBefore('.node-type-song .group-footer .field-name-service-links-displays-group .service-links');
+            }
+
+
 
 
         }

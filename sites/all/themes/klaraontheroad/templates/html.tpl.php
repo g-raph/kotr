@@ -70,7 +70,6 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
-
   <script type="text/javascript" src="//www.google.be/jsapi"></script>
   <script type="text/javascript">
     google.load("maps", "3.4", {
