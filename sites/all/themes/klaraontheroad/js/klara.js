@@ -11,18 +11,46 @@
                 var $this = $(this);
                 var $timelineblockdate = $this.find('.date-display-single').attr('content');
                 if ($thisdate > $timelineblockdate) {
-                    $this.append('<div class="scrollanchor"></div>').siblings().find('.scrollanchor').remove();
+                    $this.prepend('<div class="scrollanchor"></div>').siblings().find('.scrollanchor').remove();
                     $this.find('.klara-timeline-img.klara-picture').css('background','#b0cc00');
                 } else {
                     $this.addClass('upcoming');
                 }
             });
+            var ww = $(window).width();
+            $(window).bind('load resize',function(e){
+                e.preventDefault();
+                if (ww > 500) {
+                    var hlhight = $('.highlighted').height() + 160;
+                    var tlhight = $('.klara-timeline-block').height();
+                } else {
+                    var hlhight = $('.highlighted').height() + 110;
+                    var tlhight = $('.klara-timeline-block').height();
+                }
+                $('#block-views-uitzendingen-block-1').css('padding-top',hlhight);
+                $('.scrollanchor').css('top','-'+(hlhight-(tlhight+20))+'px');
+                $('.scrollanchor').animatescroll();
+                // slideup highlight
+                var cbtopval = $('.front .content-bottom').position().top;
+                console.log(cbtopval,cbtopval-hlhight);
+                $(window).scroll(function(e){
+                    e.preventDefault();
+                    if ($(this).scrollTop() > (cbtopval-hlhight)) {
+                        $('.highlighted').slideUp(200);
+                    } else {
+                        $('.highlighted').slideDown(200);
+                    }
+                });
+            });
+
 
             var cts = $('.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .field-items');
             cts.addClass('toplevel');
 
             // uitzendingen h1
-            $('<span>Klara | On the road | </span>').prependTo('.node-type-uitzending h1.page-header');
+            if (!$('.titlepref').length){
+                $('<span class="titlepref">Klara | On the road | </span>').prependTo('.node-type-uitzending h1.page-header');
+            }
 
             // cool scrolling
             $('#block-views-calendar-broadcasts-block-2 .view-calendar-broadcasts > .view-content ul').slimScroll({
@@ -53,8 +81,9 @@
             });
 
             // share buttons icon
-            $('<i class="fa fa-share-alt"></i>').prependTo('.node-uitzending .field-name-service-links-displays-group');
-
+            if (!$('.fa-share-alt').length) {
+                $('<i class="fa fa-share-alt"></i>').prependTo('.node-uitzending .field-name-service-links-displays-group');
+            }
             // title playlist
             if (!$('.titleplaylist').length) {
                 $('<h3 class="titleplaylist">Playlist</h3>').prependTo('.field-name-field-broadcast-ctsong');
@@ -83,7 +112,9 @@
 
             // calendar
             var tdToCheck = $('.view-calendar-broadcasts tr.date-box td');
-            $('<i class="fa fa-times"></i>').prependTo(tdToCheck.find('> .item > div > div.monthview'));
+            if (!$('.fa-times').length) {
+                $('<i class="fa fa-times"></i>').prependTo(tdToCheck.find('> .item > div > div.monthview'));
+            }
             $('.view-calendar-broadcasts tr.single-day').hide();
             tdToCheck.each(function(){
                 var $this = $(this);
@@ -189,7 +220,7 @@
                 var audioUrl = $('.node-type-song .field-name-field-song-audiofile .field-item').html();
                 $('<div class="audiobox"><i class="fa fa-signal"></i> <audio class="songteaser-audio" src="' + audioUrl + '" preload="auto" controls></audio></div>').insertBefore('.node-type-song .field-name-field-song-audiofile');
                 $('.node-type-song .node-song .group-footer > *').addClass('col-sm-4');
-                $('<i class="fa fa-link"></i>').prependTo('.node-type-song .node-song .group-footer > .field-name-field-song-external-link');
+                $('<i class="fa fa-link"></i>').prependTo('.node-type-song .node-song .group-footer .field-name-field-song-external-link');
                 $('<i class="fa fa-share-alt"></i>').insertBefore('.node-type-song .group-footer .field-name-service-links-displays-group .service-links');
             }
 

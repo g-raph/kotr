@@ -48,7 +48,8 @@ scripts[] = 'js/flexslider.js'
 scripts[] = 'js/animatescroll.js'
 scripts[] = 'js/jquery.slimscroll.js'
 scripts[] = 'js/klara.js'
-scripts[] = 'js/multimarker.js'
+scripts[] = 'js/gmapcustom.js'
+;scripts[] = 'js/multimarker.js'
 
 ; 
 ; scripts[] = 'bootstrap/js/affix.js'

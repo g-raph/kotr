@@ -166,7 +166,7 @@ h1.page-header {
 .front {
   #block-views-uitzendingen-block-1 {
     margin: 0;
-    padding: 0;
+    padding: 420px 0 0;
   }
   .block-nodeblock {
     ul.submenu {
@@ -306,9 +306,12 @@ h1.page-header {
 
 // highlight
 .highlighted {
-  padding: 130px 0 80px;
+  padding: 100px 0 50px;
   background: #fff;
   border-bottom: 2px solid #ddd;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
   .ds-2col {
     .group-left {
       width: 23%;
@@ -564,6 +567,7 @@ a.klara-read-more {
           padding: 5px 38px 10px 65px;
           border-bottom: 1px dashed #ccc;
           position: relative;
+          cursor: pointer;
           &:before {
             content: counter(my-badass-counter, decimal-leading-zero);
             counter-increment: my-badass-counter;
@@ -612,7 +616,7 @@ a.klara-read-more {
           }
           .field-name-field-song-audiofile,
           .field-name-field-song-pics,
-          .field-name-field-song-locatie,
+          .field-name-field-song-adresgegevens,
           .field-name-body {
             display: none;
           }
@@ -982,7 +986,7 @@ audio {
       margin: 0 0 40px;
       padding: 0 0 40px;
       border-bottom: 1px dashed #ccc;
-      .field-name-field-song-locatie {
+      .field-name-field-song-adresgegevens {
         display: none;
       }
       .field-name-field-song-pics {
@@ -1264,15 +1268,15 @@ audio {
     width: 100%;
   }
   .highlighted {
-    padding: 80px 0;
+    padding: 80px 0 30px;
     .ds-2col {
       .group-left, .group-right {
         width: 100%;
       }
       .group-left {
         img {
-          width: 50%;
-          margin: 0 25%;
+          width: 30%;
+          margin: 0 35%;
         }
       }
       .group-right {

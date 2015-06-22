@@ -72,11 +72,9 @@
   <?php print $page_bottom; ?>
   <script type="text/javascript" src="//www.google.be/jsapi"></script>
   <script type="text/javascript">
-    google.load("maps", "3.4", {
-      other_params: "sensor=false&language=nl"
-    });
+    google.load("maps", "3.4");
   </script>
-  <script type="text/javascript" src="/sites/all/themes/klaraontheroad/js/jquery.googlemap.js"></script>
+<!--  <script type="text/javascript" src="/sites/all/themes/klaraontheroad/js/jquery.googlemap.js"></script>-->
 
 </body>
 </html>

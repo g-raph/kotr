@@ -153,7 +153,7 @@ h1.page-header {
 }
 .front #block-views-uitzendingen-block-1 {
   margin: 0;
-  padding: 0;
+  padding: 420px 0 0;
 }
 .front .block-nodeblock ul.submenu {
   margin-top: 40px;
@@ -298,9 +298,12 @@ h1.page-header {
   padding: 5px 15px;
 }
 .highlighted {
-  padding: 130px 0 80px;
+  padding: 100px 0 50px;
   background: #fff;
   border-bottom: 2px solid #ddd;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
 }
 .highlighted .ds-2col .group-left {
   width: 23%;
@@ -564,6 +567,7 @@ a.klara-read-more {
   padding: 5px 38px 10px 65px;
   border-bottom: 1px dashed #ccc;
   position: relative;
+  cursor: pointer;
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item:before {
   content: counter(my-badass-counter, decimal-leading-zero);
@@ -616,7 +620,7 @@ a.klara-read-more {
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-audiofile,
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-pics,
-.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-locatie,
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-adresgegevens,
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-body {
   display: none;
 }
@@ -959,7 +963,7 @@ audio {
   padding: 0 0 40px;
   border-bottom: 1px dashed #ccc;
 }
-.node-type-song .node-song .group-header .field-name-field-song-locatie {
+.node-type-song .node-song .group-header .field-name-field-song-adresgegevens {
   display: none;
 }
 .node-type-song .node-song .group-header .field-name-field-song-pics {
@@ -1291,15 +1295,15 @@ audio {
     width: 100%;
   }
   .highlighted {
-    padding: 80px 0;
+    padding: 80px 0 30px;
   }
   .highlighted .ds-2col .group-left,
   .highlighted .ds-2col .group-right {
     width: 100%;
   }
   .highlighted .ds-2col .group-left img {
-    width: 50%;
-    margin: 0 25%;
+    width: 30%;
+    margin: 0 35%;
   }
   .highlighted .ds-2col .group-right {
     text-align: center;
