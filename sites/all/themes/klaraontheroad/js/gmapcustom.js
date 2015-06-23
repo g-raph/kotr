@@ -4,10 +4,13 @@
 
             var map,pos;
             var custommarker = '/sites/all/themes/klaraontheroad/images/marker.svg';
-            var myOptions = {
+            var myOptions1 = {
                 zoom: 10,
-                center: new google.maps.LatLng(0, 0),
-                mapTypeId: 'terrain'
+                center: new google.maps.LatLng(0, 0)
+            };
+            var myOptions2 = {
+                zoom: 16,
+                center: new google.maps.LatLng(0, 0)
             };
 
             function gmquery(elem, index) {
@@ -30,11 +33,11 @@
                         map: map
                     });
                     map.setCenter(pos);
-                    elem.click(function () {
+                    elem.hover(function () {
                         map.panTo(pos);
                         infowindow.open(map, marker);
                     });
-                    elem.siblings().click(function () {
+                    elem.siblings().hover(function () {
                         infowindow.close(map, marker);
                     });
                     google.maps.event.addListener(marker, 'click', function () {
@@ -53,7 +56,7 @@
                 if (!$('#mapbox').length) {
                     $('<div id="mapbox" style="width: 900px; height: 500px; max-width: 100%;"></div>').appendTo('.node-uitzending > .group-right');
                 }
-                map = new google.maps.Map($('#mapbox')[0], myOptions);
+                map = new google.maps.Map($('#mapbox')[0], myOptions1);
 
 
                 lied.each(function (index) {
@@ -100,7 +103,7 @@
                 if (!$('#singlemap').length) {
                     $('<div id="singlemap"></div>').insertBefore('.node-type-song .main-container');
                 }
-                map = new google.maps.Map($('#singlemap')[0], myOptions);
+                map = new google.maps.Map($('#singlemap')[0], myOptions2);
 
                 var singleAddress = $('.node-type-song .field-name-field-song-adresgegevens .field-item').html();
                 var songtitle = $('.node-type-song .page-header').html();

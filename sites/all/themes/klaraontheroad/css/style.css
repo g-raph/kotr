@@ -304,6 +304,15 @@ h1.page-header {
   position: fixed;
   width: 100%;
   z-index: 999;
+  height: auto;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.highlighted.hidethis {
+  height: 0;
+  padding: 0;
 }
 .highlighted .ds-2col .group-left {
   width: 23%;
@@ -616,7 +625,8 @@ a.klara-read-more {
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-uitv {
   display: inline-block;
   vertical-align: top;
-  width: 48%;
+  width: 45%;
+  margin-right: 5%;
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-audiofile,
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-pics,
@@ -697,7 +707,7 @@ audio {
 .webform-client-form .webform-component--bericht {
   float: left;
   width: 100%;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 .webform-client-form button {
   float: left;
@@ -1412,7 +1422,7 @@ audio {
   }
   .group-broadcast-topview.field-group-div.col-sm-4 {
     padding: 0;
-    margin: 0;
+    margin: 0 0 20px;
   }
   .group-broadcast-topview-right.field-group-div.col-sm-8 {
     margin: 20px 0 0;

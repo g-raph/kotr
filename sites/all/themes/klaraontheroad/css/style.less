@@ -312,6 +312,13 @@ h1.page-header {
   position: fixed;
   width: 100%;
   z-index: 999;
+  height: auto;
+  overflow: hidden;
+  .transit;
+  &.hidethis {
+    height: 0;
+    padding: 0;
+  }
   .ds-2col {
     .group-left {
       width: 23%;
@@ -612,7 +619,8 @@ a.klara-read-more {
           .field-name-field-song-uitv {
             display: inline-block;
             vertical-align: top;
-            width: 48%;
+            width: 45%;
+            margin-right: 5%;
           }
           .field-name-field-song-audiofile,
           .field-name-field-song-pics,
@@ -714,7 +722,7 @@ audio {
   .webform-component--bericht {
     float: left;
     width: 100%;
-    margin-top: 20px;
+    margin: 20px 0;
   }
   button {
     float: left;
@@ -1403,7 +1411,7 @@ audio {
   }
   .group-broadcast-topview.field-group-div.col-sm-4 {
     padding: 0;
-    margin: 0;
+    margin: 0 0 20px;
   }
   .group-broadcast-topview-right.field-group-div.col-sm-8 {
     margin: 20px 0 0;
