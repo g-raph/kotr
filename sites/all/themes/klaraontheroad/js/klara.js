@@ -45,7 +45,11 @@
                 }
                 $('#block-views-uitzendingen-block-1').css('padding-top',hlhight);
                 $('.front .scrollanchor').css('top','-'+(hlhight-(tlhight+20))+'px');
-                $('.front .scrollanchor').animatescroll();
+                if ($('.front .scrollanchor').length) {
+                    $('.front .scrollanchor').animatescroll();
+                } else {
+                    $('.front .view-uitzendingen').animatescroll();
+                }
                 // slideup highlight
                 var cbtopval = $('.front .content-bottom').position().top;
                 //console.log(cbtopval,cbtopval-hlhight);
