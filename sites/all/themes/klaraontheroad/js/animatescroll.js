@@ -146,14 +146,14 @@
         
         if(opts.element == "html,body") {
             // Get the distance of particular id or class from top
-            var offset = this.offset().top;
+            var offset = this.position().top;
         
             // Scroll the page to the desired position
             $(opts.element).stop().animate({ scrollTop: offset - opts.padding}, opts.scrollSpeed, opts.easing);
         }
         else {
             // Scroll the element to the desired position
-            $(opts.element).stop().animate({ scrollTop: this.offset().top - this.parent().offset().top + this.parent().scrollTop() - opts.padding}, opts.scrollSpeed, opts.easing);
+            $(opts.element).stop().animate({ scrollTop: this.position().top - this.parent().position().top + this.parent().scrollTop() - opts.padding}, opts.scrollSpeed, opts.easing);
         }
     };
     
