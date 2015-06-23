@@ -135,10 +135,10 @@
             // scrolleffects
             var scrollMenuFront = $('nav > ul.menu');
             scrollMenuFront.find('> li:nth-child(2) > a').removeAttr('href').click(function(){
-                if (!$('.front .klara-timeline-block:first-child').hasClass('upcoming')) {
-                    $('.front .klara-timeline-block .scrollanchor').animatescroll();
-                } else {
+                if ($('.front .klara-timeline-block:first-child').hasClass('upcoming')) {
                     $('.front .view-uitzendingen').animatescroll();
+                } else {
+                    $('.front .klara-timeline-block .scrollanchor').animatescroll();
                 }
             });
             scrollMenuFront.find('> li:nth-child(3) > a').removeAttr('href').click(function(){
