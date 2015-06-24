@@ -183,51 +183,59 @@
                 });
             }
 
-            // audioplayer
-            var $ong = $('.field-name-field-broadcast-ctsong > div > .field-items > .field-item');
-            $('<div class="audiobox"><div class="audiolabel"><i class="fa fa-signal"></i> <span></span></div><div class="nextprev"><a class="prev"><i class="fa fa-arrow-circle-left"></i></a><a class="next"><i class="fa fa-arrow-circle-right"></i></a></div><audio class="mainaudioplayer" controls></audio></div>').appendTo('.node-uitzending .group-header .group-broadcast-topview');
-            var sources = [];
-            $ong.each(function(index) {
-                var $this = $(this);
-                var audioField = $this.find('.field-name-field-song-audiofile .field-item');
-                if (audioField.length) {
-                    var audioUrl = audioField.html();
-                    sources.push(audioUrl);
-                }
-            });
-            //console.log(sources);
-            var prevbtn = $('.group-broadcast-topview .nextprev .prev i');
-            var nextbtn = $('.group-broadcast-topview .nextprev .next i');
-            var counter = 0;
-            $('.mainaudioplayer').attr('src',sources[counter]);
-            var songtitle = $('.field-name-field-broadcast-ctsong > div > .field-items > .field-item:nth-child('+(counter+1)+') .field-name-title a').html();
-            var songtitleshort = songtitle.slice(0,26)+'...';
-            $('.group-broadcast-topview .audiolabel span').html(songtitleshort);
-            prevbtn.hide();
-            prevbtn.click(function(){
-                counter--;
-                //console.log('counter: '+counter);
-                var songtitle = $('.field-name-field-broadcast-ctsong > div > .field-items > .field-item:nth-child('+(counter+1)+') .field-name-title a').html();
-                var songtitleshort = songtitle.slice(0,26)+'...';
+            if ($('body').hasClass('node-type-uitzending')) {
+                // audioplayer
+                var $ong = $('.field-name-field-broadcast-ctsong > div > .field-items > .field-item');
+                $('<div class="audiobox"><div class="audiolabel"><i class="fa fa-signal"></i> <span></span></div><div class="nextprev"><a class="prev"><i class="fa fa-arrow-circle-left"></i></a><a class="next"><i class="fa fa-arrow-circle-right"></i></a></div><audio class="mainaudioplayer" controls></audio></div>').appendTo('.node-uitzending .group-header .group-broadcast-topview');
+                var sources = [];
+                $ong.each(function (index) {
+                    var $this = $(this);
+                    var audioField = $this.find('.field-name-field-song-audiofile .field-item');
+                    if (audioField.length) {
+                        var audioUrl = audioField.html();
+                        sources.push(audioUrl);
+                    }
+                });
+                //console.log(sources);
+                var prevbtn = $('.group-broadcast-topview .nextprev .prev i');
+                var nextbtn = $('.group-broadcast-topview .nextprev .next i');
+                var counter = 0;
+                $('.mainaudioplayer').attr('src', sources[counter]);
+                var songtitle = $('.field-name-field-broadcast-ctsong > div > .field-items > .field-item:nth-child(' + (counter + 1) + ') .field-name-title a').html();
+                var songtitleshort = songtitle.slice(0, 26) + '...';
                 $('.group-broadcast-topview .audiolabel span').html(songtitleshort);
-                $('.mainaudioplayer').attr('src',sources[counter]);
-                nextbtn.show();
-                if (counter === 0) {
-                    prevbtn.hide();
-                }
-            });
-            nextbtn.click(function(){
-                counter++;
-                //console.log('counter: '+counter);
-                var songtitle = $('.field-name-field-broadcast-ctsong > div > .field-items > .field-item:nth-child('+(counter+1)+') .field-name-title a').html();
-                var songtitleshort = songtitle.slice(0,26)+'...';
-                $('.group-broadcast-topview .audiolabel span').html(songtitleshort);
-                $('.mainaudioplayer').attr('src',sources[counter]);
-                prevbtn.show();
-                if (counter === (sources.length-1)) {
-                    nextbtn.hide();
-                }
-            });
+                prevbtn.hide();
+                prevbtn.click(function () {
+                    counter--;
+                    //console.log('counter: '+counter);
+                    var songtitle = $('.field-name-field-broadcast-ctsong > div > .field-items > .field-item:nth-child(' + (counter + 1) + ') .field-name-title a').html();
+                    var songtitleshort = songtitle.slice(0, 26) + '...';
+                    $('.group-broadcast-topview .audiolabel span').html(songtitleshort);
+                    $('.mainaudioplayer').attr({
+                        'src': sources[counter],
+                        'autoplay': ''
+                    });
+                    nextbtn.show();
+                    if (counter === 0) {
+                        prevbtn.hide();
+                    }
+                });
+                nextbtn.click(function () {
+                    counter++;
+                    //console.log('counter: '+counter);
+                    var songtitle = $('.field-name-field-broadcast-ctsong > div > .field-items > .field-item:nth-child(' + (counter + 1) + ') .field-name-title a').html();
+                    var songtitleshort = songtitle.slice(0, 26) + '...';
+                    $('.group-broadcast-topview .audiolabel span').html(songtitleshort);
+                    $('.mainaudioplayer').attr({
+                        'src': sources[counter],
+                        'autoplay': ''
+                    });
+                    prevbtn.show();
+                    if (counter === (sources.length - 1)) {
+                        nextbtn.hide();
+                    }
+                });
+            }
 
             // uitzending img slider
             var $imgfield = $('.node-uitzending .group-header .field-name-field-broadcast-pic');
@@ -250,7 +258,7 @@
             });
 
             // go back button
-            var relatedUitzUrl = $('.node-type-song .field-name-field-song-rel-uitzending .field-item').html();
+            var relatedUitzUrl = $('.node-type-song .field-name-field-song-rel-broadcast .field-item').html();
             $('.navbar-inverse .navbar-nav > li.last > a').attr('href',relatedUitzUrl);
 
             // audio on song pages

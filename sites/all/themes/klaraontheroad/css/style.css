@@ -990,7 +990,7 @@ audio {
   max-width: 100%;
   top: 65px;
 }
-.node-type-song .node-song .field-name-field-song-rel-uitzending {
+.node-type-song .node-song .field-name-field-song-rel-broadcast {
   display: none;
 }
 .node-type-song .node-song .group-header {
@@ -1021,6 +1021,9 @@ audio {
   height: 0;
   clear: both;
   visibility: hidden;
+}
+.node-type-song .node-song .group-header .field-name-field-song-pics img {
+  width: 100%;
 }
 .node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo {
   width: 50%;
