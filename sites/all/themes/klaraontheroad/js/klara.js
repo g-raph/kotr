@@ -6,8 +6,8 @@
             var now = new Date();
             var twoDigitMonth = ((now.getMonth().length+1) === 1)? (now.getMonth()+1) : '0' + (now.getMonth()+1);
             var $thisdate = now.getFullYear() + "-" + twoDigitMonth + "-" + now.getDate();
-            var $switchdate = now.getFullYear() + "-" + twoDigitMonth + "-" + (now.getDate()+6);
-            console.log($thisdate,$switchdate);
+            //var $switchdate = now.getFullYear() + "-" + twoDigitMonth + "-" + (now.getDate()+6);
+            //console.log($thisdate,$switchdate);
             var $timelineblock = $('.klara-timeline-block');
             $timelineblock.each(function(){
                 var $this = $(this);
@@ -16,7 +16,7 @@
                 var $timelineswitch2 = parseInt($timelineblockdate.slice(8,10))+6;
                 var $timelineswitch3 = $timelineblockdate.slice(10,25);
                 var $timelineswitchdate = $timelineswitch1+$timelineswitch2+$timelineswitch3;
-                console.log($timelineswitch1,$timelineswitch2,$timelineswitch3);
+                //console.log($timelineswitch1,$timelineswitch2,$timelineswitch3);
                 if ($thisdate > $timelineswitchdate) {
                     $this.prepend('<div class="scrollanchor"></div>').siblings().find('.scrollanchor').remove();
                 }
@@ -27,40 +27,64 @@
                 }
             });
 
-            // highlight region
-            $(window).load(function(){
-                highlighter();
-            });
-            $(window).resize(function(){
-                highlighter();
-            });
+            // frontpage only js
+            if ($('body').hasClass('front')) {
 
-            function highlighter() {
-                var ww = $(window).width();
-                var tlhight = $('.klara-timeline-block').height();
-                if (ww > 500) {
-                    var hlhight = $('.highlighted').height() + 160;
-                } else {
-                    var hlhight = $('.highlighted').height() + 110;
-                }
-                $('#block-views-uitzendingen-block-1').css('padding-top',hlhight);
-                $('.front .scrollanchor').css('top','-'+(hlhight-(tlhight+20))+'px');
-                if ($('.front .scrollanchor').length) {
-                    $('.front .scrollanchor').animatescroll();
-                } else {
-                    $('.front .view-uitzendingen').animatescroll();
-                }
-                // slideup highlight
-                var cbtopval = $('.front .content-bottom').position().top;
-                //console.log(cbtopval,cbtopval-hlhight);
-                $(window).scroll(function(e){
-                    e.preventDefault();
-                    if ($(this).scrollTop() > (cbtopval-hlhight)) {
-                        $('.highlighted').addClass('hidethis');
+                // insert library only on frontpage
+                $('<script type="text/javascript" src="/sites/all/themes/klaraontheroad/js/animatescroll.js"></script>').appendTo('.front');
+
+                // highlight region
+                $(window).load(function () {
+                    highlighter();
+                });
+                $(window).resize(function () {
+                    highlighter();
+                });
+
+                function highlighter() {
+                    var ww = $(window).width();
+                    var tlhight = $('.klara-timeline-block').height();
+                    if (ww > 500) {
+                        var hlhight = $('.highlighted').height() + 160;
                     } else {
-                        $('.highlighted').removeClass('hidethis');
+                        var hlhight = $('.highlighted').height() + 110;
+                    }
+                    $('#block-views-uitzendingen-block-1').css('padding-top', hlhight);
+                    $('.front .scrollanchor').css('top', '-' + (hlhight - (tlhight + 20)) + 'px');
+                    if ($('.front .scrollanchor').length) {
+                        $('.front .scrollanchor').animatescroll();
+                    } else {
+                        $('.front .view-uitzendingen').css('padding-top', '460px').animatescroll();
+                    }
+                    // slideup highlight
+                    var cbtopval = $('.front .content-bottom').position().top;
+                    //console.log(cbtopval,cbtopval-hlhight);
+                    $(window).scroll(function (e) {
+                        e.preventDefault();
+                        if ($(this).scrollTop() > (cbtopval - hlhight)) {
+                            $('.highlighted').addClass('hidethis');
+                        } else {
+                            $('.highlighted').removeClass('hidethis');
+                        }
+                    });
+                }
+
+                // scrolleffects
+                var scrollMenuFront = $('nav > ul.menu');
+                scrollMenuFront.find('> li:nth-child(2) > a').removeAttr('href').click(function(){
+                    if ($('.front .klara-timeline-block:first-child').hasClass('upcoming')) {
+                        $('.front .view-uitzendingen').animatescroll();
+                    } else {
+                        $('.front .klara-timeline-block .scrollanchor').animatescroll();
                     }
                 });
+                scrollMenuFront.find('> li:nth-child(3) > a').removeAttr('href').click(function(){
+                    $('.front .content-bottom').animatescroll();
+                });
+                scrollMenuFront.find('> li:nth-child(4) > a').removeAttr('href').click(function(){
+                    $('.front .footer').animatescroll();
+                });
+
             }
 
 
@@ -136,22 +160,6 @@
 
             });
 
-            // scrolleffects
-            var scrollMenuFront = $('nav > ul.menu');
-            scrollMenuFront.find('> li:nth-child(2) > a').removeAttr('href').click(function(){
-                if ($('.front .klara-timeline-block:first-child').hasClass('upcoming')) {
-                    $('.front .view-uitzendingen').animatescroll();
-                } else {
-                    $('.front .klara-timeline-block .scrollanchor').animatescroll();
-                }
-            });
-            scrollMenuFront.find('> li:nth-child(3) > a').removeAttr('href').click(function(){
-                $('.front .content-bottom').animatescroll();
-            });
-            scrollMenuFront.find('> li:nth-child(4) > a').removeAttr('href').click(function(){
-                $('.front .footer').animatescroll();
-            });
-
             // video to slideshow
             var $songvideo = $('.node-type-song .node-song .group-header .field-name-field-song-video .embedded-video .player iframe');
             var $songpicsitems = $('.node-type-song .node-song .group-header .field-name-field-song-pics > .field-items');
@@ -176,18 +184,41 @@
             }
 
             // audioplayer
-            var $ong = $('.field-name-field-broadcast-ctsong > .field-items > .field-item');
-            $('<div class="audiolabel"><i class="fa fa-signal"></i> Beluister alle nummers</div><audio class="mainaudioplayer" controls></audio>').appendTo('.node-uitzending .group-header .group-broadcast-topview');
+            var $ong = $('.field-name-field-broadcast-ctsong > div > .field-items > .field-item');
+            $('<div class="audiobox"><div class="audiolabel"><i class="fa fa-signal"></i> <span>Song nr 1</span></div><div class="nextprev"><a class="prev"><i class="fa fa-arrow-circle-left"></i></a><a class="next"><i class="fa fa-arrow-circle-right"></i></a></div><audio class="mainaudioplayer" controls></audio></div>').appendTo('.node-uitzending .group-header .group-broadcast-topview');
+            var sources = [];
             $ong.each(function(index) {
                 var $this = $(this);
                 var audioField = $this.find('.field-name-field-song-audiofile .field-item');
-                if (audioField.length >= 1) {
-                    console.log('song-'+(index+1)+': audio');
+                if (audioField.length) {
                     var audioUrl = audioField.html();
-                    $('<source src="' + audioUrl + '" />').appendTo('.node-type-uitzending .group-header .mainaudioplayer');
-                    $('<audio class="songteaser-audio" src="' + audioUrl + '" preload="auto" controls></audio>').insertBefore($this.find('.field-name-field-song-audio-file'));
-                } else {
-                    console.log('song-'+(index+1)+': audio not uploaded');
+                    sources.push(audioUrl);
+                }
+            });
+            //console.log(sources);
+            var prevbtn = $('.group-broadcast-topview .nextprev .prev i');
+            var nextbtn = $('.group-broadcast-topview .nextprev .next i');
+            var counter = 0;
+            $('.mainaudioplayer').attr('src',sources[counter]);
+            prevbtn.hide();
+            prevbtn.click(function(){
+                counter--;
+                //console.log('counter: '+counter);
+                $('.group-broadcast-topview .audiolabel span').html('Song nr '+(counter+1));
+                $('.mainaudioplayer').attr('src',sources[counter]);
+                nextbtn.show();
+                if (counter === 0) {
+                    prevbtn.hide();
+                }
+            });
+            nextbtn.click(function(){
+                counter++;
+                //console.log('counter: '+counter);
+                $('.group-broadcast-topview .audiolabel span').html('Song nr '+(counter+1));
+                $('.mainaudioplayer').attr('src',sources[counter]);
+                prevbtn.show();
+                if (counter === (sources.length-1)) {
+                    nextbtn.hide();
                 }
             });
 
@@ -212,15 +243,14 @@
             });
 
             // go back button
-            $('.navbar-inverse .navbar-nav > li.last > a').click(function(){
-                window.history.back();
-            });
+            var relatedUitzUrl = $('.node-type-song .field-name-field-song-rel-uitzending .field-item').html();
+            $('.navbar-inverse .navbar-nav > li.last > a').attr('href',relatedUitzUrl);
 
             // audio on song pages
             $('.node-type-song .node-song .group-footer > *').addClass('col-sm-4');
             if ($('.node-type-song .field-name-field-song-audiofile').length) {
                 var audioUrl = $('.node-type-song .field-name-field-song-audiofile .field-item').html();
-                $('<div class="audiobox"><i class="fa fa-signal"></i> <audio class="songteaser-audio" src="' + audioUrl + '" preload="auto" controls></audio></div>').insertBefore('.node-type-song .field-name-field-song-audiofile');
+                $('<div class="audiobox col-sm-4"><i class="fa fa-signal"></i> <audio class="songteaser-audio" src="' + audioUrl + '" preload="auto" controls></audio></div>').insertBefore('.node-type-song .field-name-field-song-audiofile');
             }
             if ($('.node-type-song .field-name-field-song-external-link').length) {
                 $('<i class="fa fa-link"></i>').prependTo('.node-type-song .node-song .group-footer .field-name-field-song-external-link');

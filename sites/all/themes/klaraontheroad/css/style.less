@@ -452,6 +452,20 @@ a.klara-read-more {
       .group-broadcast-topview.field-group-div {
         .well;
         margin-bottom: 0;
+        .audiobox {
+          position: relative;
+          .nextprev {
+            position: absolute;
+            right: 0;
+            top: 0;
+            .next, .prev {
+              cursor: pointer;
+            }
+            .next {
+              margin-left: 6px;
+            }
+          }
+        }
         .field-name-field-broadcast-pic {
           margin-bottom: 15px;
           .field-item {
@@ -472,7 +486,6 @@ a.klara-read-more {
       .group-broadcast-topview-right {
         .field-name-field-broadcast-date {
           border: 0;
-          text-indent: 20px;
           float: left;
           font-size: 12px;
           margin: 0;
@@ -481,9 +494,12 @@ a.klara-read-more {
             content: "\f073";
             font-family: fontawesome;
             display: inline-block;
-            margin-left: -20px;
+            margin-left: 0;
             position: absolute;
             color: @color-base;
+          }
+          .field-item {
+            text-indent: 20px;
           }
         }
       }
@@ -970,6 +986,9 @@ audio {
 // scrolling
 .main-container, .content-bottom, .footer {
   padding: 65px 0;
+  .region-content-bottom > section {
+    padding-top: 30px;
+  }
 }
 
 .front {
@@ -990,6 +1009,9 @@ audio {
     top: 65px;
   }
   .node-song {
+    .field-name-field-song-rel-uitzending {
+      display: none;
+    }
     .group-header {
       margin: 0 0 40px;
       padding: 0 0 40px;
@@ -1159,6 +1181,7 @@ audio {
         }
         audio {
           width: 80%;
+          max-width: 200px;
         }
       }
       .field-name-field-song-external-link {

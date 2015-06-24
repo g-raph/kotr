@@ -64,7 +64,7 @@
                     var $thisaddress = $this.find('.field-name-field-song-adresgegevens .field-item').html();
                     addresses.push($thisaddress);
                 });
-                console.log(addresses);
+                //console.log(addresses);
 
                 lied.each(function (index) {
                     var $this = $(this);

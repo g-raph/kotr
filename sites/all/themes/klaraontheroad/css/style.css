@@ -458,6 +458,21 @@ a.klara-read-more {
   clear: both;
   visibility: hidden;
 }
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview.field-group-div .audiobox {
+  position: relative;
+}
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview.field-group-div .audiobox .nextprev {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview.field-group-div .audiobox .nextprev .next,
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview.field-group-div .audiobox .nextprev .prev {
+  cursor: pointer;
+}
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview.field-group-div .audiobox .nextprev .next {
+  margin-left: 6px;
+}
 .node-type-uitzending .node-uitzending .group-header .group-broadcast-topview.field-group-div .field-name-field-broadcast-pic {
   margin-bottom: 15px;
 }
@@ -476,7 +491,6 @@ a.klara-read-more {
 }
 .node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-right .field-name-field-broadcast-date {
   border: 0;
-  text-indent: 20px;
   float: left;
   font-size: 12px;
   margin: 0;
@@ -486,9 +500,12 @@ a.klara-read-more {
   content: "\f073";
   font-family: fontawesome;
   display: inline-block;
-  margin-left: -20px;
+  margin-left: 0;
   position: absolute;
   color: #cc0001;
+}
+.node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-right .field-name-field-broadcast-date .field-item {
+  text-indent: 20px;
 }
 .node-type-uitzending .node-uitzending .group-header .group-broadcast-topview-bottom {
   clear: both;
@@ -956,6 +973,11 @@ audio {
 .footer {
   padding: 65px 0;
 }
+.main-container .region-content-bottom > section,
+.content-bottom .region-content-bottom > section,
+.footer .region-content-bottom > section {
+  padding-top: 30px;
+}
 .front .main-container {
   padding: 0;
 }
@@ -967,6 +989,9 @@ audio {
   height: 350px;
   max-width: 100%;
   top: 65px;
+}
+.node-type-song .node-song .field-name-field-song-rel-uitzending {
+  display: none;
 }
 .node-type-song .node-song .group-header {
   margin: 0 0 40px;
@@ -1196,6 +1221,7 @@ audio {
 }
 .node-type-song .node-song .group-footer .audiobox audio {
   width: 80%;
+  max-width: 200px;
 }
 .node-type-song .node-song .group-footer .field-name-field-song-external-link {
   padding: 25px 0;
