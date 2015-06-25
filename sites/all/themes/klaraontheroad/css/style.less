@@ -244,6 +244,9 @@ h1.page-header {
     &:first-child, &:last-child {
       display: inline-block;
     }
+    &.herbeluisterlink {
+      display: inline-block;
+    }
   }
   &.node-type-uitzending {
     .navbar-nav > li.last {
@@ -600,6 +603,9 @@ a.klara-read-more {
             letter-spacing: -3px;
             color: #ccc;
             top: -10px;
+          }
+          .field-name-field-song-tax {
+            display: none;
           }
           .field-name-title {
             position: relative;
@@ -1019,11 +1025,11 @@ audio {
       .field-name-field-song-adresgegevens {
         display: none;
       }
-      .field-name-field-song-pics {
+      .field-name-field-song-pics, .field-name-field-song-video {
         float: left;
-        margin: 0 20px 10px 0;
+        margin: 0 40px 10px 0;
         position: relative;
-        width: 30%;
+        width: 48%;
         .well-white;
         img {
           width: 100%;
@@ -1093,6 +1099,23 @@ audio {
       }
       .field-name-field-song-video {
 
+      }
+      .field-name-field-song-audiofile {
+        display: none;
+      }
+      .audiobox {
+        padding: 0;
+        margin: 0 0 50px;
+        text-align: center;
+        i.fa-signal {
+          font-size: 30px;
+          color: #cc0001;
+          vertical-align: top;
+          margin-right: 5px;
+        }
+        audio {
+          width: 50%;
+        }
       }
     }
     .group-left {
@@ -1171,9 +1194,6 @@ audio {
         height: 80px;
         .well;
       }
-      .field-name-field-song-audiofile {
-        display: none;
-      }
       .audiobox {
         padding: 25px 10px;
         i.fa-signal {
@@ -1225,6 +1245,9 @@ audio {
             vertical-align: top;
           }
         }
+      }
+      .field-name-field-song-tax {
+        display: none;
       }
     }
   }
@@ -1493,5 +1516,12 @@ audio {
   }
   .node-type-song #singlemap {
     height: 200px;
+  }
+  .node-type-song .node-song .group-header .field-name-field-song-pics, .node-type-song .node-song .group-header .field-name-field-song-video {
+    width: 100%;
+    margin: 0 0 30px;
+  }
+  .node-type-song .node-song .group-header .audiobox audio {
+    width: 80%;
   }
 }

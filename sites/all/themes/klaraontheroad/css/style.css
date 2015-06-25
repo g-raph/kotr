@@ -228,6 +228,9 @@ h1.page-header {
 .not-front .navbar-nav > li:last-child {
   display: inline-block;
 }
+.not-front .navbar-nav > li.herbeluisterlink {
+  display: inline-block;
+}
 .not-front.node-type-uitzending .navbar-nav > li.last {
   display: none;
 }
@@ -604,6 +607,9 @@ a.klara-read-more {
   letter-spacing: -3px;
   color: #ccc;
   top: -10px;
+}
+.node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-tax {
+  display: none;
 }
 .node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-title {
   position: relative;
@@ -1001,11 +1007,12 @@ audio {
 .node-type-song .node-song .group-header .field-name-field-song-adresgegevens {
   display: none;
 }
-.node-type-song .node-song .group-header .field-name-field-song-pics {
+.node-type-song .node-song .group-header .field-name-field-song-pics,
+.node-type-song .node-song .group-header .field-name-field-song-video {
   float: left;
-  margin: 0 20px 10px 0;
+  margin: 0 40px 10px 0;
   position: relative;
-  width: 30%;
+  width: 48%;
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
@@ -1015,31 +1022,37 @@ audio {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
-.node-type-song .node-song .group-header .field-name-field-song-pics:after {
+.node-type-song .node-song .group-header .field-name-field-song-pics:after,
+.node-type-song .node-song .group-header .field-name-field-song-video:after {
   content: ".";
   display: block;
   height: 0;
   clear: both;
   visibility: hidden;
 }
-.node-type-song .node-song .group-header .field-name-field-song-pics img {
+.node-type-song .node-song .group-header .field-name-field-song-pics img,
+.node-type-song .node-song .group-header .field-name-field-song-video img {
   width: 100%;
 }
-.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo {
+.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo,
+.node-type-song .node-song .group-header .field-name-field-song-video.hasvideo {
   width: 50%;
   padding-bottom: 40px;
 }
-.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav {
+.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav,
+.node-type-song .node-song .group-header .field-name-field-song-video.hasvideo ul.flex-direction-nav {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li {
+.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li,
+.node-type-song .node-song .group-header .field-name-field-song-video.hasvideo ul.flex-direction-nav > li {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li > a {
+.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li > a,
+.node-type-song .node-song .group-header .field-name-field-song-video.hasvideo ul.flex-direction-nav > li > a {
   position: absolute;
   z-index: 99;
   color: #cc0001;
@@ -1049,18 +1062,22 @@ audio {
   padding: 0 1px;
   border: 0;
 }
-.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li > a:hover {
+.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li > a:hover,
+.node-type-song .node-song .group-header .field-name-field-song-video.hasvideo ul.flex-direction-nav > li > a:hover {
   color: orange;
 }
-.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li > a.flex-prev {
+.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li > a.flex-prev,
+.node-type-song .node-song .group-header .field-name-field-song-video.hasvideo ul.flex-direction-nav > li > a.flex-prev {
   left: 20px;
   bottom: 15px;
 }
-.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li > a.flex-next {
+.node-type-song .node-song .group-header .field-name-field-song-pics.hasvideo ul.flex-direction-nav > li > a.flex-next,
+.node-type-song .node-song .group-header .field-name-field-song-video.hasvideo ul.flex-direction-nav > li > a.flex-next {
   right: 20px;
   bottom: 15px;
 }
-.node-type-song .node-song .group-header .field-name-field-song-pics ol.flex-control-paging {
+.node-type-song .node-song .group-header .field-name-field-song-pics ol.flex-control-paging,
+.node-type-song .node-song .group-header .field-name-field-song-video ol.flex-control-paging {
   position: absolute;
   padding: 0;
   margin: 0;
@@ -1068,13 +1085,15 @@ audio {
   width: 100%;
   bottom: 15px;
 }
-.node-type-song .node-song .group-header .field-name-field-song-pics ol.flex-control-paging > li {
+.node-type-song .node-song .group-header .field-name-field-song-pics ol.flex-control-paging > li,
+.node-type-song .node-song .group-header .field-name-field-song-video ol.flex-control-paging > li {
   display: inline-block;
   vertical-align: middle;
   list-style: none;
   margin: 0 1px;
 }
-.node-type-song .node-song .group-header .field-name-field-song-pics ol.flex-control-paging > li > a {
+.node-type-song .node-song .group-header .field-name-field-song-pics ol.flex-control-paging > li > a,
+.node-type-song .node-song .group-header .field-name-field-song-video ol.flex-control-paging > li > a {
   text-indent: -999999px;
   display: block;
   width: 10px;
@@ -1087,9 +1106,27 @@ audio {
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.node-type-song .node-song .group-header .field-name-field-song-pics ol.flex-control-paging > li > a.flex-active {
+.node-type-song .node-song .group-header .field-name-field-song-pics ol.flex-control-paging > li > a.flex-active,
+.node-type-song .node-song .group-header .field-name-field-song-video ol.flex-control-paging > li > a.flex-active {
   background: #cc0001;
   border: 2px solid #cc0001;
+}
+.node-type-song .node-song .group-header .field-name-field-song-audiofile {
+  display: none;
+}
+.node-type-song .node-song .group-header .audiobox {
+  padding: 0;
+  margin: 0 0 50px;
+  text-align: center;
+}
+.node-type-song .node-song .group-header .audiobox i.fa-signal {
+  font-size: 30px;
+  color: #cc0001;
+  vertical-align: top;
+  margin-right: 5px;
+}
+.node-type-song .node-song .group-header .audiobox audio {
+  width: 50%;
 }
 .node-type-song .node-song .group-left {
   width: 48%;
@@ -1210,9 +1247,6 @@ audio {
   clear: both;
   visibility: hidden;
 }
-.node-type-song .node-song .group-footer .field-name-field-song-audiofile {
-  display: none;
-}
 .node-type-song .node-song .group-footer .audiobox {
   padding: 25px 10px;
 }
@@ -1264,6 +1298,9 @@ audio {
 .node-type-song .node-song .group-footer .field-name-service-links-displays-group .service-links > * {
   display: inline-block;
   vertical-align: top;
+}
+.node-type-song .node-song .group-footer .field-name-field-song-tax {
+  display: none;
 }
 .view-uitzendingen .klara-timeline-block .group-left a,
 #block-views-calendar-broadcasts-block-2 ul > li.views-row .views-field-field-broadcast-pic a {
@@ -1504,5 +1541,13 @@ audio {
   }
   .node-type-song #singlemap {
     height: 200px;
+  }
+  .node-type-song .node-song .group-header .field-name-field-song-pics,
+  .node-type-song .node-song .group-header .field-name-field-song-video {
+    width: 100%;
+    margin: 0 0 30px;
+  }
+  .node-type-song .node-song .group-header .audiobox audio {
+    width: 80%;
   }
 }

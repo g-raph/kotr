@@ -6,8 +6,6 @@
             var now = new Date();
             var twoDigitMonth = ((now.getMonth().length+1) === 1)? (now.getMonth()+1) : '0' + (now.getMonth()+1);
             var $thisdate = now.getFullYear() + "-" + twoDigitMonth + "-" + now.getDate();
-            //var $switchdate = now.getFullYear() + "-" + twoDigitMonth + "-" + (now.getDate()+6);
-            //console.log($thisdate,$switchdate);
             var $timelineblock = $('.klara-timeline-block');
             $timelineblock.each(function(){
                 var $this = $(this);
@@ -262,18 +260,18 @@
             $('.navbar-inverse .navbar-nav > li.last > a').attr('href',relatedUitzUrl);
 
             // audio on song pages
-            $('.node-type-song .node-song .group-footer > *').addClass('col-sm-4');
+            $('.node-type-song .node-song .group-footer > *').addClass('col-sm-6');
             if ($('.node-type-song .field-name-field-song-audiofile').length) {
                 var audioUrl = $('.node-type-song .field-name-field-song-audiofile .field-item').html();
-                $('<div class="audiobox col-sm-4"><i class="fa fa-signal"></i> <audio class="songteaser-audio" src="' + audioUrl + '" preload="auto" controls></audio></div>').insertBefore('.node-type-song .field-name-field-song-audiofile');
+                $('<div class="audiobox col-sm-12"><i class="fa fa-signal"></i> <audio class="songteaser-audio" src="' + audioUrl + '" preload="auto" controls></audio></div>').insertBefore('.node-type-song .field-name-field-song-audiofile');
             }
             if ($('.node-type-song .field-name-field-song-external-link').length) {
                 $('<i class="fa fa-link"></i>').prependTo('.node-type-song .node-song .group-footer .field-name-field-song-external-link');
             }
             $('<i class="fa fa-share-alt"></i>').insertBefore('.node-type-song .group-footer .field-name-service-links-displays-group .service-links');
 
-
-
+            // vuile fix voor extra menuitem
+            $('<li class="herbeluisterlink"><a href="http://radioplus.be/#/klara">Herbeluister</a></li>').insertBefore('.navbar-fixed-top > ul.navbar-nav > li.last');
 
 
         }

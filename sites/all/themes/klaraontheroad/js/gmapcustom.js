@@ -3,7 +3,6 @@
         attach: function (context, settings) {
 
             var map,pos;
-            var custommarker = '/sites/all/themes/klaraontheroad/images/marker.svg';
             var myOptions1 = {
                 zoom: 10,
                 center: new google.maps.LatLng(0, 0)
@@ -13,10 +12,19 @@
                 center: new google.maps.LatLng(0, 0)
             };
 
+
+
             function gmquery(elem, index) {
                 var pos;
                 var $thistitle = elem.find('.field-name-title .field-item h3').html();
                 var $thiscontent = elem.find('.field-name-body .field-item').html();
+                var custommarker;
+                var songtaxval = elem.find('.field-name-field-song-tax .field-item').html();
+                if (songtaxval === "Tip van de luisteraar") {
+                    custommarker = '/sites/all/themes/klaraontheroad/images/marker2.svg';
+                } else {
+                    custommarker = '/sites/all/themes/klaraontheroad/images/marker.svg';
+                }
                 $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=' + addresses[index] + '&sensor=false', null, function (data) {
                     //console.log(data);
                     pos = data.results[0].geometry.location;
@@ -98,6 +106,14 @@
 
             // song detail page
             if ($('body').hasClass('node-type-song')) {
+
+                var custommarker;
+                var songtaxval = $('.node-type-song .node-song .group-footer .field-name-field-song-tax .field-item').html();
+                if (songtaxval === "Tip van de luisteraar") {
+                    custommarker = '/sites/all/themes/klaraontheroad/images/marker2.svg';
+                } else {
+                    custommarker = '/sites/all/themes/klaraontheroad/images/marker.svg';
+                }
 
                 // map single marker
                 if (!$('#singlemap').length) {
