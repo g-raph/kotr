@@ -11,7 +11,7 @@
                 var $this = $(this);
                 var $timelineblockdate = $this.find('.date-display-single').attr('content');
                 var $timelineswitch1 = $timelineblockdate.slice(0,8);
-                var $timelineswitch2 = parseInt($timelineblockdate.slice(8,10))+6;
+                var $timelineswitch2 = parseInt($timelineblockdate.slice(8,10))-1;
                 var $timelineswitch3 = $timelineblockdate.slice(10,25);
                 var $timelineswitchdate = $timelineswitch1+$timelineswitch2+$timelineswitch3;
                 //console.log($timelineswitch1,$timelineswitch2,$timelineswitch3);
@@ -45,14 +45,14 @@
                     if (ww > 500) {
                         var hlhight = $('.highlighted').height() + 160;
                     } else {
-                        var hlhight = $('.highlighted').height() + 110;
+                        var hlhight = $('.highlighted').height() + 10;
                     }
                     $('#block-views-uitzendingen-block-1').css('padding-top', hlhight);
                     $('.front .scrollanchor').css('top', '-' + (hlhight - (tlhight + 20)) + 'px');
                     if ($('.front .scrollanchor').length) {
                         $('.front .scrollanchor').animatescroll();
                     } else {
-                        $('.front .view-uitzendingen').css('padding-top', '460px').animatescroll();
+                        $('.front .view-uitzendingen').css('padding-top', '360px').animatescroll();
                     }
                     // slideup highlight
                     var cbtopval = $('.front .content-bottom').position().top;
@@ -273,6 +273,13 @@
             // vuile fix voor extra menuitem
             $('<li class="herbeluisterlink"><a href="http://radioplus.be/#/klara">Herbeluister</a></li>').insertBefore('.navbar-fixed-top > ul.navbar-nav > li.last');
 
+            // hamburger
+            $('<i class="fa fa-bars togglebutton"></i>').prependTo('body');
+            var hamburger = $('body > .togglebutton');
+            hamburger.click(function(){
+                $(this).toggleClass('open');
+                $('.navbar-fixed-top').slideToggle(200);
+            });
 
         }
     };

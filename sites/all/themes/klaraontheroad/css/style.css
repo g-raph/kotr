@@ -147,6 +147,9 @@ h1.page-header {
   text-align: center;
   margin: 40px 0;
 }
+body > .togglebutton {
+  display: none;
+}
 .front h1.page-header,
 .front .tabs--primary {
   display: none;
@@ -1469,6 +1472,15 @@ audio {
     width: 970px;
   }
 }
+@media (max-width: 768px) {
+  #block-views-calendar-broadcasts-block-1 {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  #block-views-calendar-broadcasts-block-2 {
+    width: 100%;
+  }
+}
 @media (max-width: 500px) {
   .view .date-nav-wrapper .date-heading h3 {
     font-size: 14px;
@@ -1562,5 +1574,35 @@ audio {
   }
   .node-type-song .node-song .group-header .audiobox audio {
     width: 80%;
+  }
+  body > .togglebutton {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  body > .togglebutton.open {
+    top: 120px;
+  }
+  .navbar-fixed-top {
+    display: none;
+  }
+  .highlighted {
+    padding: 20px 0;
+    font-size: 12px;
+  }
+  .highlighted .ds-2col .group-left {
+    margin-bottom: 0;
+  }
+  .highlighted .ds-2col .group-left img {
+    width: 20%;
   }
 }
