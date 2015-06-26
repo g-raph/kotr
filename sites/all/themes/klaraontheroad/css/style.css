@@ -1343,6 +1343,19 @@ audio {
   .view-uitzendingen .klara-date {
     left: 138%;
   }
+  .node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-comp,
+  .node-type-uitzending .node-uitzending .field-name-field-broadcast-ctsong > .slimScrollDiv > .field-items > .field-item .field-name-field-song-uitv {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .node-type-song .node-song .group-left {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .node-type-song .node-song .group-right {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 700px) {
   .view-uitzendingen .klara-timeline-block .klara-timeline-content {
