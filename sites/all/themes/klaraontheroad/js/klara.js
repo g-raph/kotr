@@ -5,7 +5,8 @@
             // date calc for timeline
             var now = new Date();
             var twoDigitMonth = ((now.getMonth().length+1) === 1)? (now.getMonth()+1) : '0' + (now.getMonth()+1);
-            var $thisdate = now.getFullYear() + "-" + twoDigitMonth + "-" + now.getDate();
+            var twoDigitDay = ((now.getDate().length) === 1)? (now.getDate()) : '0' + (now.getDate());
+            var $thisdate = now.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDay;
             var $timelineblock = $('.klara-timeline-block');
             $timelineblock.each(function(){
                 var $this = $(this);
@@ -14,7 +15,6 @@
                 var $timelineswitch2 = parseInt($timelineblockdate.slice(8,10))-1;
                 var $timelineswitch3 = $timelineblockdate.slice(10,25);
                 var $timelineswitchdate = $timelineswitch1+$timelineswitch2+$timelineswitch3;
-                //console.log($timelineswitch1,$timelineswitch2,$timelineswitch3);
                 if ($thisdate > $timelineswitchdate) {
                     $this.prepend('<div class="scrollanchor"></div>').siblings().find('.scrollanchor').remove();
                 }
