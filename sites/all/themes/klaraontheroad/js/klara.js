@@ -2,58 +2,19 @@
     Drupal.behaviors.klara = {
         attach: function (context, settings) {
 
-            // date calc for timeline
-            var now = new Date();
-            var twoDigitMonth = ((now.getMonth().length+1) === 1)? (now.getMonth()+1) : '0' + (now.getMonth()+1);
-            var twoDigitDay = ((now.getDate().length) === 1)? (now.getDate()) : '0' + (now.getDate());
-            var $thisdate = now.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDay;
-            var $timelineblock = $('.klara-timeline-block');
-            $timelineblock.each(function(){
-                var $this = $(this);
-                var $timelineblockdate = $this.find('.date-display-single').attr('content');
-                var $timelineswitch1 = $timelineblockdate.slice(0,8);
-                var $timelineswitch2 = parseInt($timelineblockdate.slice(8,10))-1;
-                var $timelineswitch3 = $timelineblockdate.slice(10,25);
-                var $timelineswitchdate = $timelineswitch1+$timelineswitch2+$timelineswitch3;
-                if ($thisdate > $timelineswitchdate) {
-                    $this.prepend('<div class="scrollanchor"></div>').siblings().find('.scrollanchor').remove();
-                }
-                if ($thisdate > $timelineblockdate) {
-                    $this.find('.klara-timeline-img.klara-picture').css('background','#b0cc00');
-                } else {
-                    $this.addClass('upcoming');
-                }
-            });
-
             // frontpage only js
             if ($('body').hasClass('front')) {
 
-                // insert library only on frontpage
-                $('<script type="text/javascript" src="/sites/all/themes/klaraontheroad/js/animatescroll.js"></script>').appendTo('.front');
-
-                // highlight region
-                $(window).load(function () {
-                    highlighter();
-                });
-                $(window).resize(function () {
-                    highlighter();
-                });
-
-                function highlighter() {
+                function scrolling() {
                     var ww = $(window).width();
-                    var tlhight = $('.klara-timeline-block').height();
                     if (ww > 500) {
-                        var hlhight = $('.highlighted').height() + 160;
+                        var hlhight = $('.highlighted').height() + 60;
                     } else {
                         var hlhight = $('.highlighted').height() + 10;
                     }
                     $('#block-views-uitzendingen-block-1').css('padding-top', hlhight);
-                    $('.front .scrollanchor').css('top', '-' + (hlhight - (tlhight + 20)) + 'px');
-                    if ($('.front .scrollanchor').length) {
-                        $('.front .scrollanchor').animatescroll();
-                    } else {
-                        $('.front .view-uitzendingen').css('padding-top', '360px').animatescroll();
-                    }
+                    //$('.front .klara-timeline-block .scrollanchor').css('top', '-' + (hlhight - (tlhight + 20)) + 'px');
+                    $('.front .upcoming').animatescroll();
                     // slideup highlight
                     var cbtopval = $('.front .content-bottom').position().top;
                     //console.log(cbtopval,cbtopval-hlhight);
@@ -67,14 +28,38 @@
                     });
                 }
 
-                // scrolleffects
+                // insert library only on frontpage
+                $('<script type="text/javascript" src="/sites/all/themes/klaraontheroad/js/animatescroll.js"></script>').appendTo('.front');
+
+                // date calc for timeline
+                var now = new Date();
+                var twoDigitMonth = ((now.getMonth().length+1) === 1)? (now.getMonth()+1) : '0' + (now.getMonth()+1);
+                var twoDigitDay = ((now.getDate().length) === 1)? (now.getDate()) : '0' + (now.getDate());
+                var $thisdate = now.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDay;
+                var $timelineblock = $('.klara-timeline-block');
+                $timelineblock.each(function(){
+                    var $this = $(this);
+                    var $timelineblockdate = $this.find('.date-display-single').attr('content');
+                    var $timelineblockdateSplit = $timelineblockdate.slice(0,10);
+                    if ($thisdate > $timelineblockdateSplit) {
+                        $this.find('.klara-timeline-img.klara-picture').css('background','#b0cc00');
+                    } else {
+                        $this.addClass('upcoming');
+                    }
+                });
+
+                // highlight region
+                $(window).load(function () {
+                    scrolling();
+                });
+                $(window).resize(function () {
+                    scrolling();
+                });
+
+                // menulink scrolleffects
                 var scrollMenuFront = $('nav > ul.menu');
                 scrollMenuFront.find('> li:nth-child(2) > a').removeAttr('href').click(function(){
-                    if ($('.front .klara-timeline-block:first-child').hasClass('upcoming')) {
-                        $('.front .view-uitzendingen').animatescroll();
-                    } else {
-                        $('.front .klara-timeline-block .scrollanchor').animatescroll();
-                    }
+                    $('.front .upcoming').animatescroll();
                 });
                 scrollMenuFront.find('> li:nth-child(3) > a').removeAttr('href').click(function(){
                     $('.front .content-bottom').animatescroll();
